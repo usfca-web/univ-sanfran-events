@@ -1,9 +1,9 @@
-uuid: 7405ebbf-806e-48e3-950c-da9fd257671e
+uuid: 51aec6ba-8258-4aac-a09c-bc81bd4b55f2
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+    - 'block_content:basic:f15bd690-0666-43c7-8478-be4c3e9b0dda'
   module:
     - block_content
     - system
@@ -15,11 +15,11 @@ theme: usf_events
 region: content
 weight: 0
 provider: null
-plugin: 'block_content:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+plugin: 'block_content:f15bd690-0666-43c7-8478-be4c3e9b0dda'
 settings:
-  id: 'block_content:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+  id: 'block_content:f15bd690-0666-43c7-8478-be4c3e9b0dda'
   label: 'Logged out user'
-  label_display: '0'
+  label_display: visible
   provider: block_content
   status: true
   info: ''
