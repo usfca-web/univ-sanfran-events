@@ -1,0 +1,209 @@
+uuid: e7e2d73e-aaef-46da-a37f-810a9a338711
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_source
+    - node.type.event
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      03db3f9d-dedf-43d2-b7af-2ad932d32964:
+        default_value: published
+        only_if_empty: false
+        uuid: 03db3f9d-dedf-43d2-b7af-2ad932d32964
+        plugin: default_value
+        source: blank
+        weight: 0
+        label: 'Set value or default value'
+      0b9f04ec-c3b2-479a-9fd7-f4500c5c1181:
+        default_value: USFCA
+        only_if_empty: false
+        uuid: 0b9f04ec-c3b2-479a-9fd7-f4500c5c1181
+        plugin: default_value
+        source: blank2
+        weight: 0
+        label: 'Set value or default value'
+      bae23242-ebbb-43fd-b328-b5bceb887835:
+        default_value: Slate
+        only_if_empty: false
+        uuid: bae23242-ebbb-43fd-b328-b5bceb887835
+        plugin: default_value
+        source: blank3
+        weight: 0
+        label: 'Set value or default value'
+label: 'Slate Events'
+id: slate_events
+description: 'Import Events from Slate'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.row[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: event
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  formtitle:
+    value: FormTitle
+    label: FormTitle
+    machine_name: formtitle
+    type: json
+  formstartdate:
+    value: FormStartDate
+    label: FormStartDate
+    machine_name: formstartdate
+    type: json
+  formenddate:
+    value: FormEndDate
+    label: FormEndDate
+    machine_name: formenddate
+    type: json
+  formstartdatetime:
+    value: FormStartDateTime
+    label: FormStartDateTime
+    machine_name: formstartdatetime
+    type: json
+  formenddatetime:
+    value: FormEndDateTime
+    label: FormEndDateTime
+    machine_name: formenddatetime
+    type: json
+  formdescription:
+    value: FormDescription
+    label: FormDescription
+    machine_name: formdescription
+    type: json
+  formid:
+    value: FormID
+    label: FormID
+    machine_name: formid
+    type: json
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: json
+  blank:
+    value: blank
+    label: blank
+    machine_name: blank
+    type: json
+  blank2:
+    value: blank2
+    label: blank2
+    machine_name: blank2
+    type: json
+  formurl:
+    value: FormURL
+    label: FormURL
+    machine_name: formurl
+    type: json
+  blank3:
+    value: blank3
+    label: blank3
+    machine_name: blank3
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: formtitle
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_date
+    map:
+      value: formstartdatetime
+      end_value: formenddatetime
+    settings:
+      language: ''
+      timezone: America/Los_Angeles
+  -
+    target: body
+    map:
+      value: formdescription
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_display_title
+    map:
+      value: formtitle
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: moderation_state
+    map:
+      value: blank
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_event_website_tax
+    map:
+      target_id: blank2
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: '1'
+  -
+    target: field_slate_external_url
+    map:
+      uri: formurl
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_source
+    map:
+      target_id: blank3
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: '1'
+  -
+    target: field_guid
+    map:
+      value: formid
+    settings:
+      language: null
+    unique:
+      value: '1'

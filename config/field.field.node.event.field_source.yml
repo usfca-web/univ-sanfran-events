@@ -1,0 +1,35 @@
+uuid: 0647202f-cf48-4256-97a4-20c08ddcebeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.event
+    - taxonomy.vocabulary.source
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: all
+    edit_disable: all
+id: node.event.field_source
+field_name: field_source
+entity_type: node
+bundle: event
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      source: source
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

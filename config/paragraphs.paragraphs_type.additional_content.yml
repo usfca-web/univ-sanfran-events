@@ -1,0 +1,10 @@
+uuid: 2cefc8fe-57fa-4f82-8cf6-44a13f964aca
+langcode: en
+status: true
+dependencies: {  }
+id: additional_content
+label: 'Additional Content'
+icon_uuid: null
+icon_default: null
+description: 'A general paragraph field used for additional content'
+behavior_plugins: {  }

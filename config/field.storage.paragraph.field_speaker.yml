@@ -1,0 +1,19 @@
+uuid: 6bcfd37b-b0c9-4a14-bf8d-23e0a159262f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_speaker
+field_name: field_speaker
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

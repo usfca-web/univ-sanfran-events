@@ -1,0 +1,25 @@
+uuid: 71564c18-a19e-4f6e-880e-ce7fc72e7527
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_alternative_text
+    - media.type.image
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.image.field_alternative_text
+field_name: field_alternative_text
+entity_type: media
+bundle: image
+label: 'Alternative text'
+description: 'Short description of the image used by screen readers and displayed when the image is not loaded. This is important for accessibility.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

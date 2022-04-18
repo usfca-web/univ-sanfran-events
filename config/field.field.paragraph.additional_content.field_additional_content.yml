@@ -1,0 +1,26 @@
+uuid: 32e2f1e9-bd9e-4208-a710-a5b39d15aec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_additional_content
+    - paragraphs.paragraphs_type.additional_content
+  module:
+    - disable_field
+    - text
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: paragraph.additional_content.field_additional_content
+field_name: field_additional_content
+entity_type: paragraph
+bundle: additional_content
+label: 'Additional Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

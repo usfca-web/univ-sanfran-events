@@ -1,0 +1,129 @@
+uuid: 0ba7c75d-140b-4b3f-ac94-bd52e3b427a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_widen_image_id
+    - field.field.media.image.field_widen_media_description
+    - media.type.image
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - media
+third_party_settings:
+  feeds_tamper:
+    tampers: {  }
+label: 'Widen Media'
+id: import_files_from_widen
+description: 'Import media from Widen'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.items[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:media'
+processor_configuration:
+  values:
+    bundle: image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: json
+  thumbnails_2048px_url:
+    value: thumbnails.2048px.url
+    label: thumbnails.2048px.url
+    machine_name: thumbnails_2048px_url
+    type: json
+  filename:
+    value: filename
+    label: filename
+    machine_name: filename
+    type: json
+  embeds_originalsize_url:
+    value: embeds.Originalsize.url
+    label: embeds.Originalsize.url
+    machine_name: embeds_originalsize_url
+    type: json
+  metadata_fields_keywords:
+    value: metadata.fields.keywords
+    label: metadata.fields.keywords
+    machine_name: metadata_fields_keywords
+    type: json
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: json
+  metadata_fields_description:
+    value: metadata.fields.description
+    label: metadata.fields.description
+    machine_name: metadata_fields_description
+    type: json
+  embeds_herobanner2650x1767_url:
+    value: embeds.HeroBanner2650x1767.url
+    label: embeds.HeroBanner2650x1767.url
+    machine_name: embeds_herobanner2650x1767_url
+    type: json
+  embeds_herobanner1600x900_url:
+    value: embeds.HeroBanner1600x900.url
+    label: embeds.HeroBanner1600x900.url
+    machine_name: embeds_herobanner1600x900_url
+    type: json
+mappings:
+  -
+    target: field_media_image
+    map:
+      target_id: embeds_herobanner1600x900_url
+      alt: ''
+      title: ''
+    settings:
+      existing: 2
+      language: null
+      reference_by: filename
+      autocreate: false
+      feeds_item: false
+  -
+    target: name
+    map:
+      value: filename
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_widen_image_id
+    map:
+      value: id
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: field_widen_media_description
+    map:
+      value: metadata_fields_description
+    settings:
+      language: null

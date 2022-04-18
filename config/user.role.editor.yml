@@ -1,0 +1,48 @@
+uuid: 054ada5f-df00-4b3b-8889-511c9f11df3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - media.type.image
+    - node.type.event
+    - workflows.workflow.editorial
+  module:
+    - actions_permissions
+    - content_moderation
+    - filter
+    - media
+    - node
+    - rabbit_hole
+    - system
+    - views_bulk_edit
+    - workbench_access
+id: editor
+label: editor
+weight: 4
+is_admin: null
+permissions:
+  - 'create event content'
+  - 'create image media'
+  - 'delete any event content'
+  - 'delete any image media'
+  - 'delete own event content'
+  - 'delete own image media'
+  - 'edit any event content'
+  - 'edit any image media'
+  - 'edit own event content'
+  - 'edit own image media'
+  - 'execute views_bulk_edit all'
+  - 'rabbit hole bypass node'
+  - 'revert event revisions'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition review'
+  - 'use text format full_html'
+  - 'use views bulk edit'
+  - 'use workbench access'
+  - 'view any unpublished content'
+  - 'view event revisions'
+  - 'view latest version'
+  - 'view the administration theme'

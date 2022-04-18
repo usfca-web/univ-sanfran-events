@@ -1,0 +1,53 @@
+uuid: 3b3d1844-4c78-4b29-bf6a-cd57d5d2027a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - media.type.image
+    - node.type.event
+    - workflows.workflow.editorial
+  module:
+    - actions_permissions
+    - content_moderation
+    - filter
+    - media
+    - node
+    - rabbit_hole
+    - views_bulk_edit
+    - workbench_access
+id: manager
+label: manager
+weight: 5
+is_admin: null
+permissions:
+  - 'assign selected workbench access'
+  - 'assign workbench access'
+  - 'batch update workbench access'
+  - 'bypass workbench access'
+  - 'create event content'
+  - 'create image media'
+  - 'delete any event content'
+  - 'delete any image media'
+  - 'delete own event content'
+  - 'delete own image media'
+  - 'edit any event content'
+  - 'edit any image media'
+  - 'edit own event content'
+  - 'edit own image media'
+  - 'execute views_bulk_edit all'
+  - 'rabbit hole bypass node'
+  - 'revert event revisions'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition published'
+  - 'use editorial transition review'
+  - 'use text format full_html'
+  - 'use views bulk edit'
+  - 'use workbench access'
+  - 'view any unpublished content'
+  - 'view event revisions'
+  - 'view latest version'
+  - 'view workbench access information'

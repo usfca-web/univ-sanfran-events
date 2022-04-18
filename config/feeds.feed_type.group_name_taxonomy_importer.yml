@@ -1,0 +1,67 @@
+uuid: c1defab9-42ce-4bef-a3cd-cab50867614a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.group_name
+  module:
+    - feeds_ex
+    - taxonomy
+label: 'Group Name Taxonomy Importer'
+id: group_name_taxonomy_importer
+description: 'Importer for Group Names from taxonomy terms'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: /root/item
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: group_name
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  taxonomy_term:
+    label: taxonomy.term
+    machine_name: taxonomy_term
+    value: taxonomy.term
+    type: xml
+  term:
+    label: term
+    machine_name: term
+    value: term
+    type: xml
+  name:
+    label: name
+    machine_name: name
+    value: name
+    type: xml
+mappings:
+  -
+    target: name
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }

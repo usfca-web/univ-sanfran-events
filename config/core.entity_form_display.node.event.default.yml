@@ -1,0 +1,111 @@
+uuid: 1e45f90b-559d-4a48-b73e-6ef2a590371c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.feeds_item
+    - field.field.node.event.field_building
+    - field.field.node.event.field_contact
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_email_category
+    - field.field.node.event.field_ems_booking_id
+    - field.field.node.event.field_ems_reservation_id
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_type_id
+    - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_group_name
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_image_caption
+    - field.field.node.event.field_location
+    - field.field.node.event.field_media
+    - field.field.node.event.field_section
+    - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_source
+    - field.field.node.event.field_speaker
+    - field.field.node.event.field_terms
+    - node.type.event
+  module:
+    - path
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  feeds_item: true
+  field_building: true
+  field_contact: true
+  field_date: true
+  field_display_title: true
+  field_email_category: true
+  field_ems_booking_id: true
+  field_ems_reservation_id: true
+  field_event_category: true
+  field_event_type_id: true
+  field_event_website_tax: true
+  field_featured: true
+  field_group_name: true
+  field_guid: true
+  field_image_caption: true
+  field_location: true
+  field_media: true
+  field_section: true
+  field_slate_external_url: true
+  field_source: true
+  field_speaker: true
+  field_terms: true

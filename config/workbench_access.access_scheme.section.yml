@@ -1,0 +1,19 @@
+uuid: 41395ad8-0341-4baf-a9b4-75423a1100c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_section
+    - taxonomy.vocabulary.sections
+id: section
+plural_label: Sections
+label: Section
+scheme: taxonomy
+scheme_settings:
+  vocabularies:
+    - sections
+  fields:
+    -
+      entity_type: node
+      bundle: event
+      field: field_section

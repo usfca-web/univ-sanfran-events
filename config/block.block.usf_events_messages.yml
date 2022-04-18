@@ -1,0 +1,22 @@
+uuid: 12021291-d44c-4822-a028-a501cf57c35a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usf_events
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: usf_events_messages
+theme: usf_events
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

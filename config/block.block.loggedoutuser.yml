@@ -1,0 +1,38 @@
+uuid: 7405ebbf-806e-48e3-950c-da9fd257671e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - usf_events
+id: loggedoutuser
+theme: usf_events
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+settings:
+  id: 'block_content:27060b5c-418a-4c44-8e9a-5d1e7f3d8212'
+  label: 'Logged out user'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

@@ -1,0 +1,25 @@
+uuid: d1a36612-798b-4af3-86aa-32c1045233b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_widen_media_description
+    - media.type.image
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.image.field_widen_media_description
+field_name: field_widen_media_description
+entity_type: media
+bundle: image
+label: 'Widen Media Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,38 @@
+uuid: 16f7a947-e974-4d54-9e84-2cbd309a66d5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:74c3e2d4-6981-4cc9-9ac0-15facdf40e40'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - usf_events
+id: loggedinuser
+theme: usf_events
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:74c3e2d4-6981-4cc9-9ac0-15facdf40e40'
+settings:
+  id: 'block_content:74c3e2d4-6981-4cc9-9ac0-15facdf40e40'
+  label: 'Logged in user'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

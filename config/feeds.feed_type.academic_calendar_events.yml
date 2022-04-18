@@ -1,0 +1,111 @@
+uuid: baa9dd4a-d24a-46ae-89d9-4c7c09a4ede3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_event_category
+    - node.type.event
+  module:
+    - feeds_ex
+    - node
+label: 'Academic Calendar events'
+id: academic_calendar_events
+description: 'Import Academic Calendar Events from USFCA'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: /events/item
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: event
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    label: title
+    machine_name: title
+    value: title
+    type: xml
+  displaytitle:
+    label: displayTitle
+    machine_name: displaytitle
+    value: displayTitle
+    type: xml
+  eventstarttime:
+    label: eventStartTime
+    machine_name: eventstarttime
+    value: eventStartTime
+    type: xml
+  eventendtime:
+    label: eventEndTime
+    machine_name: eventendtime
+    value: eventEndTime
+    type: xml
+  eventcategory:
+    label: eventCategory
+    machine_name: eventcategory
+    value: eventCategory
+    type: xml
+  guid:
+    label: GUID
+    machine_name: guid
+    value: guid
+    raw: false
+    inner: false
+    type: xml
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_display_title
+    map:
+      value: displaytitle
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_date
+    map:
+      value: eventstarttime
+      end_value: eventendtime
+    settings:
+      language: ''
+      timezone: America/Los_Angeles
+  -
+    target: field_event_category
+    map:
+      target_id: eventcategory
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: '1'

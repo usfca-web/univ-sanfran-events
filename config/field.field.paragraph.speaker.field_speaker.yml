@@ -1,0 +1,26 @@
+uuid: 39ffb883-ea0c-496a-8039-ba8f75a42bea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_speaker
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - disable_field
+    - text
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: paragraph.speaker.field_speaker
+field_name: field_speaker
+entity_type: paragraph
+bundle: speaker
+label: Speaker
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

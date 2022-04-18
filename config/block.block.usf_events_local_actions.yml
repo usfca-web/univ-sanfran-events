@@ -1,0 +1,20 @@
+uuid: c34d1f7d-0bed-4ed7-83e8-49fc250acd5e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usf_events
+_core:
+  default_config_hash: XRdb8LpbArVA6CpuuEZxzi50JIdjsJaCCZ5o3fH0Blk
+id: usf_events_local_actions
+theme: usf_events
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 5cbdbfde-5f3d-423f-8479-a56def93d07f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Second Media Category'
+vid: media_category_2
+description: ''
+weight: 0

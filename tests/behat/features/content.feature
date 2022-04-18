@@ -58,6 +58,6 @@ Feature: Content
     | Article by Joe | Joe User | 1       |
     When I am logged in as a user with the "administrator" role
     And I am on the homepage
-    Then I should see the link "Article by Joe"
-    When I follow "Article by Joe"
-    Then I should see the text "Article by Joe"
+    Then I should see the link "Home"
+    When I follow "Home"
+    Then I should see the text "Welcome to USF Events"

@@ -1,0 +1,35 @@
+uuid: 44a61057-409a-4c5a-af83-aa94d2e34933
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_category
+    - node.type.event
+    - taxonomy.vocabulary.category
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_event_category
+field_name: field_event_category
+entity_type: node
+bundle: event
+label: 'Website/Mobile App Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

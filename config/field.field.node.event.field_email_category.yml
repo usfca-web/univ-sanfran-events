@@ -1,0 +1,35 @@
+uuid: f0513a84-80eb-45e5-bf45-89f7452d261e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_category
+    - node.type.event
+    - taxonomy.vocabulary.email_category
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_email_category
+field_name: field_email_category
+entity_type: node
+bundle: event
+label: 'Email Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      email_category: email_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
