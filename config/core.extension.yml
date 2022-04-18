@@ -1,0 +1,33 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+module:
+  automated_cron: 0
+  big_pipe: 0
+  block: 0
+  block_content: 0
+  breakpoint: 0
+  ckeditor: 0
+  color: 0
+  comment: 0
+  config: 0
+  contact: 0
+  contextual: 0
+  dblog: 0
+  dynamic_page_cache: 0
+  editor: 0
+  field: 0
+  file: 0
+  filter: 0
+  help: 0
+  node: 0
+  options: 0
+  page_cache: 0
+  path_alias: 0
+  rdf: 0
+  search: 0
+  system: 0
+  text: 0
+  tour: 0
+  user: 0
+theme: {  }
+profile: standard
