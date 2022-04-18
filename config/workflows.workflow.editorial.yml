@@ -2,6 +2,8 @@ uuid: 5af3ae70-902b-4870-b747-cbfeb18b278f
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.event
   module:
     - content_moderation
 _core:
@@ -59,5 +61,7 @@ type_settings:
         - published
       to: published
       weight: 1
-  entity_types: {  }
+  entity_types:
+    node:
+      - event
   default_moderation_state: draft

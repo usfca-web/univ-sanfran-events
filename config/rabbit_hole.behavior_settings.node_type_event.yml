@@ -8,7 +8,7 @@ id: node_type_event
 entity_type_id: node_type
 entity_id: event
 action: page_redirect
-allow_override: 1
+allow_override: 0
 redirect: /<front>
 redirect_code: 301
 redirect_fallback_action: access_denied
