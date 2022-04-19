@@ -3,3 +3,4 @@ _core:
 ignored_config_entities:
   - 'block.block.*'
   - 'system.menu.*'
+  - system.site
