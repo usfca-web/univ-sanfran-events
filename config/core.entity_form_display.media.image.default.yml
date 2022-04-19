@@ -3,7 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.feeds_item
+    - field.field.media.image.field_media_category
+    - field.field.media.image.field_media_category_2
+    - field.field.media.image.field_media_category_3
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_widen_image_id
+    - field.field.media.image.field_widen_media_description
     - image.style.thumbnail
     - media.type.image
   module:
@@ -18,7 +24,25 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_category:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_category_2:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_category_3:
+    type: options_select
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -30,22 +54,38 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_widen_image_id:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_widen_media_description:
+    type: string_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -55,7 +95,4 @@ content:
     third_party_settings: {  }
 hidden:
   feeds_item: true
-  field_alternative_text: true
-  field_widen_image_id: true
-  field_widen_media_description: true
   name: true

@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - image.style.thumbnail
+    - taxonomy.vocabulary.media_category
+    - taxonomy.vocabulary.media_category_2
+    - taxonomy.vocabulary.media_category_3
   module:
+    - better_exposed_filters
     - image
     - media
+    - taxonomy
     - user
 _core:
   default_config_hash: mF_CA96Q4unIl78LRoLKR5YPUDGdxn0wbSqyUbvrQjc
@@ -529,15 +534,82 @@ display:
             offset_label: Offset
           quantity: 9
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Filter
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              name:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              bundle:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              status:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              langcode:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_media_category_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: true
+                  is_secondary: false
+              field_media_category_2_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: true
+                  is_secondary: false
+              field_media_category_3_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: true
+                  is_secondary: false
       access:
         type: perm
         options:
@@ -748,37 +820,188 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        langcode:
-          id: langcode
-          table: media_field_data
-          field: langcode
+        field_media_category_target_id:
+          id: field_media_category_target_id
+          table: media__field_media_category
+          field: field_media_category_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
-          operator: in
+          plugin_id: taxonomy_index_tid
+          operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: langcode_op
-            label: Language
+            operator_id: field_media_category_target_id_op
+            label: 'First Media Category'
             description: ''
             use_operator: false
-            operator: langcode_op
+            operator: field_media_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: langcode
+            identifier: field_media_category_target_id
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              content_editor: '0'
               administrator: '0'
+              editor: '0'
+              manager: '0'
             reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: media_category
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_media_category_2_target_id:
+          id: field_media_category_2_target_id
+          table: media__field_media_category_2
+          field: field_media_category_2_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_media_category_2_target_id_op
+            label: 'Second Media Category'
+            description: ''
+            use_operator: false
+            operator: field_media_category_2_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_media_category_2_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              editor: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: media_category_2
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_media_category_3_target_id:
+          id: field_media_category_3_target_id
+          table: media__field_media_category_3
+          field: field_media_category_3_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_media_category_3_target_id_op
+            label: 'Third Media Category'
+            description: ''
+            use_operator: false
+            operator: field_media_category_3_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_media_category_3_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              editor: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: media_category_3
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_widen_media_description_value:
+          id: field_widen_media_description_value
+          table: media__field_widen_media_description
+          field: field_widen_media_description_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_widen_media_description_value_op
+            label: 'Widen Media Description'
+            description: ''
+            use_operator: false
+            operator: field_widen_media_description_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_widen_media_description_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              editor: '0'
+              manager: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
