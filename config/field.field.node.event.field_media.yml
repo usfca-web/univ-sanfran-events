@@ -1,0 +1,35 @@
+uuid: 691930ec-ebab-4e8b-ae77-afa23e84aac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media
+    - media.type.image
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_media
+field_name: field_media
+entity_type: node
+bundle: event
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

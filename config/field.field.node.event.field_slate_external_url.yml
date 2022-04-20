@@ -1,0 +1,28 @@
+uuid: 415ab30a-8efd-4e09-bb57-f7db767cebe5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slate_external_url
+    - node.type.event
+  module:
+    - disable_field
+    - link
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_slate_external_url
+field_name: field_slate_external_url
+entity_type: node
+bundle: event
+label: 'Slate External URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

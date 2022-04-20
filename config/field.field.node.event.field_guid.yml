@@ -1,0 +1,25 @@
+uuid: 90811d95-dca4-4d6e-be5b-97e3f77d0233
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_guid
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_guid
+field_name: field_guid
+entity_type: node
+bundle: event
+label: guid
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

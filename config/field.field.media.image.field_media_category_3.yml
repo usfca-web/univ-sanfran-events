@@ -1,0 +1,35 @@
+uuid: 464f1486-6545-4481-9b9a-9e193efcc7af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_category_3
+    - media.type.image
+    - taxonomy.vocabulary.media_category_3
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.image.field_media_category_3
+field_name: field_media_category_3
+entity_type: media
+bundle: image
+label: 'Third Media Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_category_3: media_category_3
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

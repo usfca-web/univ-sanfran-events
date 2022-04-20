@@ -1,0 +1,43 @@
+uuid: fea50c59-3906-418f-b2b2-4f71186b21fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_speaker_image
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - disable_field
+    - image
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: paragraph.speaker.field_speaker_image
+field_name: field_speaker_image
+entity_type: paragraph
+bundle: speaker
+label: 'Speaker Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

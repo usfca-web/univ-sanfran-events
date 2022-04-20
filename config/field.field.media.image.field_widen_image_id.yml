@@ -1,0 +1,25 @@
+uuid: b3e7ac89-cf66-4360-ac04-94f26873bc1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_widen_image_id
+    - media.type.image
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.image.field_widen_image_id
+field_name: field_widen_image_id
+entity_type: media
+bundle: image
+label: 'Widen Image ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

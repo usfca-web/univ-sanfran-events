@@ -1,0 +1,35 @@
+uuid: bf3eb1b1-1052-4163-90a3-f4ee695e3ac3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_category
+    - media.type.image
+    - taxonomy.vocabulary.media_category
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.image.field_media_category
+field_name: field_media_category
+entity_type: media
+bundle: image
+label: 'First Media Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_category: media_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

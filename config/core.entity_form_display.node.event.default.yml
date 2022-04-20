@@ -1,0 +1,253 @@
+uuid: 1e45f90b-559d-4a48-b73e-6ef2a590371c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.feeds_item
+    - field.field.node.event.field_building
+    - field.field.node.event.field_contact
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_email_category
+    - field.field.node.event.field_ems_booking_id
+    - field.field.node.event.field_ems_reservation_id
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_type_id
+    - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_group_name
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_image_caption
+    - field.field.node.event.field_location
+    - field.field.node.event.field_media
+    - field.field.node.event.field_section
+    - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_source
+    - field.field.node.event.field_speaker
+    - field.field.node.event.field_terms
+    - node.type.event
+    - workflows.workflow.editorial
+  module:
+    - chosen_field
+    - content_moderation
+    - datetime_range
+    - link
+    - media_library
+    - path
+    - text
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 10
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_building:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: daterange_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_title:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_email_category:
+    type: chosen_select
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ems_booking_id:
+    type: number
+    weight: 22
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ems_reservation_id:
+    type: number
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_category:
+    type: chosen_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_type_id:
+    type: number
+    weight: 21
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_website_tax:
+    type: entity_reference_autocomplete
+    weight: 24
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_group_name:
+    type: chosen_select
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_caption:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_location:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 11
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_section:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_slate_external_url:
+    type: link_default
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_source:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_terms:
+    type: chosen_select
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  field_guid: true
+  field_speaker: true

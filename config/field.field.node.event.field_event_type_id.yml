@@ -1,0 +1,29 @@
+uuid: 771e5771-69ec-4012-9c9d-48bc45389b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_type_id
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: all
+    edit_disable: all
+id: node.event.field_event_type_id
+field_name: field_event_type_id
+entity_type: node
+bundle: event
+label: 'Event Type ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

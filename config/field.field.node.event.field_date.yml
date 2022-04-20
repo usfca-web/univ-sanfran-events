@@ -1,0 +1,26 @@
+uuid: 5ccaead1-df03-48d4-b5f7-6a3bf73d5417
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.event
+  module:
+    - datetime_range
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_date
+field_name: field_date
+entity_type: node
+bundle: event
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

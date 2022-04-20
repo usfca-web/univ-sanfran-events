@@ -49,7 +49,7 @@ defaults: &defaults
     #======================================================================================================================================
 
     NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
-    ADMIN_USERNAME: admin
+    ADMIN_USERNAME: administrator
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
 

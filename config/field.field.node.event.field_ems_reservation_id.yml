@@ -1,0 +1,29 @@
+uuid: 31457378-f113-42cf-9ee4-efbd37a42a54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ems_reservation_id
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: all
+    edit_disable: all
+id: node.event.field_ems_reservation_id
+field_name: field_ems_reservation_id
+entity_type: node
+bundle: event
+label: 'EMS Reservation ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

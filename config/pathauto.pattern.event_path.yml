@@ -1,0 +1,22 @@
+uuid: 19bc4709-0e76-4901-a998-6b50c4ff8e3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: event_path
+label: 'Event Path'
+type: 'canonical_entities:node'
+pattern: 'event/[node:field_display_title]/[node:field_ems_booking_id]'
+selection_criteria:
+  5117f889-f0e7-498c-9ae3-e3e1e46aba78:
+    id: node_type
+    negate: false
+    uuid: 5117f889-f0e7-498c-9ae3-e3e1e46aba78
+    context_mapping:
+      node: node
+    bundles:
+      event: event
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -32,3 +32,15 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+// CAS Hostname settings
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // If it's the live environment, set the CAS hostname to point to prod
+  if ($_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
+      $config['cas.settings']['server']['hostname'] = 'usfcas.usfca.edu';
+  }
+  else {
+      // Use test server on every other Pantheon environment.
+      $config['cas.settings']['server']['hostname'] = 'amidala.usfca.edu';
+  }
+}
