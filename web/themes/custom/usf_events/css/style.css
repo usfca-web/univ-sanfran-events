@@ -191,6 +191,17 @@ select#edit-field-event-website-tax-target-id {
 select#edit-field-section-target-id {
     width: 140px;
 }
+/* MEDIA LIBRARY */
+
+.ui-dialog.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
+    min-width: 70vw!important;
+    margin: 0 auto;
+    left: 15%!important;
+}
+.media-library-views-form .media-library-item {
+    max-width: 15%;
+}
+
 
 /* PREVIEW CSS */
 .preview_tabs {
