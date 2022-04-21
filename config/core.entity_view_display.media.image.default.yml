@@ -3,7 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.feeds_item
+    - field.field.media.image.field_media_category
+    - field.field.media.image.field_media_category_2
+    - field.field.media.image.field_media_category_3
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_widen_image_id
+    - field.field.media.image.field_widen_media_description
     - image.style.large
     - media.type.image
   module:
@@ -22,14 +28,30 @@ content:
       image_link: ''
       image_style: large
     third_party_settings: {  }
+    weight: 0
+    region: content
+  field_widen_image_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 1
+    region: content
+  field_widen_media_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   created: true
   feeds_item: true
   field_alternative_text: true
-  field_widen_image_id: true
-  field_widen_media_description: true
+  field_media_category: true
+  field_media_category_2: true
+  field_media_category_3: true
   name: true
   thumbnail: true
   uid: true

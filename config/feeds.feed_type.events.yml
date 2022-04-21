@@ -146,7 +146,7 @@ mappings:
       end_value: eventendtime
     settings:
       language: ''
-      timezone: America/Los_Angeles
+      timezone: __SITE__
   -
     target: field_display_title
     map:

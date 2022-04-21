@@ -88,6 +88,8 @@
 %}
 {{ attach_library('bartik/classy.node') }}
 
+{% set start_date = node.field_date.value ~ 'Z' %}
+{% set end_date = node.field_date.end_value ~ 'Z' %}
 
 <article{{ attributes.addClass(classes) }}>
   <header>
@@ -115,7 +117,7 @@
      {{ node.field_display_title.value }}
   </div>
     <div class="event_date">
-      {{ node.field_date.value|date("l, F j, g:i A ") ~ ' - ' }}{{ node.field_date.end_value|date("g:i A ") }}
+     {{ start_date|date("l, F j, g:i A ") ~ ' - '}}{{ end_date|date("g:i A ") }}
     </div>
     <div class="event_location">
       {{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }}
@@ -158,7 +160,7 @@
             {{ node.field_display_title.value }}
           </div>
           <div class="event_date">
-            {{ node.field_date.value|date("l, F j, g:i A ") ~ ' - '  }}{{ node.field_date.end_value|date("g:i A ") }}
+            {{ start_date|date("l, F j, g:i A ") ~ ' - '}}{{ end_date|date("g:i A ") }}
           </div>
           <div class="event_location">
             {{ node.field_location.value ~ ' - '  }}{{ node.field_building.value }}
