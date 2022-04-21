@@ -1,0 +1,59 @@
+uuid: 4dc10965-887e-4591-aa82-1abaf4caa0bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category
+  module:
+    - feeds_ex
+    - taxonomy
+label: 'Category Name Taxonomy Importer'
+id: category_name_taxonomy_importer
+description: 'Importer for Category Names from taxonomy terms'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: /root/item
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  values:
+    vid: category
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  name:
+    label: name
+    machine_name: name
+    value: name
+    raw: false
+    inner: false
+    type: xml
+mappings:
+  -
+    target: name
+    map:
+      value: name
+    settings:
+      language: null
+    unique: {  }
