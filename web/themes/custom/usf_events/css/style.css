@@ -470,16 +470,35 @@ li.ui-tabs-active.ui-state-active {
     .region-primary-menu .menu {
         background: #00543c;
         margin: -2px 0;
+        margin: -2px 0 -2px 20px;
+        position: relative;
+        bottom: -10px;
     }
     .region-primary-menu .menu a {
         background: #fff;
-        margin: 10px;
+        margin: 10px 0;
         text-align: center;
         padding: 10px;
     }
     .region-primary-menu .menu .menu-item {
         width: 45%;
         display: inline-block;
+    }
+    a.menu-toggle {
+        display: none!important;
+    }
+    .region-primary-menu .menu a {
+        border-radius: 8px 8px 0 0;
+        background: rgba(255,255,255,0.7);
+    }
+    .region-primary-menu .menu a.is-active {
+        background: #fff!important;
+    }
+    body:not(:target) .region-primary-menu .menu-item {
+        overflow: visible;
+    }
+    div#block-logoutmenu {
+        padding: 10px 20px 0;
     }
 }
 
