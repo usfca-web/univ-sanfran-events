@@ -4,7 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.image.feeds_item
+    - field.field.media.image.field_media_category
+    - field.field.media.image.field_media_category_2
+    - field.field.media.image.field_media_category_3
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_widen_image_id
+    - field.field.media.image.field_widen_media_description
     - image.style.thumbnail
     - media.type.image
   module:
@@ -16,9 +22,27 @@ targetEntityType: media
 bundle: image
 mode: media_library
 content:
+  field_media_category:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_category_2:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_category_3:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_media_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
