@@ -19,7 +19,11 @@ a:hover, a:focus, .link:hover, .link:focus {
     margin-bottom:1px;
 }
 
-
+table.views-table.views-view-table { /* makes table responsive */
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
 /* HEADER FOOTER */
 a.site-branding__logo {
     width: 400px;
@@ -65,6 +69,9 @@ a.footer-link:hover {
 }
 
 /* SEARCH FILTERS & EDIT PAGE */
+.form-item {
+    margin-bottom: 10px;
+}
 .form-type-date,
 .form-item-title,
 .form-item-field-event-category-target-id, 
@@ -76,6 +83,7 @@ select#edit-action,
 .view-filters select {
     height: 35px!important;
     border: 1px solid #ccc;
+    margin-bottom: 0;
 }
 .view-filters select,
 select#edit-action {
@@ -102,6 +110,9 @@ select#edit-action {
     height: 35px;
     border-radius: 6px;
     margin-bottom:40px;
+}
+a.chosen-single {
+    margin-bottom: 0;
 }
 .node-preview-container {
     background: #fdbb30;
@@ -164,6 +175,12 @@ input, textarea, select {
 input#edit-field-date-0-value-time,
 input#edit-field-date-0-end-value-time {
     width: 130px;
+}
+select#edit-field-event-website-tax-target-id {
+    width: 280px;
+}
+select#edit-field-section-target-id {
+    width: 140px;
 }
 
 /* PREVIEW CSS */
@@ -403,7 +420,7 @@ li.ui-tabs-active.ui-state-active {
 }
 
 /* Mobile and tablet */
-@media (min-width: 320px) and (max-width: 739px) {
+@media screen and (max-width: 739px) and (min-width: 320px) {
 	a.site-branding__logo {
 		width: 300px;
 	    height: 50px;
@@ -429,7 +446,7 @@ li.ui-tabs-active.ui-state-active {
 	}
 }
 /* Mobile only */
-@media (min-width: 320px) and (max-width: 739px) {
+@media screen and (max-width: 500px) and (min-width: 320px) {
 	#block-usf-events-branding {
 	    position: absolute;
 	    top: 30px;
