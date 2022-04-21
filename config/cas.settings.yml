@@ -27,9 +27,9 @@ forced_login:
     pages: ''
 user_accounts:
   prevent_normal_login: true
-  auto_register: false
+  auto_register: true
   email_assignment_strategy: 0
-  email_hostname: ''
+  email_hostname: usfca.edu
   email_attribute: ''
   auto_assigned_roles: {  }
   restrict_password_management: true
