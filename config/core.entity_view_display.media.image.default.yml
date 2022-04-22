@@ -32,7 +32,7 @@ content:
     region: content
   field_widen_image_id:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -40,7 +40,7 @@ content:
     region: content
   field_widen_media_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
