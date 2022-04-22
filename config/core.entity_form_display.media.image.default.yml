@@ -24,33 +24,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_media_category:
     type: entity_reference_autocomplete_tags
     weight: 1
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_media_category_2:
-    type: entity_reference_autocomplete_tags
-    weight: 2
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_media_category_3:
-    type: entity_reference_autocomplete_tags
-    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -68,7 +48,7 @@ content:
     third_party_settings: {  }
   field_widen_image_id:
     type: string_textfield
-    weight: 9
+    weight: 7
     region: content
     settings:
       size: 60
@@ -76,7 +56,7 @@ content:
     third_party_settings: {  }
   field_widen_media_description:
     type: string_textarea
-    weight: 8
+    weight: 6
     region: content
     settings:
       rows: 5
@@ -84,20 +64,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -107,4 +87,6 @@ content:
     third_party_settings: {  }
 hidden:
   feeds_item: true
+  field_media_category_2: true
+  field_media_category_3: true
   name: true
