@@ -1882,7 +1882,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
+          type: basic_string
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -2258,7 +2258,7 @@ display:
               alias: eventMediaAlt
               raw_output: false
             field_image_caption:
-              alias: mediaCaption
+              alias: eventMediaCaption
               raw_output: false
             field_source:
               alias: source
