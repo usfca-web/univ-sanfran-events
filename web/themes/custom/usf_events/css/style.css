@@ -197,11 +197,41 @@ select#edit-field-section-target-id {
     min-width: 70vw!important;
     margin: 0 auto;
     left: 15%!important;
+    padding: 20px;
 }
 .media-library-views-form .media-library-item {
-    max-width: 15%;
+    max-width: 14.6%;
 }
-
+#views-exposed-form-media-library-widget .form--inline .form-wrapper {
+    width: 300px;
+}
+#views-exposed-form-media-library-widget .form--inline div.form-wrapper .form-submit {
+    margin-top: 20px;
+}
+#views-exposed-form-media-library-widget details {
+    position: relative;
+    top: 24px;
+    height: 34px;
+    font-size: 0.9em;
+}
+#views-exposed-form-media-library-widget summary {
+    height: 24px;
+    padding: 5px 10px 5px;
+}
+#views-exposed-form-media-library-widget input.button {
+    position: relative;
+    top: 30px;
+    height: 38px!important;
+    border-radius: 18px;
+    font-size: 0.9em;
+}
+form.js-media-library-add-form {
+    position: relative;
+    top: -10px;
+}
+.view-header {
+    margin-bottom: 10px;
+}
 
 /* PREVIEW CSS */
 .preview_tabs {
@@ -439,7 +469,7 @@ li.ui-tabs-active.ui-state-active {
     color: #2A2A2A!important;
 }
 
-/* Mobile and tablet */
+/* Mobile and tablet 
 @media screen and (max-width: 739px) and (min-width: 320px) {
     a.site-branding__logo {
         width: 300px;
@@ -452,9 +482,20 @@ li.ui-tabs-active.ui-state-active {
         margin: 1rem auto!important;
         width: 300px;
     }
-}
+}*/
 /* Tablet Only */
 @media screen and (max-width: 739px) and (min-width: 500px) { 
+    a.site-branding__logo {
+        width: 300px;
+        height: 50px;
+    }
+    a.footer-logo {
+        float: none;
+        display: block!important;
+        position: relative;
+        margin: 1rem auto!important;
+        width: 300px;
+    }
     #block-usf-events-branding {
         position: absolute;
         top: 5px;
@@ -464,9 +505,38 @@ li.ui-tabs-active.ui-state-active {
         top: 30px;
         left: 10px;
     }
+    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
+        min-width: 80vw!important;
+        left: 8%!important;
+    }
+    .media-library-views-form .media-library-item {
+        max-width: 18%;
+    }
+    .region-primary-menu .menu a {
+        border-radius: 8px 8px 0 0;
+        position: relative;
+        bottom: -5px;
+    }
+    .region-primary-menu .menu a.is-active {
+        background: #fff!important;
+    }
+    .region-primary-menu .menu {
+        margin: -2px 0 -2px 20px;
+    }
 }
 /* Mobile only */
 @media screen and (max-width: 500px) and (min-width: 320px) {
+    a.site-branding__logo {
+        width: 300px;
+        height: 50px;
+    }
+    a.footer-logo {
+        float: none;
+        display: block!important;
+        position: relative;
+        margin: 1rem auto!important;
+        width: 300px;
+    }
     #block-usf-events-branding {
         position: absolute;
         top: 30px;
@@ -489,7 +559,6 @@ li.ui-tabs-active.ui-state-active {
     }
     .region-primary-menu .menu {
         background: #00543c;
-        margin: -2px 0;
         margin: -2px 0 -2px 20px;
         position: relative;
         bottom: -10px;
@@ -516,6 +585,16 @@ li.ui-tabs-active.ui-state-active {
     }
     body:not(:target) .region-primary-menu .menu-item {
         overflow: visible;
+    }
+    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
+        width: 80%!important;
+        left: 5%!important;
+    }
+    #media-library-add-form-wrapper .form-managed-file {
+        width: 95%;
+    }
+    .media-library-views-form .media-library-item {
+        max-width: 30%;
     }
 }
 
