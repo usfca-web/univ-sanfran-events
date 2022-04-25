@@ -195,11 +195,6 @@ tr:nth-child(2n) {
     background: rgba(0,0,0,0.033);
 }
 
-.region-primary-menu .menu {
-        background: yellow;
-    }
-
-
 /* MEDIA LIBRARY */
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
@@ -286,11 +281,12 @@ li.ui-tabs-active.ui-state-active {
 }
 
 /* TYPOGRAPHY USFCA PREVIEW */
+#tabs-1, #tabs-2 {
+    padding: 50px 0;
+}
 
 #tabs-1 .event_header_bg {
     background: #00543c;
-    padding-left: 50px;
-    padding-right: 50px;
     height: 200px;
     margin-top: -50px;
     position: relative;
@@ -301,8 +297,6 @@ li.ui-tabs-active.ui-state-active {
     font-weight: 500;
     color: #fff;
     bottom: 60px;
-    padding-left: 50px;
-    padding-right: 50px;
     position: absolute;
     line-height: 130%;
 }
@@ -497,6 +491,10 @@ li.ui-tabs-active.ui-state-active {
     line-height: 1.22;
     font-weight: 600;
     color: #2A2A2A!important;
+}
+
+.node .field--type-image {
+    margin: 0;
 }
 
 /* Mobile and tablet 
