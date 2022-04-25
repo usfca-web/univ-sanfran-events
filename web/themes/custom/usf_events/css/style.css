@@ -289,10 +289,9 @@ li.ui-tabs-active.ui-state-active {
 
 #tabs-1 .event_header_bg {
     background: #00543c;
-    padding: 0;
+    padding-left: 50px;
+    padding-right: 50px;
     height: 200px;
-    width: 893px;
-    margin-left: -50px;
     margin-top: -50px;
     position: relative;
 }
@@ -303,6 +302,7 @@ li.ui-tabs-active.ui-state-active {
     color: #fff;
     bottom: 60px;
     padding-left: 50px;
+    padding-right: 50px;
     position: absolute;
     line-height: 130%;
 }
@@ -310,6 +310,8 @@ li.ui-tabs-active.ui-state-active {
     z-index: 3;
     margin-top: -50px;
     position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-1 .event_media img {
     width:800px;
@@ -325,6 +327,8 @@ li.ui-tabs-active.ui-state-active {
     font-size: 16px;
     font-weight:300;
     margin-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-1 .event_body .x-large_copy {
     font-family: 'IBM Plex Serif', serif;
@@ -422,6 +426,8 @@ li.ui-tabs-active.ui-state-active {
     margin-bottom: 1.25rem;
     margin-top: -0.815rem!important;
     font-weight: 700;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-2 .event_date {
     font-size: 1.2rem;
@@ -430,6 +436,8 @@ li.ui-tabs-active.ui-state-active {
     margin-top: 1rem;
     line-height: 1;
     color: #2A2A2A;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-2 .event_location {
     font-size: 1rem;
@@ -438,6 +446,14 @@ li.ui-tabs-active.ui-state-active {
     line-height: 1.5;
     text-transform: uppercase;
     color: #2A2A2A;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#tabs-2 .event_media {
+    z-index: 3;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-2 .event_media img {
     width:800px;
@@ -445,12 +461,17 @@ li.ui-tabs-active.ui-state-active {
 #tabs-2 .event_media_caption {
     font-size: .85rem;
     line-height: 1.17;
-    padding-top: 0.5rem
+    padding-top: 0.5rem;
+    adding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
 }
 #tabs-2 .event_body {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 0.75rem;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #tabs-2 .event_body h2{
@@ -531,7 +552,7 @@ li.ui-tabs-active.ui-state-active {
         background: #00543c;
         margin: -2px 0 -2px 20px;
         position: relative;
-        bottom: -10px;
+        bottom: -17px;
     }
     .region-primary-menu .menu a {
         background: #fff;
@@ -604,17 +625,19 @@ li.ui-tabs-active.ui-state-active {
     .region-primary-menu .menu a {
         border-radius: 8px 8px 0 0;
         position: relative;
-        bottom: -5px;
+        bottom: -6px;
     }
     .region-primary-menu .menu a.is-active {
         background: #fff!important;
     }
     .region-primary-menu .menu {
         background: #00543c;
-        margin: -2px 0 -2px 20px;
         position: relative;
-        bottom: -10px;
-        background: red;
+        bottom: -11px;
+        left: -15px;
+    }
+    .region-primary-menu li.menu-item:nth-child(1) {
+        margin-left: 25px;
     }
 
 }
