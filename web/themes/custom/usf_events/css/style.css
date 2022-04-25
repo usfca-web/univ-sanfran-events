@@ -195,6 +195,9 @@ tr:nth-child(2n) {
     background: rgba(0,0,0,0.033);
 }
 
+.region-primary-menu .menu {
+        background: yellow;
+    }
 
 
 /* MEDIA LIBRARY */
@@ -611,7 +614,9 @@ li.ui-tabs-active.ui-state-active {
         margin: -2px 0 -2px 20px;
         position: relative;
         bottom: -10px;
+        background: red;
     }
+
 }
 
 
