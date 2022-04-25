@@ -299,6 +299,8 @@ li.ui-tabs-active.ui-state-active {
     bottom: 60px;
     position: absolute;
     line-height: 130%;
+    padding-left: 50px;
+    padding-right: 50px; 
 }
 #tabs-1 .event_media {
     z-index: 3;
@@ -310,7 +312,7 @@ li.ui-tabs-active.ui-state-active {
 #tabs-1 .event_media img {
     width:800px;
 }
-#tabs-1 .event_media_caption p{
+#tabs-1 .event_media_caption {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
     font-size:12px;
     font-weight: 300;
@@ -492,9 +494,9 @@ li.ui-tabs-active.ui-state-active {
     font-weight: 600;
     color: #2A2A2A!important;
 }
-
 .node .field--type-image {
     margin: 0;
+    float: none;
 }
 
 /* Mobile and tablet 
