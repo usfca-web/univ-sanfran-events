@@ -573,7 +573,7 @@ li.ui-tabs-active.ui-state-active {
 
 
 /* Tablet Only */
-@media screen and (max-width: 739px) and (min-width: 500px) { 
+@media screen and (max-width: 900px) and (min-width: 500px) { 
     a.site-branding__logo {
         width: 300px;
         height: 50px;
