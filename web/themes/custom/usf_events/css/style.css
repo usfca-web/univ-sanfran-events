@@ -191,6 +191,12 @@ select#edit-field-event-website-tax-target-id {
 select#edit-field-section-target-id {
     width: 140px;
 }
+tr:nth-child(2n) {
+    background: rgba(0,0,0,0.033);
+}
+
+
+
 /* MEDIA LIBRARY */
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
@@ -521,7 +527,10 @@ li.ui-tabs-active.ui-state-active {
         background: #fff!important;
     }
     .region-primary-menu .menu {
+        background: #00543c;
         margin: -2px 0 -2px 20px;
+        position: relative;
+        bottom: -10px;
     }
 }
 /* Mobile only */
@@ -565,9 +574,13 @@ li.ui-tabs-active.ui-state-active {
     }
     .region-primary-menu .menu a {
         background: #fff;
-        margin: 11px 0;
         text-align: center;
         padding: 10px;
+        border-radius: 8px 8px 0 0;
+        background: rgba(255,255,255,0.7);
+    }
+    .region-primary-menu .menu a.is-active {
+        background: #fff!important;
     }
     .region-primary-menu .menu .menu-item {
         width: 45%;
@@ -576,13 +589,7 @@ li.ui-tabs-active.ui-state-active {
     a.menu-toggle {
         display: none!important;
     }
-    .region-primary-menu .menu a {
-        border-radius: 8px 8px 0 0;
-        background: rgba(255,255,255,0.7);
-    }
-    .region-primary-menu .menu a.is-active {
-        background: #fff!important;
-    }
+    
     body:not(:target) .region-primary-menu .menu-item {
         overflow: visible;
     }
@@ -595,6 +602,9 @@ li.ui-tabs-active.ui-state-active {
     }
     .media-library-views-form .media-library-item {
         max-width: 30%;
+    }
+    #edit_field_terms_target_id_chosen {
+        width: 90vw!important;
     }
 }
 
