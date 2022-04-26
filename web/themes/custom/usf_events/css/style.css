@@ -56,6 +56,7 @@ a.site-branding__logo {
     border: 0;
     letter-spacing: initial;
     margin-bottom: 30px;
+    margin-top: 0;
 }
 .site-footer {
     padding: 15px 0 30px;
@@ -284,7 +285,9 @@ li.ui-tabs-active.ui-state-active {
 #tabs-1, #tabs-2 {
     padding: 50px 0;
 }
-
+#tabs-1 {
+    border-top: 0;
+}
 #tabs-1 .event_header_bg {
     background: #00543c;
     height: 200px;
@@ -537,6 +540,7 @@ li.ui-tabs-active.ui-state-active {
     }
     span.footer-link-mobile {
         display:block;
+        margin-left: -20px;
     }
     #block-usf-events-branding {
         position: absolute;
@@ -685,7 +689,13 @@ li.ui-tabs-active.ui-state-active {
     .region-primary-menu li.menu-item:nth-child(1) {
         margin-left: 35px;
     }
-
+    .footer-link-wrapper {
+        margin: 0 auto;
+        text-align: center;
+    }
+    span.footer-link-mobile:first-child {
+        margin-left: -20px;
+    }
 }
 
 
