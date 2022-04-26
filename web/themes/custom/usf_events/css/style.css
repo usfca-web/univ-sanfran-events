@@ -660,7 +660,6 @@ li.ui-tabs-active.ui-state-active {
     .region.region-primary-menu {
         position: relative;
         top: 30px;
-        left: 10px;
     }
     .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
         min-width: 80vw!important;
@@ -681,10 +680,10 @@ li.ui-tabs-active.ui-state-active {
         background: #00543c;
         position: relative;
         bottom: -11px;
-        left: -15px;
+        margin: 0;
     }
     .region-primary-menu li.menu-item:nth-child(1) {
-        margin-left: 25px;
+        margin-left: 35px;
     }
 
 }
