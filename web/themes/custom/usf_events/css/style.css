@@ -460,7 +460,7 @@ li.ui-tabs-active.ui-state-active {
     font-size: .85rem;
     line-height: 1.17;
     padding-top: 0.5rem;
-    adding-left: 50px;
+    padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 30px;
 }
@@ -622,14 +622,18 @@ li.ui-tabs-active.ui-state-active {
         padding-left: 30px;
         padding-right: 30px;
     }
-    #tabs-2 .event_media {
-        margin-top: -30px;
-    }
     #tabs-2 .event_body {
         margin-top: 20px;
     }
     #tabs-2 .event_media img {
         margin: 0;
+    }
+    #tabs-2 .event_media_caption {
+        padding-bottom:0;
+        margin-top:-10px;
+    }
+    #tabs-1, #tabs-2 {
+        padding-bottom: 30px;
     }
 }
 
