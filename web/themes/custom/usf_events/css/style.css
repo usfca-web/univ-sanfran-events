@@ -317,6 +317,8 @@ li.ui-tabs-active.ui-state-active {
     font-size:12px;
     font-weight: 300;
     display: block;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #tabs-1 .event_body {
     font-family: 'IBM Plex Serif', serif;
@@ -528,6 +530,14 @@ li.ui-tabs-active.ui-state-active {
         margin: 1rem auto!important;
         width: 300px;
     }
+    .footer-link-wrapper {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    span.footer-link-mobile {
+        display:block;
+    }
     #block-usf-events-branding {
         position: absolute;
         top: 30px;
@@ -587,6 +597,39 @@ li.ui-tabs-active.ui-state-active {
     }
     #edit_field_terms_target_id_chosen {
         width: 90vw!important;
+    }
+
+    #tabs-1 .event_display_title, 
+    #tabs-1 .event_media,
+    #tabs-1 .event_media_caption,
+    #tabs-1 .event_body {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #tabs-1 .event_media {
+        margin-top: -30px;
+    }
+    #tabs-1 .event_body {
+        margin-top: 20px;
+    }
+    #tabs-1 .event_media img {
+        margin: 0;
+    }
+    #tabs-2 .event_display_title, 
+    #tabs-2 .event_media,
+    #tabs-2 .event_media_caption,
+    #tabs-2 .event_body {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #tabs-2 .event_media {
+        margin-top: -30px;
+    }
+    #tabs-2 .event_body {
+        margin-top: 20px;
+    }
+    #tabs-2 .event_media img {
+        margin: 0;
     }
 }
 
