@@ -646,17 +646,7 @@ li.ui-tabs-active.ui-state-active {
 
 /* Tablet Only */
 @media screen and (max-width: 900px) and (min-width: 500px) { 
-    a.site-branding__logo {
-        width: 300px;
-        height: 50px;
-    }
-    a.footer-logo {
-        float: none;
-        display: block!important;
-        position: relative;
-        margin: 1rem auto!important;
-        width: 300px;
-    }
+    
     #block-usf-events-branding {
         position: absolute;
         top: 5px;
@@ -689,6 +679,21 @@ li.ui-tabs-active.ui-state-active {
     .region-primary-menu li.menu-item:nth-child(1) {
         margin-left: 35px;
     }
+    
+}
+/*Tablet + some for footer */
+@media screen and (max-width: 1017px) and (min-width: 500px) { 
+    a.site-branding__logo {
+        width: 300px;
+        height: 50px;
+    }
+    a.footer-logo {
+        float: none;
+        display: block!important;
+        position: relative;
+        margin: 1rem auto!important;
+        width: 300px;
+    }
     .footer-link-wrapper {
         margin: 0 auto;
         text-align: center;
@@ -697,8 +702,6 @@ li.ui-tabs-active.ui-state-active {
         margin-left: -20px;
     }
 }
-
-
 
 
 
