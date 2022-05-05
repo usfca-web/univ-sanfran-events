@@ -7,12 +7,12 @@ dependencies:
 id: event_path
 label: 'Event Path'
 type: 'canonical_entities:node'
-pattern: 'event/[node:field_display_title]/[node:field_ems_booking_id]'
+pattern: 'event/[node:field_display_title]/[node:field_guid]'
 selection_criteria:
-  5117f889-f0e7-498c-9ae3-e3e1e46aba78:
+  e777299f-8f0a-4c95-ab51-7ad4a7ff37c8:
     id: node_type
     negate: false
-    uuid: 5117f889-f0e7-498c-9ae3-e3e1e46aba78
+    uuid: e777299f-8f0a-4c95-ab51-7ad4a7ff37c8
     context_mapping:
       node: node
     bundles:

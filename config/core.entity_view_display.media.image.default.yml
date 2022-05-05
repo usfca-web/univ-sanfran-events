@@ -30,21 +30,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_widen_image_id:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_widen_media_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   created: true
   feeds_item: true
@@ -52,6 +37,8 @@ hidden:
   field_media_category: true
   field_media_category_2: true
   field_media_category_3: true
+  field_widen_image_id: true
+  field_widen_media_description: true
   name: true
   thumbnail: true
   uid: true

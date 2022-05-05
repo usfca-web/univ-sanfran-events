@@ -122,6 +122,9 @@
     <div class="event_location">
       {{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }}
     </div>
+    <div class="event_url">
+      When available, the live URL for this event will be: <a href="https://www.usfca.edu{{ path('entity.node.canonical', {'node': node.id}) }}">https://www.usfca.edu{{ path('entity.node.canonical', {'node': node.id}) }}</a>
+    </div>
 
     <div class="preview_tabs">
       <div id="tabs">

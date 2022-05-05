@@ -23,22 +23,14 @@ bundle: image
 mode: media_library
 content:
   field_media_category:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_media_category_2:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_media_category_3:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_media_image:
     type: image_image
@@ -52,6 +44,8 @@ hidden:
   created: true
   feeds_item: true
   field_alternative_text: true
+  field_media_category_2: true
+  field_media_category_3: true
   field_widen_image_id: true
   field_widen_media_description: true
   name: true

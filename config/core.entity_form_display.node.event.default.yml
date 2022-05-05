@@ -144,7 +144,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_image_caption:
-    type: text_textarea
+    type: string_textarea
     weight: 12
     region: content
     settings:
