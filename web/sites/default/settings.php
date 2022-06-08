@@ -44,5 +44,3 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
       $config['cas.settings']['server']['hostname'] = 'amidala.usfca.edu';
   }
 }
-//Setting temp dir to fix import errors
-$config['system.file']['path']['temporary'] = '/tmp';
