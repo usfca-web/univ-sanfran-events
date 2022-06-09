@@ -44,3 +44,5 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
       $config['cas.settings']['server']['hostname'] = 'amidala.usfca.edu';
   }
 }
+
+$config['system.file']['path']['temporary'] = '/sites/default/files/private/tmp';
