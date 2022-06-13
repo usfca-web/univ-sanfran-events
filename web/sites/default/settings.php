@@ -45,4 +45,9 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
   }
 }
 
-$config['system.file']['path']['temporary'] = '/sites/default/files/private/tmp';
+// Temp file setting for containerized env
+// Make sure to FTP and add directory to file structure in test and live
+if (($_ENV['PANTHEON_ENVIRONMENT'] === 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] === 'test')) {
+  $config['system.file']['path']['temporary'] = __DIR__ . '/files/tmp';
+  $settings['file_temp_path'] = __DIR__ . '/files/tmp';
+}
