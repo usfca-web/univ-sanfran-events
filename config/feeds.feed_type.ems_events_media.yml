@@ -1,0 +1,75 @@
+uuid: f3b6b82d-5ea7-4557-bf43-b5e5d76699cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_image
+    - media.type.image
+  module:
+    - feeds_ex
+    - media
+label: 'EMS Events Media'
+id: ems_events_media
+description: 'Import Images from EMS Events on Production'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.results[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:media'
+processor_configuration:
+  values:
+    bundle: image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  image:
+    value: image
+    label: image
+    machine_name: image
+    type: json
+  image_alt:
+    value: image_alt
+    label: image_alt
+    machine_name: image_alt
+    type: json
+mappings:
+  -
+    target: field_media_image
+    map:
+      target_id: image
+      alt: image_alt
+      title: ''
+    settings:
+      language: ''
+      reference_by: fid
+      feeds_item: guid
+      existing: '2'
+      autocreate: 0
+  -
+    target: name
+    map:
+      value: image
+    settings:
+      language: null
+    unique:
+      value: '1'
