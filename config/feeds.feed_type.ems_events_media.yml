@@ -8,9 +8,9 @@ dependencies:
   module:
     - feeds_ex
     - media
-label: 'EMS Events Media'
+label: 'USFCA Prod Events Media'
 id: ems_events_media
-description: 'Import Images from EMS Events on Production'
+description: 'Import Events Images from USFCA Production Site'
 help: ''
 import_period: 3600
 fetcher: http
