@@ -1715,7 +1715,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://live-univ-sanfran-events.pantheonsite.io{{ thumbnail__target_id }}'
+            text: 'https://events.usfca.edu{{ thumbnail__target_id }}'
             make_link: false
             path: ''
             absolute: false
