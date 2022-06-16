@@ -118,7 +118,7 @@ custom_sources:
     value: group.name
     label: group.name
     machine_name: group_name
-    type: blank
+    type: json
 mappings:
   -
     target: field_building
