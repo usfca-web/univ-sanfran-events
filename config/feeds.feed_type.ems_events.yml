@@ -1,25 +1,19 @@
-uuid: adf208a0-110a-4427-b1ac-065267133f96
+uuid: cced9239-d4ca-4024-9dd6-fb64faa1c940
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.body
     - field.field.node.event.field_building
     - field.field.node.event.field_contact
     - field.field.node.event.field_date
     - field.field.node.event.field_display_title
-    - field.field.node.event.field_email_category
     - field.field.node.event.field_ems_booking_id
     - field.field.node.event.field_ems_reservation_id
-    - field.field.node.event.field_event_category
     - field.field.node.event.field_event_type_id
-    - field.field.node.event.field_event_website_tax
     - field.field.node.event.field_group_name
     - field.field.node.event.field_guid
     - field.field.node.event.field_location
-    - field.field.node.event.field_media
     - field.field.node.event.field_source
-    - field.field.node.event.field_terms
     - node.type.event
   module:
     - feeds_ex
@@ -28,49 +22,17 @@ dependencies:
 third_party_settings:
   feeds_tamper:
     tampers:
-      0ed266ea-333e-44d1-803d-d9fb9f283a0b:
+      8fe43780-336d-4753-8a81-135b6a1f0e35:
         default_value: EMS
         only_if_empty: false
-        uuid: 0ed266ea-333e-44d1-803d-d9fb9f283a0b
+        uuid: 8fe43780-336d-4753-8a81-135b6a1f0e35
         plugin: default_value
         source: blank
         weight: 0
         label: 'Set value or default value'
-      b1e3a274-ed76-4d8f-8a48-1801ce2a1fb2:
-        separator: '|'
-        limit: null
-        uuid: b1e3a274-ed76-4d8f-8a48-1801ce2a1fb2
-        plugin: explode
-        source: eventterms
-        weight: 0
-        label: Explode
-      157a5f0e-44d6-42d2-8c72-ed1a2e7693d6:
-        separator: '|'
-        limit: null
-        uuid: 157a5f0e-44d6-42d2-8c72-ed1a2e7693d6
-        plugin: explode
-        source: websitemobileappcategory
-        weight: 0
-        label: Explode
-      5c9341bd-eac0-46b7-9a10-c61328c48774:
-        separator: '|'
-        limit: null
-        uuid: 5c9341bd-eac0-46b7-9a10-c61328c48774
-        plugin: explode
-        source: calendaremailcategory
-        weight: 0
-        label: Explode
-      cbadb038-6c73-45ab-a199-82390aa30ff8:
-        separator: '|'
-        limit: null
-        uuid: cbadb038-6c73-45ab-a199-82390aa30ff8
-        plugin: explode
-        source: website
-        weight: 0
-        label: Explode
-label: 'USFCA Prod Events'
-id: events
-description: 'Import Events from USFCA Production Site'
+label: 'EMS Events'
+id: ems_events
+description: 'Import events from EMS'
 help: ''
 import_period: 3600
 fetcher: http
@@ -151,51 +113,11 @@ custom_sources:
     value: blank
     label: blank
     machine_name: blank
-    type: json
-  guid:
-    value: guid
-    label: guid
-    machine_name: guid
-    type: json
+    type: blank
   group_name:
     value: group.name
     label: group.name
     machine_name: group_name
-    type: json
-  description:
-    value: description
-    label: description
-    machine_name: description
-    type: json
-  image:
-    value: image
-    label: image
-    machine_name: image
-    type: json
-  moderationstate:
-    value: moderationState
-    label: moderationState
-    machine_name: moderationstate
-    type: json
-  eventterms:
-    value: eventTerms
-    label: eventTerms
-    machine_name: eventterms
-    type: json
-  websitemobileappcategory:
-    value: websiteMobileAppCategory
-    label: websiteMobileAppCategory
-    machine_name: websitemobileappcategory
-    type: json
-  calendaremailcategory:
-    value: calendarEmailCategory
-    label: calendarEmailCategory
-    machine_name: calendaremailcategory
-    type: json
-  website:
-    value: website
-    label: website
-    machine_name: website
     type: json
 mappings:
   -
@@ -283,66 +205,6 @@ mappings:
     target: field_group_name
     map:
       target_id: group_name
-    settings:
-      language: ''
-      reference_by: name
-      feeds_item: guid
-      autocreate: '1'
-  -
-    target: body
-    map:
-      value: description
-      summary: ''
-    settings:
-      language: ''
-      format: full_html
-  -
-    target: field_media
-    map:
-      target_id: image
-    settings:
-      language: null
-      reference_by: name
-      autocreate: false
-      feeds_item: false
-  -
-    target: moderation_state
-    map:
-      value: moderationstate
-    settings:
-      language: null
-    unique: {  }
-  -
-    target: field_terms
-    map:
-      target_id: eventterms
-    settings:
-      language: ''
-      reference_by: name
-      feeds_item: guid
-      autocreate: '1'
-  -
-    target: field_event_category
-    map:
-      target_id: websitemobileappcategory
-    settings:
-      language: ''
-      reference_by: name
-      feeds_item: guid
-      autocreate: '1'
-  -
-    target: field_email_category
-    map:
-      target_id: calendaremailcategory
-    settings:
-      language: ''
-      reference_by: name
-      feeds_item: guid
-      autocreate: '1'
-  -
-    target: field_event_website_tax
-    map:
-      target_id: website
     settings:
       language: ''
       reference_by: name

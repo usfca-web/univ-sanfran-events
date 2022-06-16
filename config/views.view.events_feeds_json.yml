@@ -1334,7 +1334,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ body|replace({'/sites/default/files':  'https://newevents-usf-events.pantheonsite.io/sites/default/files'}) }}\r\n\r\n"
+            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
