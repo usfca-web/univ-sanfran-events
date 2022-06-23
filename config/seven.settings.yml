@@ -1,3 +1,14 @@
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: 'public://favicon_1.ico'
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
 third_party_settings:
   shortcut:
     module_link: true
