@@ -28,6 +28,7 @@
         "drupal/disable_field": "^3.0",
         "drupal/entity_reference_revisions": "^1.9",
         "drupal/feeds": "^3.0@beta",
+        "drupal/feeds_dependency": "^1.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/feeds_tamper": "^2.0@beta",
         "drupal/json_feed": "^1.2",

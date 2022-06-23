@@ -6,7 +6,44 @@ dependencies:
     - taxonomy.vocabulary.group_name
   module:
     - feeds_ex
+    - feeds_tamper
     - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      ff7bf530-7a55-4a1b-af6d-a13de7a0d3e7:
+        find: '&amp;'
+        replace: '&'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: ff7bf530-7a55-4a1b-af6d-a13de7a0d3e7
+        plugin: find_replace
+        source: name
+        weight: 0
+        label: 'Find replace'
+      87c64ef8-2fa5-4ecb-9327-faa67b1734d6:
+        find: '&amp;#039;'
+        replace: ''''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 87c64ef8-2fa5-4ecb-9327-faa67b1734d6
+        plugin: find_replace
+        source: name
+        weight: 1
+        label: 'Find replace'
+      5798c525-dd34-4f02-b44b-ec6f0d4090e9:
+        find: '&#039;'
+        replace: ''''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 5798c525-dd34-4f02-b44b-ec6f0d4090e9
+        plugin: find_replace
+        source: name
+        weight: 2
+        label: 'Find replace'
 label: 'Group Name Taxonomy Importer'
 id: group_name_taxonomy_importer
 description: 'Importer for Group Names from taxonomy terms'

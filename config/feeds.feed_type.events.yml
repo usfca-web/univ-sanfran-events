@@ -42,7 +42,7 @@ third_party_settings:
         uuid: b1e3a274-ed76-4d8f-8a48-1801ce2a1fb2
         plugin: explode
         source: eventterms
-        weight: 0
+        weight: -7
         label: Explode
       157a5f0e-44d6-42d2-8c72-ed1a2e7693d6:
         separator: '|'
@@ -50,7 +50,7 @@ third_party_settings:
         uuid: 157a5f0e-44d6-42d2-8c72-ed1a2e7693d6
         plugin: explode
         source: websitemobileappcategory
-        weight: 0
+        weight: -9
         label: Explode
       5c9341bd-eac0-46b7-9a10-c61328c48774:
         separator: '|'
@@ -58,7 +58,7 @@ third_party_settings:
         uuid: 5c9341bd-eac0-46b7-9a10-c61328c48774
         plugin: explode
         source: calendaremailcategory
-        weight: 0
+        weight: -9
         label: Explode
       cbadb038-6c73-45ab-a199-82390aa30ff8:
         separator: '|'
@@ -66,8 +66,74 @@ third_party_settings:
         uuid: cbadb038-6c73-45ab-a199-82390aa30ff8
         plugin: explode
         source: website
-        weight: 0
+        weight: -9
         label: Explode
+      12c92aa3-001a-4be4-a806-a23fc492ceae:
+        find: '&amp;'
+        replace: '&'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 12c92aa3-001a-4be4-a806-a23fc492ceae
+        plugin: find_replace
+        source: eventterms
+        weight: -10
+        label: 'Find replace'
+      cc8613ef-6197-48e5-8ce8-3681a4200515:
+        find: '&#039;'
+        replace: ''''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: cc8613ef-6197-48e5-8ce8-3681a4200515
+        plugin: find_replace
+        source: eventterms
+        weight: -9
+        label: 'Find replace'
+      33895d13-a67b-41e3-acb9-313c27a791a0:
+        find: '&amp;#039;'
+        replace: ''''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 33895d13-a67b-41e3-acb9-313c27a791a0
+        plugin: find_replace
+        source: eventterms
+        weight: -8
+        label: 'Find replace'
+      1bbfe82e-e0c3-4a54-8d8f-2464fa392509:
+        find: '&amp;'
+        replace: '&'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 1bbfe82e-e0c3-4a54-8d8f-2464fa392509
+        plugin: find_replace
+        source: websitemobileappcategory
+        weight: -10
+        label: 'Find replace'
+      8e199a4f-35bb-4a08-888d-d9733a8880a9:
+        find: '&amp;'
+        replace: '&'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 8e199a4f-35bb-4a08-888d-d9733a8880a9
+        plugin: find_replace
+        source: calendaremailcategory
+        weight: -10
+        label: 'Find replace'
+      0271cb6a-03b6-47d1-8d03-260a385999ec:
+        find: '&amp;'
+        replace: '&'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 0271cb6a-03b6-47d1-8d03-260a385999ec
+        plugin: find_replace
+        source: website
+        weight: -10
+        label: 'Find replace'
 label: 'USFCA Prod Events'
 id: events
 description: 'Import Events from USFCA Production Site'

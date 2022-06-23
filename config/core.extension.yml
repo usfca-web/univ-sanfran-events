@@ -32,6 +32,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   feeds: 0
+  feeds_dependency: 0
   feeds_ex: 0
   feeds_tamper: 0
   field: 0

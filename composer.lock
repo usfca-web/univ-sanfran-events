@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48c03ce993e5db7ec1a6860b7938bbec",
+    "content-hash": "3a49a03ff5e862dc7ebaa70d59ff753b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2644,6 +2644,55 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/feeds",
                 "issues": "https://www.drupal.org/project/issues/feeds"
+            }
+        },
+        {
+            "name": "drupal/feeds_dependency",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds_dependency.git",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/feeds_dependency-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "f7ea1c8a80c22bf9d911e2bfe135c29f5759e493"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/feeds": "~3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1602617168",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "flocondetoile",
+                    "homepage": "https://www.drupal.org/user/2006064"
+                }
+            ],
+            "description": "Allow to set a Feed as a dependency on an another Feed.",
+            "homepage": "https://www.drupal.org/project/feeds_dependency",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/feeds_dependency",
+                "issues": "https://www.drupal.org/project/issues/feeds_dependency"
             }
         },
         {
@@ -13900,6 +13949,7 @@
         "drupal/cas_attributes": 10,
         "drupal/config_ignore": 10,
         "drupal/feeds": 10,
+        "drupal/feeds_dependency": 10,
         "drupal/feeds_ex": 10,
         "drupal/feeds_tamper": 10,
         "drupal/rabbit_hole": 10,
