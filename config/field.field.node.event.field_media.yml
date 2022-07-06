@@ -17,7 +17,7 @@ field_name: field_media
 entity_type: node
 bundle: event
 label: Media
-description: ''
+description: '<big><strong>Images should ideally be at least 1600 pixels wide, have a 16:9 aspect ratio, and contain minimal text. Event posters or postcards will be removed.</big></strong>'
 required: false
 translatable: false
 default_value: {  }

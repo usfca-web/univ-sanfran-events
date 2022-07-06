@@ -16,7 +16,7 @@ id: node.event.field_slate_external_url
 field_name: field_slate_external_url
 entity_type: node
 bundle: event
-label: 'Slate External URL'
+label: 'RSVP Link'
 description: ''
 required: false
 translatable: false

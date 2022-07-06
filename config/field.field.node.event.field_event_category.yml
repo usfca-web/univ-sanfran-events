@@ -17,7 +17,7 @@ field_name: field_event_category
 entity_type: node
 bundle: event
 label: 'Website/Mobile App Category'
-description: ''
+description: "<big><strong>Categories are used to determine which myUSF and mobile app event lists your event will appear in.<br>\r\nOnly select categories relevant to your event and do not select any School/College category that you do not have permission to use.</big></strong>"
 required: false
 translatable: false
 default_value: {  }

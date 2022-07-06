@@ -15,8 +15,8 @@ id: node.event.field_featured
 field_name: field_featured
 entity_type: node
 bundle: event
-label: "Feature in USFCA.edu calendar?\t"
-description: ''
+label: "Feature in calendar\t"
+description: "<big><strong>You may feature your event if it has a detailed description and a proper photo.<br>\r\nEvents marked as featured are subject to review by OMC.</strong></big>"
 required: false
 translatable: false
 default_value:

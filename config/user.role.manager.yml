@@ -21,7 +21,7 @@ dependencies:
     - views_bulk_edit
     - workbench_access
 id: manager
-label: manager
+label: Editor
 weight: 5
 is_admin: null
 permissions:
