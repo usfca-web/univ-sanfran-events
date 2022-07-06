@@ -9,8 +9,8 @@ dependencies:
     - disable_field
 third_party_settings:
   disable_field:
-    add_disable: none
-    edit_disable: none
+    add_disable: all
+    edit_disable: all
 id: node.event.field_contact
 field_name: field_contact
 entity_type: node

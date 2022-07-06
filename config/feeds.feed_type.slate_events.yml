@@ -158,8 +158,8 @@ mappings:
       value: formdescription
       summary: ''
     settings:
-      language: null
-      format: plain_text
+      language: ''
+      format: full_html
   -
     target: field_display_title
     map:

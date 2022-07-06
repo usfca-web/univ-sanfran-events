@@ -10,8 +10,8 @@ dependencies:
     - disable_field
 third_party_settings:
   disable_field:
-    add_disable: none
-    edit_disable: none
+    add_disable: all
+    edit_disable: all
 id: node.event.field_group_name
 field_name: field_group_name
 entity_type: node

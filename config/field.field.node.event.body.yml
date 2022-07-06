@@ -17,7 +17,7 @@ field_name: body
 entity_type: node
 bundle: event
 label: Body
-description: ''
+description: '<big><strong>Use the Body field to add your event information. Do not repeat the date or time since this information will automatically populate on the event page.</big></strong>'
 required: false
 translatable: true
 default_value: {  }

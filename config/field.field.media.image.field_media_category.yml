@@ -16,7 +16,7 @@ id: media.image.field_media_category
 field_name: field_media_category
 entity_type: media
 bundle: image
-label: 'First Media Category'
+label: 'Colleges & Offices'
 description: ''
 required: false
 translatable: false

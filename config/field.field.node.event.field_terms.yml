@@ -17,7 +17,7 @@ field_name: field_terms
 entity_type: node
 bundle: event
 label: Terms
-description: ''
+description: "<strong><big>Event terms determine which event feeds your event appears in on both myUSF and the marketing website.<br>\r\nDo not use another group's event term if you do not have their permission in advance.</strong></big>"
 required: false
 translatable: false
 default_value: {  }
