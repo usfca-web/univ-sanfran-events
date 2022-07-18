@@ -19,7 +19,7 @@ third_party_settings:
   feeds_tamper:
     tampers:
       03db3f9d-dedf-43d2-b7af-2ad932d32964:
-        default_value: published
+        default_value: draft
         only_if_empty: false
         uuid: 03db3f9d-dedf-43d2-b7af-2ad932d32964
         plugin: default_value
