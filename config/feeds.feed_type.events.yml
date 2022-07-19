@@ -138,7 +138,7 @@ label: 'USFCA Prod Events'
 id: events
 description: 'Import Events from USFCA Production Site'
 help: ''
-import_period: 3600
+import_period: -1
 fetcher: http
 fetcher_configuration:
   auto_detect_feeds: false
