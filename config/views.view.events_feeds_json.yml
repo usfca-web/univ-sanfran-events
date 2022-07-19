@@ -2661,7 +2661,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div><p><a class="diamond_link" href="{{ field_slate_external_url_1__uri }}">RSVP</a></p></div>'
+            text: '<div><p><a class="diamond_link" href="{{ field_slate_external_url_1__uri }}">{{ field_slate_external_url_1__title }}</a></p></div>'
             make_link: false
             path: ''
             absolute: false
