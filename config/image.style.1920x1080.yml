@@ -1,0 +1,15 @@
+uuid: e333197f-5881-4e6a-950c-85582ca685be
+langcode: en
+status: true
+dependencies: {  }
+name: 1920x1080
+label: 'Calendar Event (1920x1080)'
+effects:
+  fb2291b1-fc5b-4443-a256-31fdd9082f61:
+    uuid: fb2291b1-fc5b-4443-a256-31fdd9082f61
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center

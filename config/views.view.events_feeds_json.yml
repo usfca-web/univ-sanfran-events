@@ -19,6 +19,8 @@ dependencies:
     - field.storage.node.field_slate_external_url
     - field.storage.node.field_source
     - field.storage.node.field_terms
+    - image.style.1920x1080
+    - image.style.calendar_thumbnail
     - node.type.event
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.website
@@ -2138,7 +2140,72 @@ display:
           click_sort_column: target_id
           type: image_url
           settings:
-            image_style: ''
+            image_style: 1920x1080
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        thumbnail__target_id_1:
+          id: thumbnail__target_id_1
+          table: media_field_data
+          field: thumbnail__target_id
+          relationship: field_media
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: thumbnail
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'https://events.usfca.edu{{ thumbnail__target_id_1 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_url
+          settings:
+            image_style: calendar_thumbnail
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -2800,6 +2867,9 @@ display:
               raw_output: false
             field_slate_external_url_1:
               alias: rsvpLink
+              raw_output: false
+            thumbnail__target_id_1:
+              alias: eventMediaThumb
               raw_output: false
       defaults:
         fields: false
