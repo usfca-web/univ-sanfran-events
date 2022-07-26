@@ -1,0 +1,15 @@
+uuid: d7ca0343-35e7-4192-ada5-425ee64f7cbc
+langcode: en
+status: true
+dependencies: {  }
+name: calendar_thumbnail
+label: 'Calendar Thumbnail (214x160)'
+effects:
+  06b98b7d-2ddc-41b0-9775-bccbfcffe3c8:
+    uuid: 06b98b7d-2ddc-41b0-9775-bccbfcffe3c8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 214
+      height: 160
+      anchor: center-center
