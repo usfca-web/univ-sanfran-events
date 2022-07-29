@@ -87,10 +87,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_email_category:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 17
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_ems_booking_id:
     type: number
@@ -107,10 +111,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_event_category:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 16
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_event_type_id:
     type: number
@@ -133,10 +141,14 @@ content:
       display_label: true
     third_party_settings: {  }
   field_group_name:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 19
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_image_caption:
     type: string_textarea
@@ -176,10 +188,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_terms:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 15
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default

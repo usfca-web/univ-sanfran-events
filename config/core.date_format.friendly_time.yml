@@ -1,0 +1,8 @@
+uuid: d9dae345-1b5c-4497-8667-6f047e8457fd
+langcode: en
+status: true
+dependencies: {  }
+id: friendly_time
+label: 'Friendly Time'
+locked: false
+pattern: 'g:i A'

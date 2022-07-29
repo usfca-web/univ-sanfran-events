@@ -90,6 +90,7 @@
 
 {% set start_date = node.field_date.value ~ 'Z' %}
 {% set end_date = node.field_date.end_value ~ 'Z' %}
+{% set bid = node.field_ems_booking_id.value %}
 
 <article{{ attributes.addClass(classes) }}>
   <header>
@@ -122,62 +123,10 @@
     <div class="event_location">
       {{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }}
     </div>
-    <div class="event_url">
-      When available, the live URL for this event will be: <a href="https://www.usfca.edu{{ path('entity.node.canonical', {'node': node.id}) }}">https://www.usfca.edu{{ path('entity.node.canonical', {'node': node.id}) }}</a>
-    </div>
-
-    <div class="preview_tabs">
-      <div id="tabs">
-        <ul>
-          <li><a href="#tabs-1">Preview USFCA</a></li>
-          <li><a href="#tabs-2">Preview MyUSF</a></li>
-        </ul>
-        <div id="tabs-1">
-        <div class="event_header_bg">
-          <div class="event_display_title">
-            {{ node.field_display_title.value }}
-          </div>
-        </div>
-          <!--<div class="event_date">
-            {#{ node.field_date.value|date("l, F j, g:i A ") ~ ' - ' }}{{ node.field_date.end_value|date("g:i A ") }#}
-          </div>
-          <div class="event_location">
-            {#{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }#}
-          </div>-->
-{% if node.field_media.value is not empty %} 
-          <div class="event_media">
-            {{ content.field_media }}
-          </div>
+{% if node.field_event_website_tax.value is empty %}
+  <p><a href="/node/{{ node.id }}/edit">Edit event and set a display website to preview.</a></p>
 {% endif %}
-{% if node.field_image_caption.value is not empty %} 
-          <div class="event_media_caption">
-            {{ content.field_image_caption }}
-          </div>
-{% endif %}
-          <div class="event_body">  
-            {{ content.body }}
-          </div>
-        </div>
-      <div id="tabs-2">
-         <div class="event_display_title">
-            {{ node.field_display_title.value }}
-          </div>
-          <div class="event_date">
-            {{ start_date|date("l, F j, g:i A ") ~ ' - '}}{{ end_date|date("g:i A ") }}
-          </div>
-          <div class="event_location">
-            {{ node.field_location.value ~ ' - '  }}{{ node.field_building.value }}
-          </div>
-          <div class="event_media">
-            {{ content.field_media }}
-          </div>
-          <div class="event_media_caption">  
-            {{ content.field_image_caption }}
-          </div>
-          <div class="event_body">  
-            {{ content.body }}
-          </div>
-      </div>
-    </div>
+    {{ drupal_view('event_url', 'block_1', bid) }}
+    {{ drupal_view('event_url', 'block_2', bid) }}
   </div>
 </article>
