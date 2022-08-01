@@ -124,7 +124,7 @@
       {{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }}
     </div>
 {% if node.field_event_website_tax.value is empty %}
-  <p><a href="/node/{{ node.id }}/edit">Edit event and set a display website to preview.</a></p>
+  <p><a href="/node/{{ node.id }}/edit">Edit event and set which website(s) you want it to display on in order to preview.</a></p>
 {% endif %}
     {{ drupal_view('event_url', 'block_1', bid) }}
     {{ drupal_view('event_url', 'block_2', bid) }}
