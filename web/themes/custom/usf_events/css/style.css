@@ -513,7 +513,7 @@ li.ui-tabs-active.ui-state-active {
     border: 1px solid #FDBB30;
     background: #fff;
     transition: box-shadow .25s,transform .25s;
-}
+}   
 
 #tabs-2 .diamond_link:focus, .diamond_link:hover {
     background: 0 0;
@@ -521,7 +521,7 @@ li.ui-tabs-active.ui-state-active {
 } 
 
 #tabs-2 .diamond_link:focus::after, .diamond_link:hover::after {
-    background: #FDBB30;
+    background: #FDBB30 !important;
 }
 
 #tabs-2 .event_body {
