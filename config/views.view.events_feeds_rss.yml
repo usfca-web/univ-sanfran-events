@@ -1277,7 +1277,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://live-usfca.pantheonsite.io{{ view_node_1 }}'
+            text: 'https://www.usfca.edu{{ view_node_1 }}'
             make_link: false
             path: ''
             absolute: false
