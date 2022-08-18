@@ -467,6 +467,63 @@ li.ui-tabs-active.ui-state-active {
     padding-right: 50px;
     padding-bottom: 30px;
 }
+#tabs-2 .event_rsvp_link {
+    font-size: .85rem;
+    line-height: 1.17;
+    padding-top: 0.5rem;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
+
+#tabs-2 .diamond_link {
+    font-size: 1rem;
+    font-weight: 800!important;
+    color: #00543C;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    letter-spacing: .5px;
+    padding: 0.375rem 2.6875rem 0.5rem 0;
+}
+
+#tabs-2 .diamond_link::before {
+    width: 6px;
+    height: 9px;
+    top: 12px;
+    right: 13px;
+    z-index: 1;
+    background: url(/themes/custom/usf_events/images/icons.svg) -300px -129px no-repeat;
+}
+
+#tabs-2 .diamond_link::after, .diamond_link::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+}
+
+#tabs-2 .diamond_link::after {
+    width: 25px;
+    height: 25px;
+    top: 4px;
+    right: 5px;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px solid #FDBB30;
+    background: #fff;
+    transition: box-shadow .25s,transform .25s;
+}   
+
+#tabs-2 .diamond_link:focus, .diamond_link:hover {
+    background: 0 0;
+    text-decoration: underline;
+} 
+
+#tabs-2 .diamond_link:focus::after, .diamond_link:hover::after {
+    background: #FDBB30 !important;
+}
+
 #tabs-2 .event_body {
     font-size: 1rem;
     line-height: 1.6;

@@ -2,7 +2,7 @@ uuid: 774956fa-0db7-4adb-bdf6-060813c9f301
 langcode: en
 status: true
 dependencies: {  }
-name: Website
+name: 'Website to Appear on'
 vid: website
 description: 'Which website should the event appear on? (USFCA/MyUSF)'
 weight: 0
