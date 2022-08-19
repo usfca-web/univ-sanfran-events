@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.event.field_date
     - field.field.node.event.field_display_title
     - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_group_name
     - field.field.node.event.field_guid
+    - field.field.node.event.field_location
     - field.field.node.event.field_slate_external_url
     - field.field.node.event.field_source
     - node.type.event
@@ -136,6 +138,16 @@ custom_sources:
     label: blank3
     machine_name: blank3
     type: json
+  formlocation:
+    value: FormLocation
+    label: FormLocation
+    machine_name: formlocation
+    type: json
+  formfolder:
+    value: FormFolder
+    label: FormFolder
+    machine_name: formfolder
+    type: json
 mappings:
   -
     target: title
@@ -207,3 +219,19 @@ mappings:
       language: null
     unique:
       value: '1'
+  -
+    target: field_location
+    map:
+      value: formlocation
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_group_name
+    map:
+      target_id: formfolder
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: '1'
