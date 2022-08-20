@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.event.field_media
     - field.field.node.event.field_section
     - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_slate_id
     - field.field.node.event.field_source
     - field.field.node.event.field_speaker
     - field.field.node.event.field_terms
@@ -181,9 +182,17 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  field_slate_id:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_source:
     type: options_select
-    weight: 25
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -199,7 +208,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 24
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }

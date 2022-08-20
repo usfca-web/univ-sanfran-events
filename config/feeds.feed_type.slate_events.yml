@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_guid
     - field.field.node.event.field_location
     - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_slate_id
     - field.field.node.event.field_source
     - node.type.event
   module:
@@ -235,3 +236,10 @@ mappings:
       reference_by: name
       feeds_item: guid
       autocreate: '1'
+  -
+    target: field_slate_id
+    map:
+      value: formid
+    settings:
+      language: null
+    unique: {  }
