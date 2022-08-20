@@ -1,0 +1,29 @@
+uuid: 6ecf16e6-3054-4caa-abea-70b5ebaf68b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slate_id
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: roles_enable
+    add_roles:
+      - administrator
+    edit_disable: roles_enable
+    edit_roles:
+      - administrator
+id: node.event.field_slate_id
+field_name: field_slate_id
+entity_type: node
+bundle: event
+label: 'Slate ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

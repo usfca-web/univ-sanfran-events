@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.event.field_media
     - field.field.node.event.field_section
     - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_slate_id
     - field.field.node.event.field_source
     - field.field.node.event.field_speaker
     - field.field.node.event.field_terms
@@ -116,6 +117,7 @@ hidden:
   field_guid: true
   field_section: true
   field_slate_external_url: true
+  field_slate_id: true
   field_source: true
   field_speaker: true
   field_terms: true
