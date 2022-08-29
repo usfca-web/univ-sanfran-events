@@ -1527,8 +1527,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -2841,6 +2841,9 @@ display:
             thumbnail__target_id:
               alias: eventMedia
               raw_output: false
+            thumbnail__target_id_1:
+              alias: eventMediaThumb
+              raw_output: false
             thumbnail__alt:
               alias: eventMediaAlt
               raw_output: false
@@ -2867,9 +2870,6 @@ display:
               raw_output: false
             field_slate_external_url_1:
               alias: rsvpLink
-              raw_output: false
-            thumbnail__target_id_1:
-              alias: eventMediaThumb
               raw_output: false
       defaults:
         fields: false
