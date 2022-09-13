@@ -281,6 +281,15 @@ li.ui-tabs-active.ui-state-active {
     color: white!important;
 }
 
+/* LOG IN/LOG OUT MENU */
+.log-in-out-menu p a {
+    color:#ffffff; 
+    /*float: right;*/
+    display: flex; 
+    justify-content: flex-end;
+    padding: 4px;
+}
+
 /* TYPOGRAPHY USFCA PREVIEW */
 #tabs-1, #tabs-2 {
     padding: 50px 0;
