@@ -1023,10 +1023,10 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_date_value:
-          id: field_date_value
+        field_date_end_value:
+          id: field_date_end_value
           table: node__field_date
-          field: field_date_value
+          field: field_date_end_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -1036,7 +1036,7 @@ display:
             min: ''
             max: ''
             value: now
-            type: date
+            type: offset
           group: 1
           exposed: false
           expose:
