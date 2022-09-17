@@ -5,7 +5,7 @@ dependencies:
   config:
     - node.type.event
 id: node_type_event
-entity_type_id: 'entity_bundle:node'
+entity_type_id: node_type
 entity_id: event
 action: page_redirect
 allow_override: 0
