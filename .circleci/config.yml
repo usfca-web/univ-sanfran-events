@@ -53,7 +53,7 @@ defaults: &defaults
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
 
-version: 2
+version: 2.1
 jobs:
   configure_env_vars:
     <<: *defaults
