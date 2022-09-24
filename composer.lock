@@ -3710,20 +3710,20 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.1.4",
+            "version": "4.1.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.1.4"
+                "reference": "4.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.1.4.zip",
-                "reference": "4.1.4",
-                "shasum": "02dfb8e421d0a093e52b3c70e22cd5f5f11fd524"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.1.5.zip",
+                "reference": "4.1.5",
+                "shasum": "4a85fa401dae71d5ba8f116fac5d920a5260c631"
             },
             "require": {
-                "drupal/core": "^9"
+                "drupal/core": "^9 || ^10"
             },
             "require-dev": {
                 "drush/drush": "^10"
@@ -3734,8 +3734,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.4",
-                    "datestamp": "1657620097",
+                    "version": "4.1.5",
+                    "datestamp": "1663950843",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5445,7 +5445,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-events-updates-9-22",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
@@ -13178,16 +13178,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.5.0",
+            "version": "8.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "a52720f4de29237f64fca8f9bacf00705497460f"
+                "reference": "971f489404350bf4608b7e59381e603c47700366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/a52720f4de29237f64fca8f9bacf00705497460f",
-                "reference": "a52720f4de29237f64fca8f9bacf00705497460f",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/971f489404350bf4608b7e59381e603c47700366",
+                "reference": "971f489404350bf4608b7e59381e603c47700366",
                 "shasum": ""
             },
             "require": {
@@ -13223,7 +13223,7 @@
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.5.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.5.1"
             },
             "funding": [
                 {
@@ -13235,7 +13235,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-21T12:15:08+00:00"
+            "time": "2022-09-23T05:34:53+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
