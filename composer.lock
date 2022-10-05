@@ -1711,16 +1711,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.4.6",
+            "version": "9.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "a5c83e4ac0d8eb46f06a97a8b85bcbfa08a70701"
+                "reference": "247431af7e33a8cf7c46677a79336103c6e83db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/a5c83e4ac0d8eb46f06a97a8b85bcbfa08a70701",
-                "reference": "a5c83e4ac0d8eb46f06a97a8b85bcbfa08a70701",
+                "url": "https://api.github.com/repos/drupal/core/zipball/247431af7e33a8cf7c46677a79336103c6e83db1",
+                "reference": "247431af7e33a8cf7c46677a79336103c6e83db1",
                 "shasum": ""
             },
             "require": {
@@ -1766,7 +1766,7 @@
                 "symfony/translation": "^4.4",
                 "symfony/validator": "^4.4",
                 "symfony/yaml": "^4.4.19",
-                "twig/twig": "^2.15",
+                "twig/twig": "^2.15.3",
                 "typo3/phar-stream-wrapper": "^3.1.3"
             },
             "conflict": {
@@ -1872,13 +1872,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.4.6"
+                "source": "https://github.com/drupal/core/tree/9.4.7"
             },
-            "time": "2022-09-20T13:22:39+00:00"
+            "time": "2022-09-28T16:19:47+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.4.6",
+            "version": "9.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -1922,22 +1922,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.4.6"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.4.7"
             },
             "time": "2022-06-19T16:14:23+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.4.6",
+            "version": "9.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "d8b7fa96de13d4e7c9ec3c5d9769cc87b74d7986"
+                "reference": "287868a598996f1eb04ea57dbefb741d3784db23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/d8b7fa96de13d4e7c9ec3c5d9769cc87b74d7986",
-                "reference": "d8b7fa96de13d4e7c9ec3c5d9769cc87b74d7986",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/287868a598996f1eb04ea57dbefb741d3784db23",
+                "reference": "287868a598996f1eb04ea57dbefb741d3784db23",
                 "shasum": ""
             },
             "require": {
@@ -1946,7 +1946,7 @@
                 "doctrine/annotations": "~1.13.2",
                 "doctrine/lexer": "~1.2.3",
                 "doctrine/reflection": "~1.2.3",
-                "drupal/core": "9.4.6",
+                "drupal/core": "9.4.7",
                 "egulias/email-validator": "~3.2",
                 "guzzlehttp/guzzle": "~6.5.8",
                 "guzzlehttp/promises": "~1.5.1",
@@ -1995,7 +1995,7 @@
                 "symfony/validator": "~v4.4.41",
                 "symfony/var-dumper": "~v5.4.9",
                 "symfony/yaml": "~v4.4.37",
-                "twig/twig": "~v2.15.1",
+                "twig/twig": "~v2.15.3",
                 "typo3/phar-stream-wrapper": "~v3.1.7"
             },
             "conflict": {
@@ -2008,9 +2008,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.4.6"
+                "source": "https://github.com/drupal/core-recommended/tree/9.4.7"
             },
-            "time": "2022-09-20T13:22:39+00:00"
+            "time": "2022-09-28T16:19:47+00:00"
         },
         {
             "name": "drupal/csv_serialization",
@@ -2713,20 +2713,20 @@
             ],
             "authors": [
                 {
-                    "name": "Bobík",
-                    "homepage": "https://www.drupal.org/user/123612"
-                },
-                {
-                    "name": "MegaChriz",
-                    "homepage": "https://www.drupal.org/user/654114"
-                },
-                {
                     "name": "franz",
                     "homepage": "https://www.drupal.org/user/581844"
                 },
                 {
+                    "name": "Honza Pobořil",
+                    "homepage": "https://www.drupal.org/user/123612"
+                },
+                {
                     "name": "mausolos",
                     "homepage": "https://www.drupal.org/user/642118"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
                 },
                 {
                     "name": "twistor",
@@ -3272,17 +3272,17 @@
         },
         {
             "name": "drupal/scheduler",
-            "version": "2.0.0-rc4",
+            "version": "2.0.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduler.git",
-                "reference": "2.0.0-rc4"
+                "reference": "2.0.0-rc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.0-rc4.zip",
-                "reference": "2.0.0-rc4",
-                "shasum": "f6da54919bb5b556ccf3ac803fd0d43de280f028"
+                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.0-rc5.zip",
+                "reference": "2.0.0-rc5",
+                "shasum": "22b07ba327d72a0d0800816fdc1e147f534d0267"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -3298,8 +3298,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc4",
-                    "datestamp": "1654941604",
+                    "version": "2.0.0-rc5",
+                    "datestamp": "1664183997",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -5450,7 +5450,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-master",
+            "version": "dev-events-updates-10-05",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
@@ -6162,28 +6162,28 @@
         },
         {
             "name": "softcreatr/jsonpath",
-            "version": "0.7.5",
+            "version": "0.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "008569bf80aa3584834f7890781576bc7b65afa7"
+                "reference": "e04c02cb78bcc242c69d17dac5b29436bf3e1076"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/008569bf80aa3584834f7890781576bc7b65afa7",
-                "reference": "008569bf80aa3584834f7890781576bc7b65afa7",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/e04c02cb78bcc242c69d17dac5b29436bf3e1076",
+                "reference": "e04c02cb78bcc242c69d17dac5b29436bf3e1076",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": ">=7.1"
+                "php": ">=7.1,<8.0"
             },
             "replace": {
                 "flow/jsonpath": "*"
             },
             "require-dev": {
                 "phpunit/phpunit": ">=7.0",
-                "roave/security-advisories": "dev-master",
+                "roave/security-advisories": "dev-latest",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -6206,7 +6206,7 @@
                 {
                     "name": "Sascha Greuel",
                     "email": "hello@1-2.dev",
-                    "homepage": "http://1-2.dev",
+                    "homepage": "https://1-2.dev",
                     "role": "Developer"
                 }
             ],
@@ -6219,11 +6219,15 @@
             },
             "funding": [
                 {
+                    "url": "https://ecologi.com/softcreatr?r=61212ab3fc69b8eb8a2014f4",
+                    "type": "custom"
+                },
+                {
                     "url": "https://github.com/softcreatr",
                     "type": "github"
                 }
             ],
-            "time": "2021-06-02T22:15:26+00:00"
+            "time": "2022-09-27T09:27:12+00:00"
         },
         {
             "name": "stack/builder",
@@ -10346,7 +10350,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "9.4.6",
+            "version": "9.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -10390,7 +10394,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/9.4.6"
+                "source": "https://github.com/drupal/core-dev/tree/9.4.7"
             },
             "time": "2022-04-14T00:37:13+00:00"
         },
@@ -13187,16 +13191,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.5.0",
+            "version": "8.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "a52720f4de29237f64fca8f9bacf00705497460f"
+                "reference": "f32937dc41b587f3500efed1dbca2f82aa519373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/a52720f4de29237f64fca8f9bacf00705497460f",
-                "reference": "a52720f4de29237f64fca8f9bacf00705497460f",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/f32937dc41b587f3500efed1dbca2f82aa519373",
+                "reference": "f32937dc41b587f3500efed1dbca2f82aa519373",
                 "shasum": ""
             },
             "require": {
@@ -13208,11 +13212,11 @@
             "require-dev": {
                 "phing/phing": "2.17.4",
                 "php-parallel-lint/php-parallel-lint": "1.3.2",
-                "phpstan/phpstan": "1.4.10|1.8.5",
+                "phpstan/phpstan": "1.4.10|1.8.6",
                 "phpstan/phpstan-deprecation-rules": "1.0.0",
                 "phpstan/phpstan-phpunit": "1.0.0|1.1.1",
-                "phpstan/phpstan-strict-rules": "1.4.3",
-                "phpunit/phpunit": "7.5.20|8.5.21|9.5.24"
+                "phpstan/phpstan-strict-rules": "1.4.4",
+                "phpunit/phpunit": "7.5.20|8.5.21|9.5.25"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -13232,7 +13236,7 @@
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.5.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.5.2"
             },
             "funding": [
                 {
@@ -13244,7 +13248,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-21T12:15:08+00:00"
+            "time": "2022-09-27T16:45:37+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -13594,16 +13598,16 @@
         },
         {
             "name": "symfony/lock",
-            "version": "v4.4.40",
+            "version": "v4.4.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lock.git",
-                "reference": "ec23fb51d9b531f7fcd2279afe5b474e624c2445"
+                "reference": "8b060dd4e10f05219698ceb3a4ad735b19c1be4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/lock/zipball/ec23fb51d9b531f7fcd2279afe5b474e624c2445",
-                "reference": "ec23fb51d9b531f7fcd2279afe5b474e624c2445",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/8b060dd4e10f05219698ceb3a4ad735b19c1be4f",
+                "reference": "8b060dd4e10f05219698ceb3a4ad735b19c1be4f",
                 "shasum": ""
             },
             "require": {
@@ -13612,10 +13616,10 @@
                 "symfony/polyfill-php80": "^1.16"
             },
             "conflict": {
-                "doctrine/dbal": "<2.6"
+                "doctrine/dbal": "<2.7"
             },
             "require-dev": {
-                "doctrine/dbal": "^2.6|^3.0",
+                "doctrine/dbal": "^2.7|^3.0",
                 "predis/predis": "~1.0"
             },
             "type": "library",
@@ -13652,7 +13656,7 @@
                 "semaphore"
             ],
             "support": {
-                "source": "https://github.com/symfony/lock/tree/v4.4.40"
+                "source": "https://github.com/symfony/lock/tree/v4.4.46"
             },
             "funding": [
                 {
@@ -13668,7 +13672,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-22T11:09:53+00:00"
+            "time": "2022-09-19T08:41:12+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
