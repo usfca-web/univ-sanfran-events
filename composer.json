@@ -31,6 +31,7 @@
         "drupal/feeds_dependency": "^1.0@beta",
         "drupal/feeds_ex": "^1.0@beta",
         "drupal/feeds_tamper": "^2.0@beta",
+        "drupal/field_permissions": "^1.2",
         "drupal/json_feed": "^2.0",
         "drupal/paragraphs": "^1.13",
         "drupal/pathauto": "^1.9",

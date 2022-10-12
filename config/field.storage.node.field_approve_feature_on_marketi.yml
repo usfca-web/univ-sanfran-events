@@ -1,23 +1,21 @@
-uuid: 68ad4b82-0d02-489d-8a91-bc8b0d5d5299
+uuid: eaaa6411-da7c-4276-83e5-28aeb15ae35a
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
-    - taxonomy
 third_party_settings:
   field_permissions:
-    permission_type: public
-id: node.field_event_website_tax
-field_name: field_event_website_tax
+    permission_type: custom
+id: node.field_approve_feature_on_marketi
+field_name: field_approve_feature_on_marketi
 entity_type: node
-type: entity_reference
-settings:
-  target_type: taxonomy_term
+type: boolean
+settings: {  }
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
