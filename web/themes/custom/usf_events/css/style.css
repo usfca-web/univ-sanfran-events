@@ -151,7 +151,7 @@ a.chosen-single {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .5);
 }
 
-.ui-widget-content {
+.ui-menu {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
