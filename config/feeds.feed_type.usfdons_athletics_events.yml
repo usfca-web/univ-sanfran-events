@@ -1,0 +1,178 @@
+uuid: 35ebe7f6-baf8-42a7-8a13-8d1b661b52b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_source
+    - node.type.event
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      560468a0-f5d1-435e-bfb5-9c39c6000338:
+        default_value: USFDons
+        only_if_empty: false
+        uuid: 560468a0-f5d1-435e-bfb5-9c39c6000338
+        plugin: default_value
+        source: source
+        weight: 0
+        label: 'Set value or default value'
+label: 'USFDons Athletics Events'
+id: usfdons_athletics_events
+description: 'Feed importer that gets events from the USFDons website'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: /rss/channel/item
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: event
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  titletitle:
+    label: title
+    machine_name: titletitle
+    value: title
+    raw: false
+    inner: false
+    type: xml
+  description:
+    label: description
+    machine_name: description
+    value: description
+    raw: false
+    inner: false
+    type: xml
+  link:
+    label: link
+    machine_name: link
+    value: link
+    raw: false
+    inner: false
+    type: xml
+  s_localstartdate:
+    label: 's:localstartdate'
+    machine_name: s_localstartdate
+    value: 's:localstartdate'
+    raw: false
+    inner: false
+    type: xml
+  s_localenddate:
+    label: 's:localenddate'
+    machine_name: s_localenddate
+    value: 's:localenddate'
+    raw: false
+    inner: false
+    type: xml
+  s_gameid:
+    label: 's:gameid'
+    machine_name: s_gameid
+    value: 's:gameid'
+    raw: false
+    inner: false
+    type: xml
+  ev_startdate:
+    label: 'ev:startdate'
+    machine_name: ev_startdate
+    value: 'ev:startdate'
+    raw: false
+    inner: false
+    type: xml
+  ev_enddate:
+    label: 'ev:enddate'
+    machine_name: ev_enddate
+    value: 'ev:enddate'
+    raw: false
+    inner: false
+    type: xml
+  source:
+    value: Source
+    label: Source
+    machine_name: source
+    type: blank
+mappings:
+  -
+    target: title
+    map:
+      value: titletitle
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_display_title
+    map:
+      value: titletitle
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: description
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_slate_external_url
+    map:
+      uri: link
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_date
+    map:
+      value: ev_startdate
+      end_value: ev_enddate
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_guid
+    map:
+      value: s_gameid
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: field_source
+    map:
+      target_id: source
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
