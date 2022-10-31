@@ -1,4 +1,4 @@
-uuid: baa9dd4a-d24a-46ae-89d9-4c7c09a4ede3
+uuid: 2b6a15e7-462f-46cd-aab2-e379b351d56f
 langcode: en
 status: true
 dependencies:
@@ -6,13 +6,15 @@ dependencies:
     - field.field.node.event.field_date
     - field.field.node.event.field_display_title
     - field.field.node.event.field_event_category
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_terms
     - node.type.event
   module:
     - feeds_ex
     - node
-label: 'Academic Calendar events'
-id: academic_calendar_events
-description: 'Import Academic Calendar Events from USFCA'
+label: 'Academic Calendar Importer'
+id: academic_calendar_importer
+description: 'An importer for academic calendar events from the old website'
 help: ''
 import_period: -1
 fetcher: http
@@ -25,7 +27,7 @@ fetcher_configuration:
 parser: xml
 parser_configuration:
   context:
-    value: /events/item
+    value: events/item
   source_encoding:
     - auto
   display_errors: false
@@ -37,7 +39,7 @@ processor_configuration:
     type: event
   langcode: en
   insert_new: 1
-  update_existing: 2
+  update_existing: 0
   update_non_existent: _keep
   skip_hash_check: false
   authorize: true
@@ -45,50 +47,60 @@ processor_configuration:
   owner_feed_author: false
   owner_id: 0
 custom_sources:
-  title:
-    label: title
-    machine_name: title
-    value: title
-    type: xml
   displaytitle:
     label: displayTitle
     machine_name: displaytitle
     value: displayTitle
+    raw: false
+    inner: false
+    type: xml
+  title:
+    label: title
+    machine_name: title
+    value: title
+    raw: false
+    inner: false
     type: xml
   eventstarttime:
     label: eventStartTime
     machine_name: eventstarttime
     value: eventStartTime
+    raw: false
+    inner: false
     type: xml
   eventendtime:
     label: eventEndTime
     machine_name: eventendtime
     value: eventEndTime
+    raw: false
+    inner: false
     type: xml
   eventcategory:
     label: eventCategory
     machine_name: eventcategory
     value: eventCategory
+    raw: false
+    inner: false
     type: xml
   guid:
     label: GUID
     machine_name: guid
-    value: guid
+    value: GUID
     raw: false
     inner: false
     type: xml
 mappings:
   -
-    target: title
+    target: field_display_title
     map:
-      value: title
+      value: displaytitle
     settings:
       language: null
     unique: {  }
   -
-    target: field_display_title
+    target: title
     map:
-      value: displaytitle
+      value: title
     settings:
       language: null
     unique: {  }
@@ -98,14 +110,31 @@ mappings:
       value: eventstarttime
       end_value: eventendtime
     settings:
-      language: ''
-      timezone: America/Los_Angeles
+      language: null
+      timezone: UTC
+  -
+    target: field_terms
+    map:
+      target_id: eventcategory
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
   -
     target: field_event_category
     map:
       target_id: eventcategory
     settings:
-      language: ''
+      language: null
       reference_by: name
-      feeds_item: guid
-      autocreate: '1'
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_guid
+    map:
+      value: guid
+    settings:
+      language: null
+    unique:
+      value: '1'

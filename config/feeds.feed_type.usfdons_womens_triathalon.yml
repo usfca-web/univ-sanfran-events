@@ -1,0 +1,277 @@
+uuid: d7dd2da9-cb44-4684-9bb2-c3786e64315e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_date
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_guid
+    - field.field.node.event.field_slate_external_url
+    - field.field.node.event.field_source
+    - field.field.node.event.field_terms
+    - field.field.node.event.field_usfdons_game_id
+    - node.type.event
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      cbb42b3d-2b8c-4d3e-a0f8-7468daad8404:
+        default_value: 'https://usfdons.com/sports/triathlon/schedule'
+        only_if_empty: false
+        uuid: cbb42b3d-2b8c-4d3e-a0f8-7468daad8404
+        plugin: default_value
+        source: link
+        weight: 0
+        label: 'Set value or default value'
+      5c8cd7eb-3d04-42b6-b309-8b455db0421c:
+        default_value: 'USF Dons'
+        only_if_empty: false
+        uuid: 5c8cd7eb-3d04-42b6-b309-8b455db0421c
+        plugin: default_value
+        source: source
+        weight: 0
+        label: 'Set value or default value'
+      9c62d171-35a2-42f3-aa90-603da81f1ae4:
+        default_value: Athletics
+        only_if_empty: false
+        uuid: 9c62d171-35a2-42f3-aa90-603da81f1ae4
+        plugin: default_value
+        source: sports_category
+        weight: 0
+        label: 'Set value or default value'
+      c35103c0-21e8-4afc-9a6f-efdad6e38201:
+        find: \n
+        replace: '<br \>'
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: c35103c0-21e8-4afc-9a6f-efdad6e38201
+        plugin: find_replace
+        source: description
+        weight: 0
+        label: 'Find replace'
+      15bb0250-034e-4d5b-84ed-95d8e0d24473:
+        default_value: MyUSF
+        only_if_empty: false
+        uuid: 15bb0250-034e-4d5b-84ed-95d8e0d24473
+        plugin: default_value
+        source: target_websites
+        weight: 0
+        label: 'Set value or default value'
+      75391952-5de7-4890-9d65-63400cdc5837:
+        default_value: USFCA
+        only_if_empty: false
+        uuid: 75391952-5de7-4890-9d65-63400cdc5837
+        plugin: default_value
+        source: target_websites_2
+        weight: 0
+        label: 'Set value or default value'
+      fde9ba5e-f931-482a-b50b-a0f7dcc8f729:
+        default_value: published
+        only_if_empty: false
+        uuid: fde9ba5e-f931-482a-b50b-a0f7dcc8f729
+        plugin: default_value
+        source: moderation_state
+        weight: 0
+        label: 'Set value or default value'
+label: 'USFDons Athletics Events - Women''s Triathalon'
+id: usfdons_womens_triathalon
+description: 'Feed for USF Dons athletics events - Women''s Triathalon'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: /rss/channel/item
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: event
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    label: title
+    machine_name: title
+    value: title
+    raw: false
+    inner: false
+    type: xml
+  ev_startdate:
+    label: 'ev:startdate'
+    machine_name: ev_startdate
+    value: 'ev:startdate'
+    raw: false
+    inner: false
+    type: xml
+  ev_enddate:
+    label: 'ev:enddate'
+    machine_name: ev_enddate
+    value: 'ev:enddate'
+    raw: false
+    inner: false
+    type: xml
+  link:
+    value: link
+    label: link
+    machine_name: link
+    type: blank
+  s_gameid:
+    label: 's:gameid'
+    machine_name: s_gameid
+    value: 's:gameid'
+    raw: false
+    inner: false
+    type: xml
+  source:
+    value: source
+    label: source
+    machine_name: source
+    type: blank
+  description:
+    label: description
+    machine_name: description
+    value: description
+    raw: false
+    inner: false
+    type: xml
+  sports_category:
+    value: 'Sports category'
+    label: 'Sports category'
+    machine_name: sports_category
+    type: blank
+  target_websites:
+    value: 'Target websites taxonomy 1'
+    label: 'Target websites taxonomy 1'
+    machine_name: target_websites
+    type: blank
+  target_websites_2:
+    value: 'Target websites taxonomy 2'
+    label: 'Target websites taxonomy 2'
+    machine_name: target_websites_2
+    type: blank
+  moderation_state:
+    value: 'Moderation state'
+    label: 'Moderation state'
+    machine_name: moderation_state
+    type: blank
+mappings:
+  -
+    target: field_display_title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_date
+    map:
+      value: ev_startdate
+      end_value: ev_enddate
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_slate_external_url
+    map:
+      uri: link
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_guid
+    map:
+      value: s_gameid
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: field_source
+    map:
+      target_id: source
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: body
+    map:
+      value: description
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_usfdons_game_id
+    map:
+      value: s_gameid
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_terms
+    map:
+      target_id: sports_category
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: '1'
+  -
+    target: field_event_website_tax
+    map:
+      target_id: target_websites
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_event_website_tax
+    map:
+      target_id: target_websites_2
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: moderation_state
+    map:
+      value: moderation_state
+    settings:
+      language: null
+    unique: {  }

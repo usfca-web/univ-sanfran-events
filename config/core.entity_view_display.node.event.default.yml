@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.event.field_source
     - field.field.node.event.field_speaker
     - field.field.node.event.field_terms
+    - field.field.node.event.field_usfdons_game_id
     - node.type.event
   module:
     - datetime_range
@@ -97,6 +98,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_usfdons_game_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   links:
     settings: {  }

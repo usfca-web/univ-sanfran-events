@@ -1,0 +1,33 @@
+uuid: 17318155-103c-4bf6-8b1a-2ad4b42ebe1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usfdons_game_id
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: roles_enable
+    add_roles:
+      - administrator
+    edit_disable: roles_enable
+    edit_roles:
+      - administrator
+id: node.event.field_usfdons_game_id
+field_name: field_usfdons_game_id
+entity_type: node
+bundle: event
+label: 'USF Dons Game ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
