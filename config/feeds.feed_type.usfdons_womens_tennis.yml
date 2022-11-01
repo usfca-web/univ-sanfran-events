@@ -79,6 +79,14 @@ third_party_settings:
         source: moderation_state
         weight: 0
         label: 'Set value or default value'
+      425bb606-bd82-4f35-862c-32c3c22bde68:
+        default_value: View
+        only_if_empty: false
+        uuid: 425bb606-bd82-4f35-862c-32c3c22bde68
+        plugin: default_value
+        source: external_link_text
+        weight: 0
+        label: 'Set value or default value'
 label: 'USFDons Athletics Events - Women''s Tennis'
 id: usfdons_womens_tennis
 description: 'Feed for USF Dons athletics events - Women''s Tennis'
@@ -179,6 +187,11 @@ custom_sources:
     label: 'Moderation state'
     machine_name: moderation_state
     type: blank
+  external_link_text:
+    value: 'External link text'
+    label: 'External link text'
+    machine_name: external_link_text
+    type: blank
 mappings:
   -
     target: field_display_title
@@ -206,7 +219,7 @@ mappings:
     target: field_slate_external_url
     map:
       uri: link
-      title: ''
+      title: external_link_text
     settings:
       language: null
   -

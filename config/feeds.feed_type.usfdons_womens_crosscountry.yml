@@ -79,6 +79,14 @@ third_party_settings:
         source: moderation_state
         weight: 0
         label: 'Set value or default value'
+      3bd6f2c5-9bf6-4633-aded-0f6a6fc0371c:
+        default_value: View
+        only_if_empty: false
+        uuid: 3bd6f2c5-9bf6-4633-aded-0f6a6fc0371c
+        plugin: default_value
+        source: external_link_text
+        weight: 0
+        label: 'Set value or default value'
 label: 'USFDons Athletics Events - Women''s Cross Country'
 id: usfdons_womens_crosscountry
 description: 'Feed for USF Dons athletics events - Women''s Cross Country'
@@ -179,6 +187,11 @@ custom_sources:
     label: 'Moderation state'
     machine_name: moderation_state
     type: blank
+  external_link_text:
+    value: 'External link text'
+    label: 'External link text'
+    machine_name: external_link_text
+    type: blank
 mappings:
   -
     target: field_display_title
@@ -206,7 +219,7 @@ mappings:
     target: field_slate_external_url
     map:
       uri: link
-      title: ''
+      title: external_link_text
     settings:
       language: null
   -

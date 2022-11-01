@@ -92,6 +92,10 @@
 {% set end_date = node.field_date.end_value ~ 'Z' %}
 {% set bid = node.field_ems_booking_id.value %}
 {% set sid = node.field_slate_id.value %}
+{% set gid = node.field_usfdons_game_id.value %}
+{% set location = node.field_location.value %}
+{% set building = node.field_building.value %}
+
 <article{{ attributes.addClass(classes) }}>
   <header>
     {{ title_prefix }}
@@ -120,7 +124,15 @@
      {{ start_date|date("l, F j, g:i A ") ~ ' - '}}{{ end_date|date("g:i A ") }}
     </div>
     <div class="event_location">
-      {{ node.field_location.value ~ ' - ' }}{{ node.field_building.value }}
+      {% if location is not empty %}
+        {{ location }}
+      {% endif %}
+      {% if location is not empty and building is not empty %}
+        - 
+      {% endif %}
+      {% if building is not empty %}
+        {{  building }}
+      {% endif %}
     </div>
 {% if node.field_event_website_tax.value is empty %}
   <p><a href="/node/{{ node.id }}/edit">Edit event and set which website(s) you want it to display on in order to preview.</a></p>
@@ -132,6 +144,10 @@
 {% if sid is not empty %}
     {{ drupal_view('event_url', 'block_3', sid) }}
     {{ drupal_view('event_url', 'block_4', sid) }}
+{% endif %}
+{% if gid is not empty %}
+    {{ drupal_view('event_url', 'block_5', gid) }}
+    {{ drupal_view('event_url', 'block_6', gid) }}
 {% endif %}
   </div>
 </article>
