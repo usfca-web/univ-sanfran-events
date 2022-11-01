@@ -21,7 +21,7 @@ third_party_settings:
   feeds_tamper:
     tampers:
       cbb42b3d-2b8c-4d3e-a0f8-7468daad8404:
-        default_value: 'https://usfdons.com/sports/womens-golf?path=wgolf'
+        default_value: 'https://usfdons.com/sports/womens-golf'
         only_if_empty: false
         uuid: cbb42b3d-2b8c-4d3e-a0f8-7468daad8404
         plugin: default_value

@@ -21,7 +21,7 @@ third_party_settings:
   feeds_tamper:
     tampers:
       cbb42b3d-2b8c-4d3e-a0f8-7468daad8404:
-        default_value: 'https://usfdons.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MS&linkID=twusfca&shopperContext=&caller=&appCode='
+        default_value: 'https://usfdons.com/sports/mens-soccer/schedule'
         only_if_empty: false
         uuid: cbb42b3d-2b8c-4d3e-a0f8-7468daad8404
         plugin: default_value
