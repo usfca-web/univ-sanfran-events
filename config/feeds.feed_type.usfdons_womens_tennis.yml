@@ -46,7 +46,7 @@ third_party_settings:
         label: 'Set value or default value'
       c35103c0-21e8-4afc-9a6f-efdad6e38201:
         find: \n
-        replace: '<br \>'
+        replace: '<br>'
         case_sensitive: false
         word_boundaries: false
         whole: false
@@ -87,6 +87,15 @@ third_party_settings:
         source: external_link_text
         weight: 0
         label: 'Set value or default value'
+      85e60f16-23cb-4438-a5f9-76fe0ab84abc:
+        find: '/\b(https?):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i'
+        replace: ''
+        limit: null
+        uuid: 85e60f16-23cb-4438-a5f9-76fe0ab84abc
+        plugin: find_replace_regex
+        source: description
+        weight: 1
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Tennis'
 id: usfdons_womens_tennis
 description: 'Feed for USF Dons athletics events - Women''s Tennis'

@@ -46,6 +46,9 @@
 {% set end = end_date|split("|") %}
 {% set end = end[1] %}
 
+{% set location = fields.field_location.content %}
+{% set building = fields.field_building.content  %}
+
 <div class="preview_tabs">
 <div id="tabs">
 <ul>
@@ -93,7 +96,15 @@
         {{ start  ~ ' - ' }} {{ end }}
     </div>
     <div class="event_location">
-        {{ fields.field_location.content ~ ' - '  }}{{ fields.field_building.content }}
+    {% if location is not empty %}
+        {{ location }}
+      {% endif %}
+      {% if location is not empty and building is not empty %}
+        - 
+      {% endif %}
+      {% if building is not empty %}
+        {{  building }}
+    {% endif %}
     </div>
     {% if fields.field_media.content %}
         <div class="event_media">
