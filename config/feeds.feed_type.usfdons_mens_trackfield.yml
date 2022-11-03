@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      e8f8eebf-dad7-420b-8b80-caf6569f263d:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: e8f8eebf-dad7-420b-8b80-caf6569f263d
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      fb0e60f4-5849-41ba-9e59-9fe22f197be2:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: fb0e60f4-5849-41ba-9e59-9fe22f197be2
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Men''s Track & Field'
 id: usfdons_mens_trackfield
 description: 'Feed for USF Dons athletics events - Men''s Track & Field'

@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      98f4865c-3007-41aa-90a2-0b8ec36c5718:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 98f4865c-3007-41aa-90a2-0b8ec36c5718
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      3f09a777-4118-4b1b-a3a7-d07a745b3352:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 3f09a777-4118-4b1b-a3a7-d07a745b3352
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Men''s Golf'
 id: usfdons_mens_golf
 description: 'Feed for USF Dons athletics events - Men''s Golf'

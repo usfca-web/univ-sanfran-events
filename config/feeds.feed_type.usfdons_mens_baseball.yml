@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      98c22d1a-8d01-4b62-9dc0-fb3c580b566e:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 98c22d1a-8d01-4b62-9dc0-fb3c580b566e
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      7916d9d2-ef81-45f3-8468-7703ed77ada3:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 7916d9d2-ef81-45f3-8468-7703ed77ada3
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Men''s Baseball'
 id: usfdons_mens_baseball
 description: 'Feed for USF Dons athletics events -  Men''s Baseball'

@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      28573945-debc-4562-acb4-42921b4e99e9:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 28573945-debc-4562-acb4-42921b4e99e9
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      77b90ab2-4bac-4137-a057-7e240d5f1ce1:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 77b90ab2-4bac-4137-a057-7e240d5f1ce1
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Women''s Cross Country'
 id: usfdons_womens_crosscountry
 description: 'Feed for USF Dons athletics events - Women''s Cross Country'

@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      767cf658-52f4-4d9e-bc1e-cdc95231db53:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 767cf658-52f4-4d9e-bc1e-cdc95231db53
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      dbf01ce8-5ecf-4efe-a2a7-17f2370b3134:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: dbf01ce8-5ecf-4efe-a2a7-17f2370b3134
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Men''s Cross Country'
 id: usfdons_mens_crosscountry
 description: 'Feed for USF Dons athletics events - Men''s Cross Country'

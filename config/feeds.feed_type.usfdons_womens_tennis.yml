@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      b0984e74-3913-420e-915d-3398b6fd0252:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: b0984e74-3913-420e-915d-3398b6fd0252
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      9ec993bb-1480-4ed5-abcb-b9470a63d43f:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 9ec993bb-1480-4ed5-abcb-b9470a63d43f
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Women''s Tennis'
 id: usfdons_womens_tennis
 description: 'Feed for USF Dons athletics events - Women''s Tennis'

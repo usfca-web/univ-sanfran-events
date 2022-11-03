@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      aef881e3-539f-46d1-8dc0-abed74832340:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: aef881e3-539f-46d1-8dc0-abed74832340
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      3c55cd14-229b-46ba-b5f6-7722f1e99057:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 3c55cd14-229b-46ba-b5f6-7722f1e99057
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Women''s Triathalon'
 id: usfdons_womens_triathalon
 description: 'Feed for USF Dons athletics events - Women''s Triathalon'

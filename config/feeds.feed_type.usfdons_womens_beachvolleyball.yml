@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      e1b59ade-a9c6-42f3-8a31-0949e58e69d4:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: e1b59ade-a9c6-42f3-8a31-0949e58e69d4
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      655274a1-caea-41ce-b195-faf42122eafc:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 655274a1-caea-41ce-b195-faf42122eafc
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Women''s Beach Volleyball'
 id: usfdons_womens_beachvolleyball
 description: 'Feed for USF Dons athletics events - Women''s Beach Volleyball'

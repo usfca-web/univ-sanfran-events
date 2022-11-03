@@ -96,6 +96,28 @@ third_party_settings:
         source: description
         weight: 1
         label: 'Find replace REGEX'
+      e738dd74-8f22-4252-9abb-0fd47f48c4de:
+        find: 'Streaming Video:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: e738dd74-8f22-4252-9abb-0fd47f48c4de
+        plugin: find_replace
+        source: description
+        weight: 2
+        label: 'Find replace'
+      642a7181-2b72-4c40-b566-5d9d77193637:
+        find: 'Tickets:'
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 642a7181-2b72-4c40-b566-5d9d77193637
+        plugin: find_replace
+        source: description
+        weight: 3
+        label: 'Find replace'
 label: 'USFDons Athletics Events - Men''s Soccer'
 id: usfdons_mens_soccer
 description: 'Feed for USF Dons athletics events - Men''s Soccer'
