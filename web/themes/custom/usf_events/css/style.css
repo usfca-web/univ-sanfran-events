@@ -150,6 +150,17 @@ a.chosen-single {
     background: white!important;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .5);
 }
+
+.ui-menu {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+.ui-menu-item {
+    background-color: white;
+}
+a.ui-menu-item-wrapper {
+    border:none;
+}
 #field_media-media-library-wrapper legend,
 #edit-field-date-0 legend {
     font-size: 0.929em;
@@ -773,6 +784,4 @@ li.ui-tabs-active.ui-state-active {
         margin-left: -20px;
     }
 }
-
-
 

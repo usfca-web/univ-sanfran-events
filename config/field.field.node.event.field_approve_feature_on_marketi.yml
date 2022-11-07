@@ -1,9 +1,9 @@
-uuid: d623b7cf-f528-4a01-9f80-1a84d592e4f3
+uuid: 683f0ac9-b6cd-4a7c-ac99-3abc35c24da4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_featured
+    - field.storage.node.field_approve_feature_on_marketi
     - node.type.event
   module:
     - disable_field
@@ -11,12 +11,12 @@ third_party_settings:
   disable_field:
     add_disable: none
     edit_disable: none
-id: node.event.field_featured
-field_name: field_featured
+id: node.event.field_approve_feature_on_marketi
+field_name: field_approve_feature_on_marketi
 entity_type: node
 bundle: event
-label: 'Feature on myUSF home'
-description: "You may feature your event if it has a detailed description and a proper photo.<br>\r\nEvents marked as featured are subject to review by OMC."
+label: 'Approve Feature on Marketing Site'
+description: 'Approve this event to be featured on the USFCA website. Available only to administrators. Not visible to editors.'
 required: false
 translatable: false
 default_value:
