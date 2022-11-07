@@ -61,7 +61,7 @@ content:
     third_party_settings: {  }
   field_approve_feature_on_marketi:
     type: boolean_checkbox
-    weight: 19
+    weight: 17
     region: content
     settings:
       display_label: true
@@ -118,7 +118,7 @@ content:
     third_party_settings: {  }
   field_event_category:
     type: entity_reference_autocomplete_tags
-    weight: 16
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -141,14 +141,14 @@ content:
     third_party_settings: {  }
   field_feature_on_marketing_site:
     type: boolean_checkbox
-    weight: 18
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_featured:
     type: boolean_checkbox
-    weight: 17
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -210,7 +210,7 @@ content:
     third_party_settings: {  }
   field_terms:
     type: entity_reference_autocomplete_tags
-    weight: 15
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS

@@ -17,7 +17,7 @@ field_name: field_email_category
 entity_type: node
 bundle: event
 label: 'Email Category'
-description: "Calendar email categories are used to determine which calendar emails your event appears in.<br>\r\nSelect any categories relevant to your event. For the colleges and schools, only select a category if you have received prior permission.<br>\r\nAll selected categories and featured events are subject to review by eCommunications. <a href=\"/admin/taxonomy-terms?vid=email_category\" target=\"_blank\">View the email category list.</a>"
+description: "Calendar email categories are used to determine which calendar emails your event appears in.<br>\r\nSelect any categories relevant to your event. For the colleges and schools, only select a category if you have received prior permission.<br>\r\nAll selected categories and featured events are subject to review by eCommunications."
 required: false
 translatable: false
 default_value: {  }

@@ -16,7 +16,7 @@ field_name: field_approve_feature_on_marketi
 entity_type: node
 bundle: event
 label: 'Approve Feature on Marketing Site'
-description: ''
+description: 'Approve this event to be featured on the USFCA website. Available only to administrators. Not visible to editors.'
 required: false
 translatable: false
 default_value:
