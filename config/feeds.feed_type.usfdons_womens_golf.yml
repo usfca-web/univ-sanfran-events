@@ -118,9 +118,67 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      7b700563-ce05-41b7-a3ef-ca6e68ccef36:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: 7b700563-ce05-41b7-a3ef-ca6e68ccef36
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      6cebe650-b8ee-4922-9246-595ef0c6a582:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 6cebe650-b8ee-4922-9246-595ef0c6a582
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      4e2b80d5-9b30-4ac4-8cd6-b7b05f2eabbc:
+        find: ' /[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 4e2b80d5-9b30-4ac4-8cd6-b7b05f2eabbc
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      34637705-3241-4ca2-9210-374d37b8d490:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 34637705-3241-4ca2-9210-374d37b8d490
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      315bb711-984b-4d83-b430-c838321cc4e6:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 315bb711-984b-4d83-b430-c838321cc4e6
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      1b8b7eb6-095d-401f-991e-9f6d11575f07:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 1b8b7eb6-095d-401f-991e-9f6d11575f07
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Golf'
 id: usfdons_womens_golf
-description: 'Feed for USF Dons athletics events - Women''s Cross Country'
+description: 'Feed for USF Dons athletics events - Women''s Golf'
 help: ''
 import_period: 3600
 fetcher: http
