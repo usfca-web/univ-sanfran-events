@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      40b35d86-8a85-4cb7-84da-339144c8fbb0:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: 40b35d86-8a85-4cb7-84da-339144c8fbb0
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      36c6f50a-6635-439f-ac2a-5f83448e8728:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: 36c6f50a-6635-439f-ac2a-5f83448e8728
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      039e5a49-1392-4b64-aebe-aaaa0648100e:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 039e5a49-1392-4b64-aebe-aaaa0648100e
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      9f89d8df-bd67-42c9-a9d8-0726854979fe:
-        find: '/[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: 9f89d8df-bd67-42c9-a9d8-0726854979fe
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      5445abe8-4c0d-4f13-a3aa-0de5b9fb08ce:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 5445abe8-4c0d-4f13-a3aa-0de5b9fb08ce
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      ebc2ed06-6089-40e3-84d5-554104d95e43:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: ebc2ed06-6089-40e3-84d5-554104d95e43
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Soccer'
 id: usfdons_mens_soccer
 description: 'Feed for USF Dons athletics events - Men''s Soccer'

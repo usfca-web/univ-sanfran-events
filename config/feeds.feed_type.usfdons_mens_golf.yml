@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      e548bc6c-199c-413f-a3a6-005649ff7839:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: e548bc6c-199c-413f-a3a6-005649ff7839
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      d55ed286-e1ac-41d6-bf78-81410dd4bc15:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: d55ed286-e1ac-41d6-bf78-81410dd4bc15
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      135255bf-2498-4779-bbfc-052857f22532:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 135255bf-2498-4779-bbfc-052857f22532
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      d646205e-aa19-4772-825e-0abc0678f9f9:
-        find: '/[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: d646205e-aa19-4772-825e-0abc0678f9f9
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      976f67f4-1a0f-4d42-8bff-3e7f503942d8:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 976f67f4-1a0f-4d42-8bff-3e7f503942d8
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      ac12ce25-9b98-4975-b3a1-0838245d5a8f:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: ac12ce25-9b98-4975-b3a1-0838245d5a8f
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Golf'
 id: usfdons_mens_golf
 description: 'Feed for USF Dons athletics events - Men''s Golf'

@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      a98d574d-4849-448d-8e0e-7624454acd7b:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: a98d574d-4849-448d-8e0e-7624454acd7b
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      d27de7a6-65d6-4071-b834-a6a83fc0503f:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: d27de7a6-65d6-4071-b834-a6a83fc0503f
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      68a9bf82-c330-45f0-9778-b1b6065c6d7e:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 68a9bf82-c330-45f0-9778-b1b6065c6d7e
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      13b893cc-2c87-4e0e-8e23-bf9a1e6587b5:
-        find: '/[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: 13b893cc-2c87-4e0e-8e23-bf9a1e6587b5
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      83f5440d-6568-47bd-b27b-c59f9351752f:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 83f5440d-6568-47bd-b27b-c59f9351752f
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      c5748133-ff3b-41b5-8d3b-5c9cdfd65627:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: c5748133-ff3b-41b5-8d3b-5c9cdfd65627
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Basketball'
 id: usfdons_womens_basketball
 description: 'Feed for USF Dons athletics events - Women''s Basketball'

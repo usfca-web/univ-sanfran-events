@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      3b582ea8-ef9b-45de-bd0c-d837d91034c8:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: 3b582ea8-ef9b-45de-bd0c-d837d91034c8
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      b88ec166-96a4-433a-a2d0-c0adb225d9ba:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: b88ec166-96a4-433a-a2d0-c0adb225d9ba
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      7ba1815a-c77c-410b-afb8-099fca327ed8:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 7ba1815a-c77c-410b-afb8-099fca327ed8
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      329c3fe6-0e6a-432e-b5ff-9bf9a86a845f:
-        find: ' /[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: 329c3fe6-0e6a-432e-b5ff-9bf9a86a845f
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      837b0d56-3c64-435d-9a77-b9e7e3a1faa4:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 837b0d56-3c64-435d-9a77-b9e7e3a1faa4
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      e79c8df6-e612-4174-9867-fbb79aeb0356:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: e79c8df6-e612-4174-9867-fbb79aeb0356
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Tennis'
 id: usfdons_womens_tennis
 description: 'Feed for USF Dons athletics events - Women''s Tennis'

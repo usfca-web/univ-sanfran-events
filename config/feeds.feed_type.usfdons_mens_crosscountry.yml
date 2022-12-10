@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      dfe65aa6-2a45-4724-93dd-f266a10ba266:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: dfe65aa6-2a45-4724-93dd-f266a10ba266
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      40ab1edc-0e6b-4930-97ca-4a7c6a37fb57:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: 40ab1edc-0e6b-4930-97ca-4a7c6a37fb57
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      69b828ba-e8b0-43a4-a98d-b01c0973727c:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 69b828ba-e8b0-43a4-a98d-b01c0973727c
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      cc28c766-9da7-46f9-83f4-4fecf94c8c17:
-        find: '/[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: cc28c766-9da7-46f9-83f4-4fecf94c8c17
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      03e0b1e3-0ea9-4678-bc28-dad522c867df:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 03e0b1e3-0ea9-4678-bc28-dad522c867df
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      68c05b79-d342-41bb-b8db-e3f6c0f5eca1:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: 68c05b79-d342-41bb-b8db-e3f6c0f5eca1
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Cross Country'
 id: usfdons_mens_crosscountry
 description: 'Feed for USF Dons athletics events - Men''s Cross Country'

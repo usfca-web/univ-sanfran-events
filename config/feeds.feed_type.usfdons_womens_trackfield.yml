@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      8960723e-07c2-4190-a6c9-76cdcfd7b5b0:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: 8960723e-07c2-4190-a6c9-76cdcfd7b5b0
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      9dacf6f0-f87c-4568-918c-fe86b18f0e19:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: 9dacf6f0-f87c-4568-918c-fe86b18f0e19
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      2e7ad32c-3684-4097-a15d-3fc53ad041c1:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 2e7ad32c-3684-4097-a15d-3fc53ad041c1
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      22e0e5a4-437d-49fe-8f21-448149991640:
-        find: ' /[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: 22e0e5a4-437d-49fe-8f21-448149991640
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      35fcef96-5881-490a-a61f-554e918b16f6:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 35fcef96-5881-490a-a61f-554e918b16f6
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      f2c94c25-e534-4cda-b3c0-e699e8d2aade:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: f2c94c25-e534-4cda-b3c0-e699e8d2aade
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Track & Field'
 id: usfdons_womens_trackfield
 description: 'Feed for USF Dons athletics events - Women''s Track & Field'

@@ -118,64 +118,6 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
-      0741fcd4-f4d2-46c2-82f9-bfac46a31d79:
-        find: '/(^.+?)+( AM)/s'
-        replace: ''
-        limit: null
-        uuid: 0741fcd4-f4d2-46c2-82f9-bfac46a31d79
-        plugin: find_replace_regex
-        source: title
-        weight: -10
-        label: 'Find replace REGEX'
-      c2888e2c-326a-486b-9575-74fe8ca98d2d:
-        find: '/(^.+?)+( PM)/s'
-        replace: ''
-        limit: null
-        uuid: c2888e2c-326a-486b-9575-74fe8ca98d2d
-        plugin: find_replace_regex
-        source: title
-        weight: -9
-        label: 'Find replace REGEX'
-      6e1bd72e-9582-4a58-aa5a-7ad937c3aa3c:
-        find: 'University of San Francisco'
-        replace: USF
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 6e1bd72e-9582-4a58-aa5a-7ad937c3aa3c
-        plugin: find_replace
-        source: title
-        weight: -6
-        label: 'Find replace'
-      bd1787f9-15e0-4410-aafd-89acc82f4089:
-        find: '/[0-9]+/'
-        replace: ''
-        limit: null
-        uuid: bd1787f9-15e0-4410-aafd-89acc82f4089
-        plugin: find_replace_regex
-        source: title
-        weight: -8
-        label: 'Find replace REGEX'
-      763a9093-107d-4816-8aee-511b8b8bc37f:
-        find: /
-        replace: ''
-        case_sensitive: false
-        word_boundaries: false
-        whole: false
-        uuid: 763a9093-107d-4816-8aee-511b8b8bc37f
-        plugin: find_replace
-        source: title
-        weight: -5
-        label: 'Find replace'
-      bc41f334-31d9-4ec7-9529-6b4ab207c8e7:
-        find: '/(\[.+?)+(\])/s'
-        replace: ''
-        limit: null
-        uuid: bc41f334-31d9-4ec7-9529-6b4ab207c8e7
-        plugin: find_replace_regex
-        source: title
-        weight: -7
-        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Track & Field'
 id: usfdons_mens_trackfield
 description: 'Feed for USF Dons athletics events - Men''s Track & Field'
