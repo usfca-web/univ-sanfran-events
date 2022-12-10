@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      47e2b31b-6579-428a-b47e-7c1df01e117b:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 47e2b31b-6579-428a-b47e-7c1df01e117b
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      0d1fb55a-9c42-44c6-a3f4-f55bd9e684da:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: 0d1fb55a-9c42-44c6-a3f4-f55bd9e684da
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      4a5f8147-5cbf-4af0-9831-35b06ca15ef1:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 4a5f8147-5cbf-4af0-9831-35b06ca15ef1
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      ac9cb5ef-2a5d-4bb6-a204-9d30c32e6567:
+        find: '/[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: ac9cb5ef-2a5d-4bb6-a204-9d30c32e6567
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      4be52f65-1ef6-4d06-a7a4-42a46b6de5ec:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 4be52f65-1ef6-4d06-a7a4-42a46b6de5ec
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      6552120d-bdef-41f0-9e4e-e3cb7351df00:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 6552120d-bdef-41f0-9e4e-e3cb7351df00
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Basketball'
 id: usfdons_mens_basketball
 description: 'Feed for USF Dons athletics events - Men''s Basketball'

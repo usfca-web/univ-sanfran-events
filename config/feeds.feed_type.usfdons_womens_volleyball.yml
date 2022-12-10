@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      fc39b9ea-5f73-4f6b-8b0a-6ec49af1fca3:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: fc39b9ea-5f73-4f6b-8b0a-6ec49af1fca3
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      3a60bfd1-14fb-4864-b2e2-cf870f67f42a:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 3a60bfd1-14fb-4864-b2e2-cf870f67f42a
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      ed3c186a-a4c6-423e-834c-42a90fcac50f:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: ed3c186a-a4c6-423e-834c-42a90fcac50f
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      d0aa3fef-ab86-4c1b-b84f-7f7a075809cc:
+        find: ' /[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: d0aa3fef-ab86-4c1b-b84f-7f7a075809cc
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      0da98daa-ec72-4200-beb9-470f231edaff:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 0da98daa-ec72-4200-beb9-470f231edaff
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      4ba2f893-0496-4558-8882-66f0fa288991:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 4ba2f893-0496-4558-8882-66f0fa288991
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Volleyball'
 id: usfdons_womens_volleyball
 description: 'Feed for USF Dons athletics events - Women''s Volleyball'

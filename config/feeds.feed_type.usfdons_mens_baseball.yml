@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      9e56a951-6cda-4b86-9edd-2a593e33e3f3:
+        find: ' /(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 9e56a951-6cda-4b86-9edd-2a593e33e3f3
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      c421544a-ebef-406c-aaca-b0523ad0f764:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: c421544a-ebef-406c-aaca-b0523ad0f764
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      1913b400-7e05-4719-8a35-d5228de186da:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 1913b400-7e05-4719-8a35-d5228de186da
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      1107a786-d205-474c-b51b-2ac93e47c5ce:
+        find: '/[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 1107a786-d205-474c-b51b-2ac93e47c5ce
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      8c52a322-acdd-457f-90c6-0371fd79f623:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 8c52a322-acdd-457f-90c6-0371fd79f623
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      56d80eeb-ba53-4698-b875-4ca3723be0e6:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 56d80eeb-ba53-4698-b875-4ca3723be0e6
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Baseball'
 id: usfdons_mens_baseball
 description: 'Feed for USF Dons athletics events -  Men''s Baseball'

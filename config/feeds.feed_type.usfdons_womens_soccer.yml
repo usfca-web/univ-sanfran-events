@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      f66bbd06-866d-42b1-af90-214471a46bee:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: f66bbd06-866d-42b1-af90-214471a46bee
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      0ecb8eab-a152-4e4e-b65e-a01aa30381ca:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 0ecb8eab-a152-4e4e-b65e-a01aa30381ca
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      fa2ba599-86ca-4cd6-906c-e94fbcb24f37:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: fa2ba599-86ca-4cd6-906c-e94fbcb24f37
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      6ac581e1-31c3-4331-bae6-dcd29c8c0a5a:
+        find: ' /[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 6ac581e1-31c3-4331-bae6-dcd29c8c0a5a
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      c7abac2a-591b-4c37-9607-29d2cc1598e9:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: c7abac2a-591b-4c37-9607-29d2cc1598e9
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      26227fe4-e7e1-47f3-a730-f94824f9ca94:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 26227fe4-e7e1-47f3-a730-f94824f9ca94
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Soccer'
 id: usfdons_womens_soccer
 description: 'Feed for USF Dons athletics events - Women''s Soccer'

@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      b812086d-43d0-447d-8cdc-52a2fb0e7a62:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: b812086d-43d0-447d-8cdc-52a2fb0e7a62
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      7ed7b080-bef8-44c6-adf3-87cc2aa29695:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 7ed7b080-bef8-44c6-adf3-87cc2aa29695
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      d906c2c4-06f8-439a-a05a-e332169a5b09:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: d906c2c4-06f8-439a-a05a-e332169a5b09
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      8436cd57-9fd6-40aa-af37-0be3b9618902:
+        find: ' /[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 8436cd57-9fd6-40aa-af37-0be3b9618902
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      43e95de6-2343-42b4-9a90-b9a4ce6047d3:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 43e95de6-2343-42b4-9a90-b9a4ce6047d3
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      9a0ce8c8-6038-452c-a780-e078faaf8f40:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 9a0ce8c8-6038-452c-a780-e078faaf8f40
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Triathalon'
 id: usfdons_womens_triathalon
 description: 'Feed for USF Dons athletics events - Women''s Triathalon'

@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      f170d414-a879-4931-86b4-831825a545db:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: f170d414-a879-4931-86b4-831825a545db
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      577cc988-ea9e-45db-b1fb-fbc72f15f8f0:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 577cc988-ea9e-45db-b1fb-fbc72f15f8f0
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      21e0bf92-d97b-4ae8-854c-f566f4034733:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 21e0bf92-d97b-4ae8-854c-f566f4034733
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      ab8d0523-ae75-4741-a22d-351aa969efce:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: ab8d0523-ae75-4741-a22d-351aa969efce
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      168797e7-e44d-47ac-85a1-f6f9ed52b307:
+        find: '/[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 168797e7-e44d-47ac-85a1-f6f9ed52b307
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      8ac27824-5811-4b56-b057-cfb0aac44cf0:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 8ac27824-5811-4b56-b057-cfb0aac44cf0
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Beach Volleyball'
 id: usfdons_womens_beachvolleyball
 description: 'Feed for USF Dons athletics events - Women''s Beach Volleyball'

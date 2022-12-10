@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      c7c30d48-2db1-43f7-8e39-53ff94dd6908:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: c7c30d48-2db1-43f7-8e39-53ff94dd6908
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      0cb31ace-7017-486f-87e6-ae1d651273b0:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 0cb31ace-7017-486f-87e6-ae1d651273b0
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      d36d6e2d-195c-40c9-8b3d-9113981195d9:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: d36d6e2d-195c-40c9-8b3d-9113981195d9
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      18759baa-03ab-4441-a5d5-2afe61913264:
+        find: '/[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 18759baa-03ab-4441-a5d5-2afe61913264
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      a10cbc76-2bcb-4cc4-af1d-4a8d63232cb8:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: a10cbc76-2bcb-4cc4-af1d-4a8d63232cb8
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      019a440b-1977-402c-9f1d-1572cbbf9cdc:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 019a440b-1977-402c-9f1d-1572cbbf9cdc
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Men''s Tennis'
 id: usfdons_mens_tennis
 description: 'Feed for USF Dons athletics events - Men''s Tennis'
