@@ -118,6 +118,64 @@ third_party_settings:
         source: description
         weight: 3
         label: 'Find replace'
+      1c925a27-fd78-499d-9a01-bd2b0b65c262:
+        find: '/(^.+?)+( AM)/s'
+        replace: ''
+        limit: null
+        uuid: 1c925a27-fd78-499d-9a01-bd2b0b65c262
+        plugin: find_replace_regex
+        source: title
+        weight: -10
+        label: 'Find replace REGEX'
+      74bc6cee-e629-4566-9bd2-08e5aa18f077:
+        find: '/(^.+?)+( PM)/s'
+        replace: ''
+        limit: null
+        uuid: 74bc6cee-e629-4566-9bd2-08e5aa18f077
+        plugin: find_replace_regex
+        source: title
+        weight: -9
+        label: 'Find replace REGEX'
+      db10a7b0-98d7-4a83-9f05-5448bcab6e9c:
+        find: 'University of San Francisco'
+        replace: USF
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: db10a7b0-98d7-4a83-9f05-5448bcab6e9c
+        plugin: find_replace
+        source: title
+        weight: -6
+        label: 'Find replace'
+      5fb4df42-1f7b-47c1-808d-39e59d560bcd:
+        find: '/[0-9]+/'
+        replace: ''
+        limit: null
+        uuid: 5fb4df42-1f7b-47c1-808d-39e59d560bcd
+        plugin: find_replace_regex
+        source: title
+        weight: -8
+        label: 'Find replace REGEX'
+      ffcc176d-8471-4519-b5dc-6d1be7c6ae11:
+        find: /
+        replace: ''
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: ffcc176d-8471-4519-b5dc-6d1be7c6ae11
+        plugin: find_replace
+        source: title
+        weight: -5
+        label: 'Find replace'
+      4f57ada7-2aeb-4ac4-86aa-690989c77357:
+        find: '/(\[.+?)+(\])/s'
+        replace: ''
+        limit: null
+        uuid: 4f57ada7-2aeb-4ac4-86aa-690989c77357
+        plugin: find_replace_regex
+        source: title
+        weight: -7
+        label: 'Find replace REGEX'
 label: 'USFDons Athletics Events - Women''s Cross Country'
 id: usfdons_womens_crosscountry
 description: 'Feed for USF Dons athletics events - Women''s Cross Country'
