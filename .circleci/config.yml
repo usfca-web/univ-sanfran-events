@@ -60,7 +60,8 @@ jobs:
 
     steps:
       - checkout
-
+      - run: echo "Updating composer"
+      - run: sudo composer self-update
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
