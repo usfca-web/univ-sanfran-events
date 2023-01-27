@@ -59,9 +59,11 @@ jobs:
     <<: *defaults
 
     steps:
+      - steps:
+          - add_ssh_keys:
+              fingerprints:
+                - "b5:75:ff:14:20:d5:97:f0:df:ba:4b:94:5a:f4:38:b5"
       - checkout
-      - run: echo "Updating composer"
-      - run: sudo composer self-update
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
