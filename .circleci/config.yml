@@ -96,7 +96,7 @@ jobs:
 
       - run:
           name: configure-composer
-          command: composer config --global github-oauth.github.com GITHUB_TOKEN
+          command: composer config --global github-oauth.github.com $GITHUB_TOKEN
 
       - run:
           name: run static tests
