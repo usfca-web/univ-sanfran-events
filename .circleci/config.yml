@@ -95,6 +95,10 @@ jobs:
           command: /build-tools-ci/scripts/set-environment
 
       - run:
+          name: install-composer
+          command: composer install
+
+      - run:
           name: run static tests
           command: ./.ci/test/static/run
 
