@@ -95,6 +95,10 @@ jobs:
           command: /build-tools-ci/scripts/set-environment
 
       - run:
+          name: configure-composer
+          command: composer config --global github-oauth.github.com $GITHUB_TOKEN
+
+      - run:
           name: run static tests
           command: ./.ci/test/static/run
 
