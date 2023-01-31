@@ -42,7 +42,7 @@
         "drupal/typed_data": "^1.0@beta",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_bulk_edit": "^2.6",
-        "drupal/views_bulk_operations": "^4.1",
+        "drupal/views_bulk_operations": "^4.2",
         "drupal/views_field_view": "^1.0@beta",
         "drupal/workbench_access": "^1.0@beta",
         "drush-ops/behat-drush-endpoint": "^9.4",
