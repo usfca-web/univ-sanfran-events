@@ -68,6 +68,7 @@
 /web/profiles/contrib/
 #/web/libraries/
 /web/private/scripts/quicksilver
+/web/.ht.router.php
 
 
 # Generally you should only ignore the root vendor directory. It's important
