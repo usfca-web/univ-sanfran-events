@@ -1,8 +1,0 @@
-uuid: bde2caac-6cb7-49e3-a269-8963a2e1f71f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Email Category'
-vid: email_category
-description: ''
-weight: 0

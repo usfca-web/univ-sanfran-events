@@ -1,8 +1,0 @@
-uuid: 8e21676f-6c85-4bce-86b4-f8cfeb18c2c0
-langcode: en
-status: true
-dependencies: {  }
-name: 'Colleges & Offices'
-vid: media_category
-description: 'Category filters for media entities'
-weight: 0
