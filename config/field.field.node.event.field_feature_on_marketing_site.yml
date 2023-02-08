@@ -1,0 +1,29 @@
+uuid: 4bd39799-8043-4a7d-98ed-d6c84f5ddd94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feature_on_marketing_site
+    - node.type.event
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_feature_on_marketing_site
+field_name: field_feature_on_marketing_site
+entity_type: node
+bundle: event
+label: 'Feature on Marketing Site'
+description: "You may feature your event if it has a detailed description and a proper photo.<br>\r\nEvents marked as featured are reviews and approved by OMC."
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
