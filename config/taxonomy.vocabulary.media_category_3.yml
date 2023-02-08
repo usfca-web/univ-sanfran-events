@@ -1,8 +1,0 @@
-uuid: 079f6b5f-f258-482f-a95a-318dd864ea88
-langcode: en
-status: true
-dependencies: {  }
-name: 'Third Media Category'
-vid: media_category_3
-description: ''
-weight: 0

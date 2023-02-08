@@ -1,8 +1,0 @@
-uuid: 012687fa-6c3b-49c3-b5a0-c1d3b05b23d1
-langcode: en
-status: true
-dependencies: {  }
-id: friendly_date_time
-label: 'Friendly Date Time'
-locked: false
-pattern: 'l, F j, g:i A'

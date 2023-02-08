@@ -1,6 +1,0 @@
-name: univ-sanfran-events
-recipe: pantheon
-config:
-  framework: drupal8
-  site: univ-sanfran-events
-  id: d8c86372-c3fa-4cf6-b193-d825aac21a9f

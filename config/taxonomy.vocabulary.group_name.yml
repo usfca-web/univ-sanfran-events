@@ -1,8 +1,0 @@
-uuid: 33259a52-fa0c-41d8-b0b7-62a70ccfea59
-langcode: en
-status: true
-dependencies: {  }
-name: 'Group Name'
-vid: group_name
-description: ''
-weight: 0
