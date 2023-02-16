@@ -98,14 +98,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_email_category:
-    type: entity_reference_autocomplete_tags
+    type: options_buttons
     weight: 20
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ems_booking_id:
     type: number
