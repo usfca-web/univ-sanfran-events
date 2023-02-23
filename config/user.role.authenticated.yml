@@ -5,6 +5,7 @@ dependencies:
   module:
     - comment
     - contact
+    - media
     - search
     - shortcut
     - system
@@ -22,3 +23,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'view media'
