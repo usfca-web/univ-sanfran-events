@@ -1497,7 +1497,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
+            alter_text: true
             text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
