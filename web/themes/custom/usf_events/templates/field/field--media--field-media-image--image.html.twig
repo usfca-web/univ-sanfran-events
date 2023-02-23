@@ -79,6 +79,4 @@
     {% endif %}
   </div>
 {% endif %} #}
-{%- for item in items -%}
-    {{- item.content -}}
-{%- endfor -%}
+{%- for item in items -%}{{- item.content -}}{%- endfor -%}
