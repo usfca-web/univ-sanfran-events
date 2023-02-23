@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_date
     - field.field.node.event.field_display_title
+    - field.field.node.event.field_event_category
     - field.field.node.event.field_event_website_tax
     - field.field.node.event.field_guid
     - field.field.node.event.field_slate_external_url
@@ -176,6 +177,14 @@ third_party_settings:
         source: title
         weight: -7
         label: 'Find replace REGEX'
+      e7f2502a-b7d0-4cf9-a9cc-fcd60a5c4d4e:
+        default_value: Athletics
+        only_if_empty: false
+        uuid: e7f2502a-b7d0-4cf9-a9cc-fcd60a5c4d4e
+        plugin: default_value
+        source: website_app_category
+        weight: 0
+        label: 'Set value or default value'
 label: 'USFDons Athletics Events - Men''s Baseball'
 id: usfdons_mens_baseball
 description: 'Feed for USF Dons athletics events -  Men''s Baseball'
@@ -207,6 +216,7 @@ processor_configuration:
   update_non_existent: _keep
   skip_hash_check: false
   authorize: true
+  revision: false
   expire: -1
   owner_feed_author: false
   owner_id: 0
@@ -280,6 +290,16 @@ custom_sources:
     value: 'External link text'
     label: 'External link text'
     machine_name: external_link_text
+    type: blank
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+  website_app_category:
+    value: website_app_category
+    label: website_app_category
+    machine_name: website_app_category
     type: blank
 mappings:
   -
@@ -377,3 +397,12 @@ mappings:
     settings:
       language: null
     unique: {  }
+  -
+    target: field_event_category
+    map:
+      target_id: website_app_category
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

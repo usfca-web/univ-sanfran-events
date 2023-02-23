@@ -1,0 +1,42 @@
+<?php
+function usf_events_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == "feed") {
+    
+
+        //$response = new \Symfony\Component\HttpFoundation\Response();
+        //$xml = \Drupal::service('renderer')->renderRoot($build);
+        //$response->setContent($xml);
+        //$response->headers->set('Content-Type', 'text/xml');
+
+//getResponse()->headers->set('Content-Type', 'application/rss+xml; charset=utf-8');
+//drupal_set_header('Content-Type: application/rss+xml; charset=utf-8');
+
+//$response = new \Symfony\Component\HttpFoundation\Response;
+//$response = new Response();
+//$response->headers->set('Content-Type', 'application/rss+xml; charset=utf-8');
+
+function hook_theme() {
+  return [
+    'some_feed' => [
+      'render element' => 'elements',
+      'template' => 'html--node--feed',
+    ],
+  ];
+}
+
+
+$build = [
+  '#theme' => 'some_feed',
+];
+
+$response = new \Symfony\Component\HttpFoundation\Response();
+$xml = \Drupal::service('renderer')->renderRoot($build);
+$response->setContent($xml);
+//$response->headers->set('Content-Type', 'application/rss+xml; charset=utf-8');
+$response->headers->set('Content-Type', 'text/csv; utf-8');
+
+//$variables['view']->getResponse()->headers->set('Content-Type', 'application/rss+xml; charset=utf-8');
+
+  }
+}
+
