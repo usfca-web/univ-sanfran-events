@@ -10,7 +10,7 @@ dependencies:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_widen_image_id
     - field.field.media.image.field_widen_media_description
-    - image.style.large
+    - image.style.event_description_embedded
     - media.type.image
   module:
     - image
@@ -26,7 +26,7 @@ content:
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: event_description_embedded
       image_loading:
         attribute: lazy
     third_party_settings: {  }

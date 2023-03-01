@@ -581,6 +581,12 @@ li.ui-tabs-active.ui-state-active {
     float: none;
 }
 
+.embedded-image {
+    max-width:360px;
+    padding:20px;
+}
+
+
 /* Mobile and tablet 
 @media screen and (max-width: 739px) and (min-width: 320px) {
     a.site-branding__logo {

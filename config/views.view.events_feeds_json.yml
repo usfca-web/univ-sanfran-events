@@ -1498,7 +1498,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files'':  ''https://pr-316-univ-sanfran-events.pantheonsite.io/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -1560,7 +1560,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files'':  ''https://pr-316-univ-sanfran-events.pantheonsite.io/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -2197,7 +2197,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://events.usfca.edu{{ thumbnail__target_id }}'
+            text: 'https://pr-316-univ-sanfran-events.pantheonsite.io{{ thumbnail__target_id }}'
             make_link: false
             path: ''
             absolute: false
@@ -2262,7 +2262,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://events.usfca.edu{{ thumbnail__target_id_1 }}'
+            text: 'https://pr-316-univ-sanfran-events.pantheonsite.io{{ thumbnail__target_id_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -3548,7 +3548,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files'':  ''https://pr-316-univ-sanfran-events.pantheonsite.io/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -3610,7 +3610,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  ''https://events.usfca.edu/sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files'':  ''https://pr-316-univ-sanfran-events.pantheonsite.io/sites/default/files'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false

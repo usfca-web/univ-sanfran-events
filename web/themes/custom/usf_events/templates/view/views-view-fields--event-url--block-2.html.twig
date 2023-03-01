@@ -32,8 +32,9 @@
  */
 #}
 {% set websites = fields.field_event_website_tax.content|trim|replace({" ":""})|split(",")%}
-{% set date = fields.field_date.content|date("Y-m-d") %}
-{% set bid = fields.field_ems_booking_id.content %}
+{# {% set date = fields.field_date.content|date("Y-m-d") %} #}
+{% set date = "2023-3-01" %}
+
 {% set title = fields.title.content|lower|replace({" ":"-"},{"\/":""}) %}
 {% set url = fields.view_node.content %}
 {% set stub = url|split("/") %}
@@ -80,11 +81,11 @@
             {{ fields.field_image_caption.content }}
     </div>
 {% endif %}
-{% if fields.body.content %}
+{# {% if fields.body.content %} #}
     <div class="event_body">  
             {{ fields.body.content }}
     </div>
-{% endif %}
+{# {% endif %} #}
 </div>
 {% endif %}
 
@@ -131,4 +132,9 @@
     {% endif %}
 
 {% endfor %}
+
+    <div class="event_body">  
+            {{ fields.body.content }}
+    </div>
+
 </div>
