@@ -88,8 +88,8 @@
 %}
 {{ attach_library('bartik/classy.node') }}
 
-{#% set start_date = node.field_date.value ~ 'Z' %#}
-{#% set end_date = node.field_date.end_value ~ 'Z' %#}
+{% set start_date = node.field_date.value ~ 'Z' %}
+{% set end_date = node.field_date.end_value ~ 'Z' %}
 {% set bid = node.field_ems_booking_id.value %}
 {% set sid = node.field_slate_id.value %}
 {% set gid = node.field_usfdons_game_id.value %}
