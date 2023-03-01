@@ -1,0 +1,15 @@
+uuid: 956fc1e7-98d8-45ae-8699-d315333b4d91
+langcode: en
+status: true
+dependencies: {  }
+name: event_description_embedded
+label: 'Event Description Embedded'
+effects:
+  f23c4a01-a955-467d-adcb-29d244aa068a:
+    uuid: f23c4a01-a955-467d-adcb-29d244aa068a
+    id: image_scale
+    weight: 1
+    data:
+      width: 360
+      height: null
+      upscale: false

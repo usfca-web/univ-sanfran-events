@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.feeds_item
+    - field.field.node.event.field_approve_feature_on_marketi
     - field.field.node.event.field_building
     - field.field.node.event.field_contact
     - field.field.node.event.field_date
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.event.field_event_category
     - field.field.node.event.field_event_type_id
     - field.field.node.event.field_event_website_tax
+    - field.field.node.event.field_feature_on_marketing_site
     - field.field.node.event.field_featured
     - field.field.node.event.field_group_name
     - field.field.node.event.field_guid
@@ -50,6 +52,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_approve_feature_on_marketi:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_date:
     type: daterange_default
     label: hidden
@@ -74,6 +86,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_feature_on_marketing_site:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_image_caption:
     type: basic_string

@@ -5,6 +5,7 @@ dependencies:
   module:
     - comment
     - contact
+    - media
     - search
     - system
 _core:
@@ -18,3 +19,4 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
+  - 'view media'

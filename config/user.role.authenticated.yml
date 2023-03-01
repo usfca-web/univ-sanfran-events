@@ -5,6 +5,8 @@ dependencies:
   module:
     - comment
     - contact
+    - field_permissions
+    - media
     - search
     - shortcut
     - system
@@ -22,3 +24,6 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'view field_approve_feature_on_marketi'
+  - 'view media'
+  - 'view own field_approve_feature_on_marketi'
