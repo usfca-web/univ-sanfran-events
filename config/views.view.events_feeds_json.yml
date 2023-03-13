@@ -1498,7 +1498,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  url(''<front>'')|render ~ ''sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -1560,7 +1560,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  url(''<front>'')|render ~ ''sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -1941,7 +1941,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: '{{ field_approve_feature_on_marketi|replace({"": "0"}) }}'
             make_link: false
             path: ''
             absolute: false
@@ -1974,14 +1974,14 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: boolean
           settings:
-            format: boolean
+            format: yes-no
             format_custom_false: ''
             format_custom_true: ''
           group_column: value
@@ -2006,7 +2006,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: '{{ field_terms|replace({"&#039;": "''"})}}'
             make_link: false
             path: ''
             absolute: false
@@ -2197,7 +2197,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://pr-316-univ-sanfran-events.pantheonsite.io{{ thumbnail__target_id }}'
+            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
             make_link: false
             path: ''
             absolute: false
@@ -2262,7 +2262,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://pr-316-univ-sanfran-events.pantheonsite.io{{ thumbnail__target_id_1 }}'
+            text: '{{ url(''<front>'')|render ~ thumbnail__target_id_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -3548,7 +3548,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  url(''<front>'')|render ~ ''sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -3610,7 +3610,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files'':  url(''<front>'')|render ~ ''sites/default/files'',''\n'':''''})}}'
+            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
             make_link: false
             path: ''
             absolute: false
@@ -4182,7 +4182,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://events.usfca.edu{{ thumbnail__target_id }}'
+            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
             make_link: false
             path: ''
             absolute: false
@@ -4247,7 +4247,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'https://events.usfca.edu{{ thumbnail__target_id_1 }}'
+            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
             make_link: false
             path: ''
             absolute: false
