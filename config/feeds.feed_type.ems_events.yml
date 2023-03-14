@@ -60,6 +60,7 @@ processor_configuration:
   update_non_existent: _keep
   skip_hash_check: false
   authorize: true
+  revision: false
   expire: -1
   owner_feed_author: false
   owner_id: 0
@@ -210,3 +211,10 @@ mappings:
       reference_by: name
       feeds_item: guid
       autocreate: '1'
+  -
+    target: unpublish_on
+    map:
+      value: eventendtime
+    settings:
+      language: ''
+      timezone: __SITE__
