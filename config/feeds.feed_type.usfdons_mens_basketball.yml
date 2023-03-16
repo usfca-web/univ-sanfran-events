@@ -401,3 +401,10 @@ mappings:
       reference_by: name
       autocreate: false
       feeds_item: false
+  -
+    target: unpublish_on
+    map:
+      value: ev_enddate
+    settings:
+      language: null
+      timezone: UTC
