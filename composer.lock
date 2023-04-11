@@ -3428,26 +3428,30 @@
         },
         {
             "name": "drupal/json_feed",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/json_feed.git",
-                "reference": "2.0.0"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/json_feed-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "92572d6d94691592f3ec6cc6b1c3810950f2ebe1"
+                "url": "https://ftp.drupal.org/files/projects/json_feed-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "2ed30367fa2e1ef185206f91ac4de2313c37ac17"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
             },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "phpstan/phpstan-deprecation-rules": "1.1.x-dev"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1656357330",
+                    "version": "2.0.1",
+                    "datestamp": "1681145647",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3455,8 +3459,16 @@
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "phpcs": [
+                    "vendor/bin/phpcs src tests -p"
+                ],
+                "test": [
+                    "@phpcs"
+                ]
+            },
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -5969,7 +5981,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-updates-0330",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
