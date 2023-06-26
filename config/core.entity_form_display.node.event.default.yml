@@ -165,6 +165,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_guid:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image_caption:
     type: string_textarea
     weight: 11
@@ -206,7 +214,7 @@ content:
     third_party_settings: {  }
   field_source:
     type: options_select
-    weight: 29
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -229,7 +237,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 28
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -247,7 +255,7 @@ content:
       display_label: true
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 31
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -277,13 +285,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 54
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   feeds_item: true
-  field_guid: true
   field_section: true
   field_speaker: true
   publish_on: true
