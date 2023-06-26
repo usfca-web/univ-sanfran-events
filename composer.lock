@@ -2606,17 +2606,17 @@
         },
         {
             "name": "drupal/entity_clone",
-            "version": "2.0.0-beta3",
+            "version": "2.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_clone.git",
-                "reference": "2.0.0-beta3"
+                "reference": "2.0.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_clone-2.0.0-beta3.zip",
-                "reference": "2.0.0-beta3",
-                "shasum": "099180f6f3767d2e18da5d8e2e87f2a7ce55b041"
+                "url": "https://ftp.drupal.org/files/projects/entity_clone-2.0.0-beta4.zip",
+                "reference": "2.0.0-beta4",
+                "shasum": "21b6636cea194e1f71753a54b28d4a56b42a4b00"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9 || ^10"
@@ -2630,8 +2630,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta3",
-                    "datestamp": "1682322779",
+                    "version": "2.0.0-beta4",
+                    "datestamp": "1687250852",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3428,30 +3428,31 @@
         },
         {
             "name": "drupal/json_feed",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/json_feed.git",
-                "reference": "2.0.1"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/json_feed-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "2ed30367fa2e1ef185206f91ac4de2313c37ac17"
+                "url": "https://ftp.drupal.org/files/projects/json_feed-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "0897908dae55b0e0d15f8354f8ef177bdfbd763b"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9 || ^10",
+                "php": ">=7.4"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "phpstan/phpstan-deprecation-rules": "1.1.x-dev"
+                "rector/rector": "^0.17.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1681145647",
+                    "version": "2.0.2",
+                    "datestamp": "1686682369",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3463,8 +3464,15 @@
                 "phpcs": [
                     "vendor/bin/phpcs src tests -p"
                 ],
+                "rector": [
+                    "vendor/bin/rector process --dry-run"
+                ],
+                "rector-fix": [
+                    "vendor/bin/rector process"
+                ],
                 "test": [
-                    "@phpcs"
+                    "@phpcs",
+                    "@rector"
                 ]
             },
             "license": [
@@ -5973,7 +5981,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-events-updates",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
