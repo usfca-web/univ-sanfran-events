@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.feeds_item
     - field.field.node.event.field_approve_feature_on_marketi
     - field.field.node.event.field_building
+    - field.field.node.event.field_campus_location
     - field.field.node.event.field_contact
     - field.field.node.event.field_date
     - field.field.node.event.field_display_title
@@ -47,7 +48,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 14
     region: content
     settings:
       rows: 9
@@ -63,7 +64,7 @@ content:
     third_party_settings: {  }
   field_approve_feature_on_marketi:
     type: boolean_checkbox
-    weight: 17
+    weight: 18
     region: content
     settings:
       display_label: true
@@ -76,9 +77,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_campus_location:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_contact:
     type: string_textfield
-    weight: 22
+    weight: 23
     region: content
     settings:
       size: 60
@@ -100,27 +107,27 @@ content:
     third_party_settings: {  }
   field_email_category:
     type: options_buttons
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ems_booking_id:
-    type: number
-    weight: 24
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_ems_reservation_id:
     type: number
     weight: 25
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_ems_reservation_id:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_event_category:
     type: entity_reference_autocomplete_tags
-    weight: 19
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -130,34 +137,34 @@ content:
     third_party_settings: {  }
   field_event_type_id:
     type: number
-    weight: 23
+    weight: 24
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_event_website_tax:
     type: options_buttons
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_feature_on_marketing_site:
     type: boolean_checkbox
-    weight: 16
+    weight: 17
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_featured:
     type: boolean_checkbox
-    weight: 15
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_group_name:
     type: entity_reference_autocomplete_tags
-    weight: 21
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -167,7 +174,7 @@ content:
     third_party_settings: {  }
   field_guid:
     type: string_textfield
-    weight: 28
+    weight: 29
     region: content
     settings:
       size: 60
@@ -175,7 +182,7 @@ content:
     third_party_settings: {  }
   field_image_caption:
     type: string_textarea
-    weight: 11
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -191,14 +198,14 @@ content:
     third_party_settings: {  }
   field_media:
     type: media_library_widget
-    weight: 10
+    weight: 11
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_slate_external_url:
     type: link_default
-    weight: 12
+    weight: 13
     region: content
     settings:
       placeholder_url: ''
@@ -206,7 +213,7 @@ content:
     third_party_settings: {  }
   field_slate_id:
     type: string_textfield
-    weight: 26
+    weight: 27
     region: content
     settings:
       size: 60
@@ -214,13 +221,13 @@ content:
     third_party_settings: {  }
   field_source:
     type: options_select
-    weight: 30
+    weight: 31
     region: content
     settings: {  }
     third_party_settings: {  }
   field_terms:
     type: entity_reference_autocomplete_tags
-    weight: 18
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -230,14 +237,14 @@ content:
     third_party_settings: {  }
   field_usfdons_game_id:
     type: number
-    weight: 27
+    weight: 28
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 29
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -255,7 +262,7 @@ content:
       display_label: true
     third_party_settings: {  }
   scheduler_settings:
-    weight: 31
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -285,7 +292,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 32
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
