@@ -1,0 +1,35 @@
+uuid: 4c69b980-5351-4d2f-8c6a-69a6966ccc02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_campus_location
+    - node.type.event
+    - taxonomy.vocabulary.location
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.event.field_campus_location
+field_name: field_campus_location
+entity_type: node
+bundle: event
+label: 'Campus Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
