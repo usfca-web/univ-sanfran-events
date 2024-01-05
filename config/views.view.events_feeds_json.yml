@@ -2055,7 +2055,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         field_event_category:
           id: field_event_category
@@ -2118,7 +2118,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         field_group_name:
           id: field_group_name
@@ -2181,7 +2181,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         thumbnail__target_id:
           id: thumbnail__target_id
@@ -4107,7 +4107,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         field_event_category:
           id: field_event_category
@@ -4170,7 +4170,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         field_group_name:
           id: field_group_name
@@ -4233,7 +4233,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         thumbnail__target_id:
           id: thumbnail__target_id
