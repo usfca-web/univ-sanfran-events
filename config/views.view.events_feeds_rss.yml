@@ -2577,7 +2577,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
+          separator: ','
           field_api_classes: false
         field_event_website_tax:
           id: field_event_website_tax
