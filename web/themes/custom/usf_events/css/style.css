@@ -402,12 +402,17 @@ li.ui-tabs-active.ui-state-active {
 #tabs-1 .event_body strong {
     font-weight:500;
 }
-#tabs-1 p.intro_text {
-    font-family: 'Fira Sans Extra Condensed',sans-serif;
-    font-size: 24px;
+#tabs-1 p.intro-text {
+    font-size: 1.25rem;/*24px;*/
     color: #00543c;
-    font-weight: 300;
-    line-height: 130%;
+    font-weight: 400;/*300;*/
+    line-height: 1.48;/*130%;*/
+    padding-bottom: 0.25rem;
+}
+#tabs-1 p.note {
+    font-size: .85rem;
+    line-height: 1.17;
+    padding-top: 0.5rem
 }
 
 /* TYPOGRAPHY myUSF PREVIEW */
@@ -584,7 +589,18 @@ li.ui-tabs-active.ui-state-active {
 .embedded-image {
     padding:20px;
 }
-
+#tabs-2 p.intro-text {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.48;
+    padding-bottom: 0.25rem
+}
+#tabs-2 p.note {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.3847;
+}
 
 /* Mobile and tablet 
 @media screen and (max-width: 739px) and (min-width: 320px) {
