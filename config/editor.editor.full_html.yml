@@ -60,7 +60,7 @@ settings:
             - Styles
   plugins:
     stylescombo:
-      styles: ''
+      styles: "p.intro-text|Intro Text\r\np.note|Note"
 image_upload:
   status: true
   scheme: public
