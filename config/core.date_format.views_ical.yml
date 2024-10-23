@@ -1,0 +1,10 @@
+uuid: 093c2843-4357-44ef-8e6e-7302250feeee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kCCMJC8539uI76hYNx3Jzpmp_sibvEO3Q-EuxyDogho
+id: views_ical
+label: 'Views iCal date'
+locked: true
+pattern: Ymd\THis\Z
