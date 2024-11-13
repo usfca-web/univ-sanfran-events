@@ -49,6 +49,7 @@
         "drupal/views_bulk_edit": "^2.9",
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_field_view": "^1.0@beta",
+        "drupal/views_ical": "^1.0@alpha",
         "drupal/workbench_access": "^1.0@beta",
         "drush-ops/behat-drush-endpoint": "^9.4",
         "drush/drush": "^10",
