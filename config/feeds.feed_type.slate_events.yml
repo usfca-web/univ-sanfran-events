@@ -21,14 +21,6 @@ dependencies:
 third_party_settings:
   feeds_tamper:
     tampers:
-      03db3f9d-dedf-43d2-b7af-2ad932d32964:
-        default_value: draft
-        only_if_empty: false
-        uuid: 03db3f9d-dedf-43d2-b7af-2ad932d32964
-        plugin: default_value
-        source: blank
-        weight: 0
-        label: 'Set value or default value'
       0b9f04ec-c3b2-479a-9fd7-f4500c5c1181:
         default_value: USFCA
         only_if_empty: false
@@ -182,13 +174,6 @@ mappings:
       language: null
     unique: {  }
   -
-    target: moderation_state
-    map:
-      value: blank
-    settings:
-      language: null
-    unique: {  }
-  -
     target: field_event_website_tax
     map:
       target_id: blank2
@@ -197,6 +182,7 @@ mappings:
       reference_by: name
       feeds_item: guid
       autocreate: '1'
+      autocreate_bundle: website
   -
     target: field_slate_external_url
     map:
@@ -213,6 +199,7 @@ mappings:
       reference_by: name
       feeds_item: guid
       autocreate: '1'
+      autocreate_bundle: source
   -
     target: field_guid
     map:
@@ -220,7 +207,7 @@ mappings:
     settings:
       language: null
     unique:
-      value: '1'
+      value: 1
   -
     target: field_location
     map:
@@ -237,6 +224,7 @@ mappings:
       reference_by: name
       feeds_item: guid
       autocreate: '1'
+      autocreate_bundle: group_name
   -
     target: field_slate_id
     map:
