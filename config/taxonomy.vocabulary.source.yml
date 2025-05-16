@@ -6,3 +6,4 @@ name: Source
 vid: source
 description: 'Source of event. (EMS/Slate)'
 weight: 0
+new_revision: false

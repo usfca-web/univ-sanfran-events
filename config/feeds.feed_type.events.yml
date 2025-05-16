@@ -81,7 +81,7 @@ third_party_settings:
         label: 'Find replace'
       cc8613ef-6197-48e5-8ce8-3681a4200515:
         find: '&#039;'
-        replace: ''''
+        replace: "'"
         case_sensitive: false
         word_boundaries: false
         whole: false
@@ -92,7 +92,7 @@ third_party_settings:
         label: 'Find replace'
       33895d13-a67b-41e3-acb9-313c27a791a0:
         find: '&amp;#039;'
-        replace: ''''
+        replace: "'"
         case_sensitive: false
         word_boundaries: false
         whole: false

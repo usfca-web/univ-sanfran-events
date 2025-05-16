@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Second Media Category'
 vid: media_category_2
-description: ''
+description: null
 weight: 0
+new_revision: false

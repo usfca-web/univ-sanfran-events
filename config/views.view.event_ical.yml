@@ -106,7 +106,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{field_date__value|date(''Ymd'')}}T{{field_date__value|date(''His'')}}Z'
+            text: "{{field_date__value|date('Ymd')}}T{{field_date__value|date('His')}}Z"
             make_link: false
             path: ''
             absolute: false
@@ -171,7 +171,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{field_date_1__end_value|date(''Ymd'') }}T{{ field_date_1__end_value|date(''His'')}}Z'
+            text: "{{field_date_1__end_value|date('Ymd') }}T{{ field_date_1__end_value|date('His')}}Z"
             make_link: false
             path: ''
             absolute: false
@@ -490,7 +490,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date_1__end_value|date(''Ymd'') }}T{{ field_date_1__end_value|date(''His'') }}'
+            text: "{{ field_date_1__end_value|date('Ymd') }}T{{ field_date_1__end_value|date('His') }}"
             make_link: false
             path: ''
             absolute: false
@@ -561,6 +561,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -604,7 +605,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: ignore
           exception:
             value: all
@@ -615,7 +616,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -632,6 +632,7 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status

@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category_2
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Men''s Soccer'
+label: "USFDons Athletics Events - Men's Soccer"
 id: usfdons_mens_soccer
-description: 'Feed for USF Dons athletics events - Men''s Soccer'
+description: "Feed for USF Dons athletics events - Men's Soccer"
 help: ''
 import_period: 3600
 fetcher: http

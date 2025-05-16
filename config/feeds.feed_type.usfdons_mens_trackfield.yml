@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Men''s Track & Field'
+label: "USFDons Athletics Events - Men's Track & Field"
 id: usfdons_mens_trackfield
-description: 'Feed for USF Dons athletics events - Men''s Track & Field'
+description: "Feed for USF Dons athletics events - Men's Track & Field"
 help: ''
 import_period: 3600
 fetcher: http

@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Men''s Cross Country'
+label: "USFDons Athletics Events - Men's Cross Country"
 id: usfdons_mens_crosscountry
-description: 'Feed for USF Dons athletics events - Men''s Cross Country'
+description: "Feed for USF Dons athletics events - Men's Cross Country"
 help: ''
 import_period: 3600
 fetcher: http

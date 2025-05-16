@@ -6,6 +6,7 @@ dependencies:
     - comment
     - contact
     - field_permissions
+    - file
     - media
     - search
     - shortcut
@@ -21,6 +22,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'delete own files'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

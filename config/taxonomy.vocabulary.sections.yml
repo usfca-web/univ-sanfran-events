@@ -1,8 +1,0 @@
-uuid: 063bef98-e2b6-4d8e-b434-6ff154bab2de
-langcode: en
-status: true
-dependencies: {  }
-name: Sections
-vid: sections
-description: 'Sections for Workbench Access'
-weight: 0

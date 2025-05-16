@@ -24,7 +24,7 @@ third_party_settings:
         label: 'Find replace'
       87c64ef8-2fa5-4ecb-9327-faa67b1734d6:
         find: '&amp;#039;'
-        replace: ''''
+        replace: "'"
         case_sensitive: false
         word_boundaries: false
         whole: false
@@ -35,7 +35,7 @@ third_party_settings:
         label: 'Find replace'
       5798c525-dd34-4f02-b44b-ec6f0d4090e9:
         find: '&#039;'
-        replace: ''''
+        replace: "'"
         case_sensitive: false
         word_boundaries: false
         whole: false

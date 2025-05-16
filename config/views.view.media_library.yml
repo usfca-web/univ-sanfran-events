@@ -156,6 +156,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -178,6 +179,7 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
+              autosubmit_textfield_minimum_length: 3
             sort:
               plugin_id: default
               advanced:
@@ -195,30 +197,41 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
+                  hide_label: false
               field_media_category_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: true
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
+                  hide_label: false
               field_media_category_2_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: true
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
+                  hide_label: false
               field_media_category_3_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: true
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
+                  hide_label: false
       access:
         type: perm
         options:
@@ -991,7 +1004,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1226,7 +1238,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - user
         - user.permissions
       tags:
         - 'config:core.entity_view_display.media.audio.default'
@@ -1309,6 +1320,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
       access:
         type: perm
         options:
@@ -1334,7 +1354,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1577,6 +1596,5 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
-        - user
         - user.permissions
       tags: {  }

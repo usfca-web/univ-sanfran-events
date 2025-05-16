@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Women''s Soccer'
+label: "USFDons Athletics Events - Women's Soccer"
 id: usfdons_womens_soccer
-description: 'Feed for USF Dons athletics events - Women''s Soccer'
+description: "Feed for USF Dons athletics events - Women's Soccer"
 help: ''
 import_period: 3600
 fetcher: http

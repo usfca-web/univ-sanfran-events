@@ -6,3 +6,4 @@ name: 'Website to Appear on'
 vid: website
 description: 'Which website should the event appear on? (USFCA/MyUSF)'
 weight: 0
+new_revision: false

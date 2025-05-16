@@ -21,7 +21,6 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
-  csv_serialization: 0
   ctools: 0
   date_popup: 0
   datetime: 0
@@ -62,6 +61,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   quickedit: 0
   rabbit_hole: 0
   rdf: 0
@@ -82,13 +82,13 @@ module:
   typed_data: 0
   ultimate_cron: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_bulk_edit: 0
   views_bulk_operations: 0
   views_field_view: 0
   views_ical: 0
   views_ui: 0
-  workbench_access: 0
   workflows: 0
   pathauto: 1
   externalauth: 10

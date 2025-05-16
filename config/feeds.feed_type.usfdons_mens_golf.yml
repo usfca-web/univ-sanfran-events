@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Men''s Golf'
+label: "USFDons Athletics Events - Men's Golf"
 id: usfdons_mens_golf
-description: 'Feed for USF Dons athletics events - Men''s Golf'
+description: "Feed for USF Dons athletics events - Men's Golf"
 help: ''
 import_period: 3600
 fetcher: http

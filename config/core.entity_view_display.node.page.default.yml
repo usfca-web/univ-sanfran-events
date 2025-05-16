@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_additional_content
     - node.type.page
   module:
     - text
@@ -25,4 +26,5 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_additional_content: true

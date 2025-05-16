@@ -6,3 +6,4 @@ name: 'Colleges & Offices'
 vid: media_category
 description: 'Category filters for media entities'
 weight: 0
+new_revision: false

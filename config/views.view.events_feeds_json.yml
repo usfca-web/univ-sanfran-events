@@ -884,6 +884,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -927,7 +928,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: ignore
           exception:
             value: all
@@ -938,7 +939,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -960,6 +960,7 @@ display:
             multiple: 0
           break_phrase: true
           not: false
+          target_entity_type_id: taxonomy_term
         field_event_website_tax_target_id:
           id: field_event_website_tax_target_id
           table: node__field_event_website_tax
@@ -967,7 +968,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: ignore
           exception:
             value: all
@@ -978,7 +979,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1000,6 +1000,7 @@ display:
             multiple: 0
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         type:
           id: type
@@ -1307,7 +1308,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date|split(''--'')[0]|trim  }}'
+            text: "{{ field_date|split('--')[0]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -1371,7 +1372,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date_1|split(''--'')[1]|trim  }}'
+            text: "{{ field_date_1|split('--')[1]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -1435,7 +1436,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date_2|split(''--'')[1]|split(''T'')[0]|trim  }}'
+            text: "{{ field_date_2|split('--')[1]|split('T')[0]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -1499,7 +1500,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
+            text: "{{ body|replace({'/sites/default/files/styles':  url('<front>')|render ~ 'sites/default/files/styles','\\n':''})}}"
             make_link: false
             path: ''
             absolute: false
@@ -1561,7 +1562,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
+            text: "{{ body|replace({'/sites/default/files/styles':  url('<front>')|render ~ 'sites/default/files/styles','\\n':''})}}"
             make_link: false
             path: ''
             absolute: false
@@ -2198,7 +2199,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
+            text: "{{ url('<front>')|render ~ thumbnail__target_id }}"
             make_link: false
             path: ''
             absolute: false
@@ -2263,7 +2264,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ url(''<front>'')|render ~ thumbnail__target_id_1 }}'
+            text: "{{ url('<front>')|render ~ thumbnail__target_id_1 }}"
             make_link: false
             path: ''
             absolute: false
@@ -3557,7 +3558,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date|split(''--'')[0]|trim  }}'
+            text: "{{ field_date|split('--')[0]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -3621,7 +3622,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date_1|split(''--'')[1]|trim  }}'
+            text: "{{ field_date_1|split('--')[1]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -3685,7 +3686,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_date_2|split(''--'')[1]|split(''T'')[0]|trim  }}'
+            text: "{{ field_date_2|split('--')[1]|split('T')[0]|trim  }}"
             make_link: false
             path: ''
             absolute: false
@@ -3749,7 +3750,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
+            text: "{{ body|replace({'/sites/default/files/styles':  url('<front>')|render ~ 'sites/default/files/styles','\\n':''})}}"
             make_link: false
             path: ''
             absolute: false
@@ -3811,7 +3812,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body|replace({''/sites/default/files/styles'':  url(''<front>'')|render ~ ''sites/default/files/styles'',''\n'':''''})}}'
+            text: "{{ body|replace({'/sites/default/files/styles':  url('<front>')|render ~ 'sites/default/files/styles','\\n':''})}}"
             make_link: false
             path: ''
             absolute: false
@@ -4383,7 +4384,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
+            text: "{{ url('<front>')|render ~ thumbnail__target_id }}"
             make_link: false
             path: ''
             absolute: false
@@ -4448,7 +4449,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ url(''<front>'')|render ~ thumbnail__target_id }}'
+            text: "{{ url('<front>')|render ~ thumbnail__target_id }}"
             make_link: false
             path: ''
             absolute: false
