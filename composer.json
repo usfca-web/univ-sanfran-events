@@ -61,6 +61,7 @@
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_field_view": "^1.0@beta",
         "drupal/views_ical": "^1.0@alpha",
+        "drupal/workbench_access": "^2.0",
         "drush-ops/behat-drush-endpoint": "^9.4",
         "drush/drush": "^12.4.3",
         "pantheon-systems/drupal-integrations": "^9",
