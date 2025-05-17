@@ -27,6 +27,7 @@
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/csv_serialization": "^4.0",
         "drupal/ctools": "^4.0",
         "drupal/date_popup": "^1.1",
         "drupal/diff": "^1.1",
