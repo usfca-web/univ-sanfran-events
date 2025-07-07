@@ -146,14 +146,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_event_website_tax:
-    type: entity_reference_autocomplete_tags
+    type: options_buttons
     weight: 15
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_feature_on_marketing_site:
     type: boolean_checkbox

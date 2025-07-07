@@ -32,7 +32,8 @@
  */
 #}
 {% set websites = fields.field_event_website_tax.content|trim|replace({" ":""})|split(",")%}
-{% set date = fields.field_date.content|date("Y-m-d") %}
+{# {% set date = fields.field_date.content|date("Y-m-d") %} #}
+{% set date = fields.field_date.raw|date("Y-m-d") %}
 {% set bid = fields.field_ems_booking_id.content %}
 {% set title = fields.title.content|lower|replace({" ":"-"},{"\/":""}) %}
 {% set url = fields.view_node.content %}
@@ -49,6 +50,14 @@
 
 {% set location = fields.field_location.content %}
 {% set building = fields.field_building.content  %}
+
+{% set rsvp_link_title = fields.field_slate_external_url_1.content %}
+    {% if rsvp_link_title is not empty %}
+        {% set rsvp_link_title = rsvp_link_title %}
+    {% else %}
+        {% set rsvp_link_title = "rsvp"%}
+    {% endif %}
+
 
 <div class="preview_tabs">
 <div id="tabs">
@@ -118,8 +127,8 @@
         </div>
     {% endif %}
     {% if fields.field_slate_external_url.content %}
-        <div class="event_rsvp_link">  
-            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank"> {{ fields.field_slate_external_url_1.content }}</a></p>
+        <div class="event_rsvp_link">
+            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank">{{ rsvp_link_title }}</a></p>
         </div>
     {% endif %}
     {% if fields.body.content %}
