@@ -79,6 +79,26 @@
             {{ fields.field_display_title.content }}
         </div>
     </div>
+
+{% if fields.field_slate_external_url.content %}
+    <div class="event_rsvp_link">
+        <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank">{{ rsvp_link_title }}</a></p>
+    </div>
+{% endif %}
+    <div class="event_date">
+        {{ start  ~ ' - ' }} {{ end }}
+    </div>
+    <div class="event_location">
+{% if location is not empty %}
+        {{ location }}
+{% endif %}
+{% if location is not empty and building is not empty %}
+        - 
+{% endif %}
+{% if building is not empty %}
+        {{  building }}
+{% endif %}
+    </div>
 {% if fields.field_media.content %} 
     <div class="event_media">
             {{ fields.field_media.content }}
