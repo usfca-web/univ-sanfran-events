@@ -207,6 +207,21 @@ tr:nth-child(2n) {
     background: rgba(0,0,0,0.033);
 }
 
+/* ----------------- */
+.media-library-selection .media-library-item {
+    background: none;
+    border: none;
+}
+.media-library-selection .media-library-item .embedded-image {
+    padding-left: 0px;
+}
+details#edit-revision-information {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* ---------------- */
+
 /* MEDIA LIBRARY */
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front.media-library-widget-modal.ui-dialog--narrow.ui-dialog-buttons {
@@ -215,6 +230,112 @@ tr:nth-child(2n) {
     left: 15%!important;
     padding: 20px;
 }
+/*------ Add media modal -----------------------*/
+.ui-dialog.media-library-widget-modal.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons {
+    background: white !important;
+}
+.ui-dialog .ui-dialog-titlebar {
+    padding: 15px 49px 15px 15px;
+    background: #ccc!important;
+}
+.media-library-item--grid{
+   /* background-color: #ebebeb;*/
+    border: 1px solid #dbdbdb;
+}
+.media-library-views-form .media-library-item--grid {
+    margin-left: 0% !important;
+    margin-right: 1.8%;
+}
+.media-library-item .form-type-checkbox {
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+form#views-exposed-form-media-library-widget,
+form#views-exposed-form-media-library-widget-table {
+    height: 150px;
+}
+.form--inline div.form-wrapper .form-submit {
+    margin-top: 0px!important;
+}
+.form--inline .form-wrapper {
+    width:unset!important;
+}
+.view-filters details {
+    border-radius:0!important;
+    position: relative;
+    top: 24px;
+    height: 34px;
+    font-size: 0.9em;
+}
+.view-filters summary {
+    background-color: #fff!important;
+    padding: 5px 10px 5px;
+}
+.view-filters input, 
+.view-filters select, 
+.view-filters .form-wrapper, 
+.view-filters .form-wrapper summary {
+    width: 15vw;
+}
+#views-exposed-form-media-library-widget input.button,
+.form--inline div.form-wrapper .form-submit {
+    width: 150px !important;
+}
+
+details > .details-wrapper {
+    padding: 0.5em 0 0 0!important;
+}
+.form--inline div.form-wrapper .form-submit {
+    position: relative;
+    top: 30px;
+    height: 38px !important;
+    border-radius: 18px;
+    font-size: 0.9em;
+}
+.embedded-image {
+    text-align: center;
+    padding: 0 20px!important;
+}
+.media-library-item__attributes {
+    position: relative;
+}
+.media-library-item__name {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    padding: 10px;
+    display: block;
+    overflow: hidden;
+    /*margin: 2px;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+   /*border: 1px solid red;*/
+    width: 15vw;
+}
+.media-library-item__name:hover {
+    overflow: unset;
+    white-space: normal;
+}
+.media-library-item--grid .field--name-thumbnail img {
+    height: 180px;
+    object-fit: contain;
+    object-position: center center;
+}
+.media-library-item__click-to-select-trigger {
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+}
+.media-library-views-form .media-library-item {
+    width: calc(75vw - 2em) !important; /*div.media-library-widget-modal is 75% (=75vw) and #drupal-modal has 1em+1em padding left and right)*/
+}
+input#edit-field-date-0-value-time,
+input#edit-field-date-0-value-date {
+    height:33px!important;
+}
+/*-----------------------------*/
+
 .media-library-views-form .media-library-item {
     max-width: 14.6%;
 }
