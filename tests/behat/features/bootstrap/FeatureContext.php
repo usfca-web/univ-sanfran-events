@@ -1,32 +1,23 @@
 <?php
 
-use Behat\Behat\Context\Context;
+use Behat\Behat\Tester\Exception\PendingException;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
-use Drupal\user\Entity\User;
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
 
-class FeatureContext extends RawDrupalContext implements Context {
-
-  public function __construct() {}
+/**
+ * Defines application features from the specific context.
+ */
+class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
 
   /**
-   * @BeforeScenario
+   * Initializes context.
+   *
+   * Every scenario gets its own context instance.
+   * You can also pass arbitrary arguments to the
+   * context constructor through behat.yml.
    */
-  public function cleanUpUsers(BeforeScenarioScope $scope) {
-    $emails = [
-      'joe@example.com',
-      'test@example.com',
-    ];
-
-    $user_storage = \Drupal::entityTypeManager()->getStorage('user');
-
-    foreach ($emails as $email) {
-      $users = $user_storage->loadByProperties(['mail' => $email]);
-      foreach ($users as $user) {
-        // Cancel user and delete their content.
-        user_cancel([], $user->id(), 'user_cancel_delete');
-        $user_storage->resetCache([$user->id()]);
-      }
-    }
+  public function __construct() {
   }
 }
