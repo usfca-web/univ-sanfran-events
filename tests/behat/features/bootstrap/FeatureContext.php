@@ -7,11 +7,7 @@ use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 class FeatureContext extends RawDrupalContext implements Context {
 
-  /**
-   * Initializes context.
-   */
-  public function __construct() {
-  }
+  public function __construct() {}
 
   /**
    * @BeforeScenario
@@ -21,11 +17,15 @@ class FeatureContext extends RawDrupalContext implements Context {
       'joe@example.com',
       'test@example.com',
     ];
+
+    $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+
     foreach ($emails as $email) {
-      $user = user_load_by_mail($email);
-      if ($user) {
+      $users = $user_storage->loadByProperties(['mail' => $email]);
+      foreach ($users as $user) {
+        // Cancel user and delete their content.
         user_cancel([], $user->id(), 'user_cancel_delete');
-        \Drupal::entityTypeManager()->getStorage('user')->resetCache([$user->id()]);
+        $user_storage->resetCache([$user->id()]);
       }
     }
   }
