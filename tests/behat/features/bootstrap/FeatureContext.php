@@ -1,17 +1,11 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\Step\Given;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
-use Behat\Behat\Context\SnippetAcceptingContext;
+use Drupal\user\Entity\User;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
-/**
- * Defines application features from the specific context.
- */
-class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
+class FeatureContext extends RawDrupalContext implements Context {
 
   /**
    * Initializes context.
@@ -20,20 +14,19 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   }
 
   /**
-   * Run a shell command, such as Drush.
-   *
-   * Example:
-   * Given I run "drush eval 'user_delete(user_load_by_mail(\"test@example.com\"));'"
-   *
-   * @Given /^I run "(.*)"$/
+   * @BeforeScenario
    */
-  public function iRun($command) {
-    $output = [];
-    $status = 0;
-    exec($command . ' 2>&1', $output, $status);
-
-    if ($status !== 0) {
-      throw new \Exception("Command failed with status $status:\nCommand: $command\nOutput:\n" . implode("\n", $output));
+  public function cleanUpUsers(BeforeScenarioScope $scope) {
+    $emails = [
+      'joe@example.com',
+      'test@example.com',
+    ];
+    foreach ($emails as $email) {
+      $user = user_load_by_mail($email);
+      if ($user) {
+        user_cancel([], $user->id(), 'user_cancel_delete');
+        \Drupal::entityTypeManager()->getStorage('user')->resetCache([$user->id()]);
+      }
     }
   }
 }
