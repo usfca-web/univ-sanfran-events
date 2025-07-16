@@ -22,7 +22,7 @@ Feature: Content
 
   @api
   Scenario: Create users
-    Given I run "drush eval \"if (\$u = user_load_by_mail('joe@example.com')) { user_delete(\$u); }\""
+    Given I run "drush user:cancel --yes --delete-content 'Joe User'"
     Given users:
     | name     | mail            | status |
     | Joe User | joe@example.com | 1      |
@@ -51,7 +51,7 @@ Feature: Content
 
   @api
   Scenario: Create nodes with specific authorship
-    Given I run "drush eval \"if (\$u = user_load_by_mail('joe@example.com')) { user_delete(\$u); }\""
+    Given I run "drush user:cancel --yes --delete-content 'Joe User'"
     Given users:
     | name     | mail            | status |
     | Joe User | joe@example.com | 1      |
