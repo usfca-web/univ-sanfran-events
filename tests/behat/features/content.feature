@@ -22,6 +22,7 @@ Feature: Content
 
   @api
   Scenario: Create users
+    Given I run "drush user:cancel --delete-content --yes 'Joe User'"
     Given users:
     | name     | mail            | status |
     | Joe User | joe@example.com | 1      |
@@ -50,6 +51,7 @@ Feature: Content
 
   @api
   Scenario: Create nodes with specific authorship
+    Given I run "drush user:cancel --delete-content --yes 'Joe User'"
     Given users:
     | name     | mail            | status |
     | Joe User | joe@example.com | 1      |
