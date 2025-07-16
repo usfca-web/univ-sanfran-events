@@ -1,4 +1,5 @@
 <?php
+
 use Behat\Behat\Context\Context;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode;
@@ -14,21 +15,17 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
 
   /**
    * Initializes context.
-   *
-   * Every scenario gets its own context instance.
-   * You can also pass arbitrary arguments to the
-   * context constructor through behat.yml.
    */
   public function __construct() {
   }
 
   /**
-   * Runs an arbitrary shell command.
+   * Run a shell command, such as Drush.
    *
-   * Example usage in .feature file:
-   * Given I run "drush eval 'if (\$u = user_load_by_mail(\"joe@example.com\")) { user_delete(\$u); }'"
+   * Example:
+   * Given I run "drush eval 'user_delete(user_load_by_mail(\"test@example.com\"));'"
    *
-   * @Given I run :command
+   * @Given /^I run "(.*)"$/
    */
   public function iRun($command) {
     $output = [];
@@ -36,7 +33,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     exec($command . ' 2>&1', $output, $status);
 
     if ($status !== 0) {
-      throw new \Exception("Command failed: $command\nOutput:\n" . implode("\n", $output));
+      throw new \Exception("Command failed with status $status:\nCommand: $command\nOutput:\n" . implode("\n", $output));
     }
   }
 }
