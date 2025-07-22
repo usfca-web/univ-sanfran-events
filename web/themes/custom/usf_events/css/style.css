@@ -556,9 +556,9 @@ li.ui-tabs-active.ui-state-active {
 
     @media screen and (min-width: 768px) { 
         width: 68.75%; /*72.91667%;*/
-        margin-left: 27.08333%;
+        padding-left: 27.08333%;
         padding-right: 4.16667%;
-        padding-left: 0;
+        margin-top:0;
     }
 }
 .preview-main-body p{
@@ -602,6 +602,7 @@ li.ui-tabs-active.ui-state-active {
         padding-right: 15.38462%;
         padding-left: 15.38462%;
         border-radius: 0 0 0 0;
+        margin-top: 0;
     }
 }
 .date-wrapper {
