@@ -434,10 +434,13 @@ li.ui-tabs-active.ui-state-active {
     height: 200px;
     margin-top: -50px;
     position: relative;
+    @media screen and (min-width: 768px) {    
+        padding-right: 4.16667%;
+        padding-left: 27.08333%;
+    }
 }
 #tabs-1 .event_display_title {
-    font-family: 'Fira Sans Extra Condensed',sans-serif;
-    font-size: 34px;
+    font-family: 'Fira Sans Extra Condensed',sans-serif;  
     font-weight: 500;
     color: #fff;
     bottom: 60px;
@@ -445,13 +448,24 @@ li.ui-tabs-active.ui-state-active {
     line-height: 130%;
     padding-left: 50px;
     padding-right: 50px; 
+    
+
+    @media screen and (max-width: 767px) and (min-width: 320px) { 
+
+        font-size: 28px;
+    }
+    @media screen and (min-width: 768px) { 
+        font-size: 36px;
+        /*margin-left: 27.08333%;*/
+        padding-left:0;
+    }
 }
 #tabs-1 .event_media {
     z-index: 3;
     margin-top: -50px;
     position: relative;
-    padding-left: 50px;
-    padding-right: 50px;
+    /*padding-left: 50px;
+    padding-right: 50px;*/
 }
 #tabs-1 .event_media img {
     width:800px;
@@ -469,8 +483,8 @@ li.ui-tabs-active.ui-state-active {
     font-size: 16px;
     font-weight:300;
     margin-top: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0px;/*50px;*/
+    padding-right: 0px;/*50px;*/
 }
 #tabs-1 .event_body .x-large_copy {
     font-family: 'IBM Plex Serif', serif;
@@ -535,6 +549,241 @@ li.ui-tabs-active.ui-state-active {
     font-weight: 400;
     font-size: 0.8125rem;
     line-height: 1.3847;
+}
+
+.preview-main-body {
+    margin-top: 4rem;
+
+    @media screen and (min-width: 768px) { 
+        width: 68.75%; /*72.91667%;*/
+        margin-left: 27.08333%;
+        padding-right: 4.16667%;
+        padding-left: 0;
+    }
+}
+.preview-main-body p{
+    @media screen and (max-width: 767px) and (min-width: 320px) { 
+        font-size: 0.875rem;
+        line-height: 1.58;
+        color: #000;
+        margin-bottom: 1.875rem;
+        font-family: 'IBM Plex Serif', serif;
+        font-weight: 400;
+    }
+}
+
+.preview-main-body  .embedded-image {
+    padding: 15px 0!important;
+}
+.preview-main-body .event_media {
+    @media screen and (max-width: 767px) and (min-width: 320px) { 
+        padding-right: 6.25%;
+        padding-left: 6.25%;
+    }
+}
+.preview-sidebar {
+    position: relative;
+    z-index: 4;
+
+    @media screen and (min-width: 768px) { 
+        width: 27.08333%;
+        position: absolute;
+        top: 210px;
+    }
+}
+.text-container {
+    padding-right: 6.25%;
+    padding-left: 6.25%;
+    margin-top: -30px;
+    z-index: 2;
+    position: relative;
+
+    @media screen and (min-width: 768px) { 
+        padding-right: 15.38462%;
+        padding-left: 15.38462%;
+        border-radius: 0 0 0 0;
+    }
+}
+.date-wrapper {
+    margin-bottom: 0.9375rem;
+    padding-top: 0.625rem;
+    padding-right: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #02B8A0;
+
+    @media screen and (min-width: 768px) { 
+        margin-bottom: 1.5625rem;
+    }
+}
+.f--date-string {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+    text-transform: uppercase;
+    justify-items: center;
+
+    @media screen and (min-width: 768px) { 
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+}
+.f--date-string span {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.125rem;
+    font-size: 2.25rem;
+    line-height: 1;
+    display: block;
+
+    @media screen and (min-width: 768px) { 
+        margin-bottom: 0.3125rem;
+        font-size: 3.75rem;
+        line-height: 1;
+    }   
+}
+.f--time-string {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1;
+    border-bottom: 0.0625rem solid #FDBB30;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) { 
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+}
+.location-wrapper {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.0625rem solid #FDBB30;
+}
+.location-wrapper .f--text {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.f--description {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.2858;
+}
+.links-container {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    margin-top: 1.875rem;
+
+    @media screen and (min-width: 768px) { 
+        margin-top: 1.5625rem;
+    }
+}
+.links-container .link {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 700!important;
+    font-size: 1.125rem;
+    line-height: 1;
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    min-height: 3.125rem;
+    border: 0.0625rem solid transparent;
+    border-radius: 0;
+    color: #000;
+    background-color: transparent;
+    text-transform: uppercase;
+    appearance: none;
+    outline-offset: 0;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    background-color: #FFF;
+    color: #000;
+    border-width: 0.125rem;
+    border-color: #FDBB30;
+    text-transform: uppercase;
+    -webkit-box-shadow: inset 0 0 0 0 #FDBB30;
+    box-shadow: inset 0 0 0 0 #FDBB30;
+    width: 99%;
+    min-width: auto;
+
+    @media screen and (min-width: 768px) { 
+        width: 100%;
+        min-width: auto;  
+    }
+}
+.links-container .link:hover {
+    font-weight: 700!important;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    background-color: #FFF;
+    color: #000;
+    border-color: #FDBB30;
+    border-width: 0.125rem;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0.1875rem #FDBB30;
+}
+.social-share-container {
+    @media screen and (max-width: 767px) and (min-width: 320px) { 
+        position: fixed;
+        bottom: 0;
+        border: 1px solid #ccc;
+        width: 90vw;
+        margin-left: -22px;
+        background: white;
+        padding-left:5px
+    }
+}
+
+.social-share-container .title {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1;
+    color: #00543C;
+    display: inline;
+    width: 100%;
+    text-align: left;
+    margin-top: 22px;
+
+    @media screen and (min-width: 768px) { 
+        display: block;
+    }
+}
+span.a2a_button_copy_link,
+span.a2a_button_facebook,
+span.a2a_button_twitter,
+span.a2a_button_linkedin,
+span.a2a_button_email,
+span.a2a_button_google_cal {
+    position: relative;
+    width: 21px;
+    height: 21px;
+    background: #FFF;
+    padding: 12px 17px 14px 0;
+    display: inline-block;
+}
+span.a2a_button_copy_link {
+    padding-left: 37px;
+
+    @media screen and (min-width: 768px) { 
+        padding-left: 7px;
+    }
 }
 
 /* TYPOGRAPHY myUSF PREVIEW */
