@@ -69,6 +69,7 @@ module:
   rest: 0
   rh_node: 0
   scheduler: 0
+  scroll_fix: 0
   search: 0
   serialization: 0
   shortcut: 0

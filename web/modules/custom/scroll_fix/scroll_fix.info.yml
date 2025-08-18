@@ -1,0 +1,5 @@
+name: Scroll Fix
+type: module
+description: 'Scroll the page back to the CKEditor after inserting media.'
+core_version_requirement: ^10
+package: Custom

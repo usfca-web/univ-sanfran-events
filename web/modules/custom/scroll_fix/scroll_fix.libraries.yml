@@ -1,0 +1,7 @@
+scroll_behavior:
+  version: 1.x
+  js:
+    js/scroll-fix.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
