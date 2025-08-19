@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_group_name
     - field.field.node.event.field_guid
     - field.field.node.event.field_location
+    - field.field.node.event.field_program_name
     - field.field.node.event.field_slate_external_url
     - field.field.node.event.field_slate_id
     - field.field.node.event.field_source
@@ -66,6 +67,8 @@ processor_configuration:
   update_existing: 2
   update_non_existent: _keep
   skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
   authorize: true
   revision: false
   expire: -1
@@ -141,6 +144,16 @@ custom_sources:
     value: FormFolder
     label: FormFolder
     machine_name: formfolder
+    type: json
+  formsubfolder:
+    value: FormSubfolder
+    label: FormSubfolder
+    machine_name: formsubfolder
+    type: json
+  formsubfolderprogram:
+    value: FormSubfolder
+    label: FormSubfolder
+    machine_name: formsubfolderprogram
     type: json
 mappings:
   -
@@ -239,3 +252,13 @@ mappings:
     settings:
       language: ''
       timezone: America/Los_Angeles
+  -
+    target: field_program_name
+    map:
+      target_id: formsubfolderprogram
+    settings:
+      language: ''
+      reference_by: name
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: program_name
