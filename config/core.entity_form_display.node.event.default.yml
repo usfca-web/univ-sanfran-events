@@ -34,6 +34,7 @@ dependencies:
     - node.type.event
     - workflows.workflow.editorial
   module:
+    - chosen_field
     - content_moderation
     - datetime_range
     - link
@@ -106,14 +107,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_email_category:
-    type: entity_reference_autocomplete_tags
+    type: options_buttons
     weight: 21
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ems_booking_id:
     type: number
@@ -130,14 +127,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_event_category:
-    type: entity_reference_autocomplete_tags
+    type: chosen_select
     weight: 20
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_event_type_id:
     type: number
