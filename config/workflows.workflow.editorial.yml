@@ -62,6 +62,12 @@ type_settings:
         - published
       to: published
       weight: 1
+    remain_unpublished:
+      label: 'Remain Unpublished'
+      from:
+        - archived
+      to: archived
+      weight: 5
   entity_types:
     node:
       - event
