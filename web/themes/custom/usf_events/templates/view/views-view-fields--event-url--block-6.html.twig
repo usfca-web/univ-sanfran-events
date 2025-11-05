@@ -73,7 +73,11 @@
 <div id="tabs-1">
     <div class="event_header_bg">
         <div class="event_display_title">
-            {{ fields.field_display_title.content }}
+            {% if fields.field_display_title.content is not empty %}
+                {{ fields.field_display_title.content }}
+            {% else %}
+                {{ fields.title.content }}
+            {% endif %}
         </div>
     </div>
 {% if fields.field_media.content %} 
@@ -97,7 +101,11 @@
 {% if website  == "MyUSF" %}
 <div id="tabs-2">
     <div class="event_display_title">
-        {{ fields.field_display_title.content }}
+            {% if fields.field_display_title.content is not empty %}
+                {{ fields.field_display_title.content }}
+            {% else %}
+                {{ fields.title.content }}
+            {% endif %}
     </div>
     <div class="event_date">
         {{ start  ~ ' - ' }} {{ end }}

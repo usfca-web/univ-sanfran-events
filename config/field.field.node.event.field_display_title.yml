@@ -9,12 +9,8 @@ dependencies:
     - disable_field
 third_party_settings:
   disable_field:
-    add_disable: roles_enable
-    add_roles:
-      - administrator
-    edit_disable: roles_enable
-    edit_roles:
-      - administrator
+    add_disable: none
+    edit_disable: none
 id: node.event.field_display_title
 field_name: field_display_title
 entity_type: node

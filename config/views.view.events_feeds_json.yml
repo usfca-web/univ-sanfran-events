@@ -1178,7 +1178,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1243,10 +1243,10 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{% if field_display_title is not empty %}\r\n{{ field_display_title }}\r\n{% else %}\r\n{{ title }}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -3285,7 +3285,7 @@ display:
         type: data_field
         options:
           field_options:
-            field_display_title:
+            title:
               alias: displayTitle
               raw_output: false
             field_date:
@@ -3428,7 +3428,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -3493,10 +3493,10 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{% if field_display_title is not empty %}\r\n{{ field_display_title }}\r\n{% else %}\r\n{{ title }}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -5470,7 +5470,7 @@ display:
         type: data_field
         options:
           field_options:
-            field_display_title:
+            title:
               alias: displayTitle
               raw_output: false
             field_date:
@@ -5612,7 +5612,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -5677,10 +5677,10 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{% if field_display_title is not empty %}\r\n{{ field_display_title }}\r\n{% else %}\r\n{{ title }}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -7796,7 +7796,7 @@ display:
         type: data_field
         options:
           field_options:
-            field_display_title:
+            title:
               alias: displayTitle
               raw_output: false
             field_date:

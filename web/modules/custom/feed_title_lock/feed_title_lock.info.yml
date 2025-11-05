@@ -1,0 +1,5 @@
+name: Feed Title Lock
+type: module
+description: "Disables the Title field on edit forms for the Event content type unless the user is an administrator."
+core_version_requirement: ^9 || ^10 || ^11
+package: Custom

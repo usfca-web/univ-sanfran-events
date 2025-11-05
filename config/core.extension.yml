@@ -33,6 +33,7 @@ module:
   editor: 0
   entity_clone: 0
   entity_reference_revisions: 0
+  feed_title_lock: 0
   feeds: 0
   feeds_dependency: 0
   feeds_ex: 0
