@@ -65,7 +65,8 @@
         "drush-ops/behat-drush-endpoint": "^9.4",
         "drush/drush": "^12.4.3",
         "pantheon-systems/drupal-integrations": "^9",
-        "pantheon-upstreams/upstream-configuration": "*"
+        "pantheon-upstreams/upstream-configuration": "*",
+        "psr/http-message": "^2.0"
     },
     "require-dev": {
         "behat/behat": "^3.10",

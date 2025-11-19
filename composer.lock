@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee555a1a3560cb829ca54f8bdf17a30e",
+    "content-hash": "d0b3310fd42d8743ecd8501301f32802",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11285,16 +11285,16 @@
         },
         {
             "name": "dmore/chrome-mink-driver",
-            "version": "2.9.3",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/behat-chrome/chrome-mink-driver.git",
-                "reference": "4dc18d3b4668e749ab7bef5a6796c13711c93e61"
+                "reference": "197c3a2e69a0d9f2572ca4461e748d0c771db4ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/behat-chrome%2Fchrome-mink-driver/repository/archive.zip?sha=4dc18d3b4668e749ab7bef5a6796c13711c93e61",
-                "reference": "4dc18d3b4668e749ab7bef5a6796c13711c93e61",
+                "url": "https://gitlab.com/api/v4/projects/behat-chrome%2Fchrome-mink-driver/repository/archive.zip?sha=197c3a2e69a0d9f2572ca4461e748d0c771db4ec",
+                "reference": "197c3a2e69a0d9f2572ca4461e748d0c771db4ec",
                 "shasum": ""
             },
             "require": {
@@ -11302,6 +11302,7 @@
                 "ext-curl": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
+                "php": "^8.1",
                 "phrity/websocket": "^1.7.0"
             },
             "require-dev": {
@@ -11329,9 +11330,9 @@
             "homepage": "https://gitlab.com/behat-chrome/chrome-mink-driver",
             "support": {
                 "issues": "https://gitlab.com/behat-chrome/chrome-mink-driver/-/issues",
-                "source": "https://gitlab.com/behat-chrome/chrome-mink-driver/-/tree/2.9.3"
+                "source": "https://gitlab.com/behat-chrome/chrome-mink-driver/-/tree/2.10.0"
             },
-            "time": "2024-05-17T12:26:55+00:00"
+            "time": "2025-10-03T23:14:32+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -12559,24 +12560,25 @@
         },
         {
             "name": "phrity/util-errorhandler",
-            "version": "1.1.1",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sirn-se/phrity-util-errorhandler.git",
-                "reference": "483228156e06673963902b1cc1e6bd9541ab4d5e"
+                "reference": "9825f15ef9b4a93252ce53ca8962278832d834da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sirn-se/phrity-util-errorhandler/zipball/483228156e06673963902b1cc1e6bd9541ab4d5e",
-                "reference": "483228156e06673963902b1cc1e6bd9541ab4d5e",
+                "url": "https://api.github.com/repos/sirn-se/phrity-util-errorhandler/zipball/9825f15ef9b4a93252ce53ca8962278832d834da",
+                "reference": "9825f15ef9b4a93252ce53ca8962278832d834da",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 | ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.0",
-                "phpunit/phpunit": "^9.0 | ^10.0 | ^11.0",
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^10.0 | ^11.0  | ^12.0",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -12604,9 +12606,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sirn-se/phrity-util-errorhandler/issues",
-                "source": "https://github.com/sirn-se/phrity-util-errorhandler/tree/1.1.1"
+                "source": "https://github.com/sirn-se/phrity-util-errorhandler/tree/1.2.1"
             },
-            "time": "2024-09-12T06:49:16+00:00"
+            "time": "2025-08-08T09:48:45+00:00"
         },
         {
             "name": "phrity/websocket",
