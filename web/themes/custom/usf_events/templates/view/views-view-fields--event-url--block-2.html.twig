@@ -41,10 +41,16 @@
 {% set start_date = fields.field_date_1.content %}
 {% set end_date = fields.field_date_2.content %}
 
-{% set day = fields.field_date_3.content|date('j') %}
+{# {% set day = fields.field_date_3.content|date('j') %}
 {% set month = fields.field_date_3.content|date('F') %}
 {% set start_time = fields.field_date_3.content|date('g:i A') %}
-{% set end_time = fields.field_date_4.content|date('g:i A') %}
+{% set end_time = fields.field_date_4.content|date('g:i A') %} #}
+
+{% set day = fields.field_date_3.raw|date('j') %}
+{% set month = fields.field_date_3.raw|date('F') %}
+{% set start_time = fields.field_date_3.raw|date('g:i A') %}
+{% set end_time = fields.field_date_4.raw|date('g:i A') %}
+
 
 {% set start = start_date|split("|") %}
 {% set start = start[0] %}
@@ -110,11 +116,13 @@
             </div>
         </div>
         <div class="f--field f--description"></div>
-        <div class="links-container">
-            <div class="f--field f--link">
-                <a class="link" href="{{ fields.field_slate_external_url.content }}"  target="_blank" rel="noopener">{{ rsvp_link_title }}</a>
+        {% if fields.field_slate_external_url.content is not empty and rsvp_link_title is not empty %}
+            <div class="links-container">
+                <div class="f--field f--link">
+                    <a class="link" href="{{ fields.field_slate_external_url.content }}"  target="_blank" rel="noopener">{{ rsvp_link_title }}</a>
+                </div>
             </div>
-        </div>
+        {% endif %}
         <div class="social-share-container">
             <span class="a2a_kit a2a_kit_size_32 addtoany_list" style="line-height: 32px;" data-a2a-url="">
                 <span class="title">
