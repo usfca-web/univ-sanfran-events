@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Women''s Triathalon'
+label: "USFDons Athletics Events - Women's Triathalon"
 id: usfdons_womens_triathalon
-description: 'Feed for USF Dons athletics events - Women''s Triathalon'
+description: "Feed for USF Dons athletics events - Women's Triathalon"
 help: ''
 import_period: 3600
 fetcher: http

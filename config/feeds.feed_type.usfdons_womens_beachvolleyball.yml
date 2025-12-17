@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Women''s Beach Volleyball'
+label: "USFDons Athletics Events - Women's Beach Volleyball"
 id: usfdons_womens_beachvolleyball
-description: 'Feed for USF Dons athletics events - Women''s Beach Volleyball'
+description: "Feed for USF Dons athletics events - Women's Beach Volleyball"
 help: ''
 import_period: 3600
 fetcher: http

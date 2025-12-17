@@ -739,6 +739,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -794,7 +795,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: ignore
           exception:
             value: all
@@ -805,7 +806,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -827,6 +827,7 @@ display:
             multiple: 1
           break_phrase: true
           not: false
+          target_entity_type_id: taxonomy_term
         field_terms_target_id:
           id: field_terms_target_id
           table: node__field_terms
@@ -834,7 +835,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: ignore
           exception:
             value: all
@@ -845,7 +846,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -866,6 +866,7 @@ display:
             multiple: 1
           break_phrase: true
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status

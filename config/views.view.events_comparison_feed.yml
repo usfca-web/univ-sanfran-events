@@ -6,7 +6,6 @@ dependencies:
     - field.storage.media.field_media_image
     - field.storage.node.field_display_title
     - field.storage.node.field_guid
-    - image.style.medium
     - node.type.event
     - taxonomy.vocabulary.website
   content:
@@ -334,6 +333,15 @@ display:
             date_format: custom
             custom_date_format: 'Y-m-d H:i:s'
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -348,6 +356,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -554,7 +563,6 @@ display:
         - 'languages:language_interface'
         - request_format
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -606,7 +614,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

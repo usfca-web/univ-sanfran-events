@@ -1,22 +1,22 @@
-uuid: cfa641c4-25c5-4d7c-8e9e-7fd77e44daa4
+uuid: 4ae0a779-1295-492b-8e35-fb053c475633
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_section
+    - field.storage.node.field_program_name
     - node.type.event
-    - taxonomy.vocabulary.sections
+    - taxonomy.vocabulary.program_name
   module:
     - disable_field
 third_party_settings:
   disable_field:
-    add_disable: none
-    edit_disable: none
-id: node.event.field_section
-field_name: field_section
+    add_disable: all
+    edit_disable: all
+id: node.event.field_program_name
+field_name: field_program_name
 entity_type: node
 bundle: event
-label: Section
+label: 'Program Name'
 description: ''
 required: false
 translatable: false
@@ -26,7 +26,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      sections: sections
+      program_name: program_name
     sort:
       field: name
       direction: asc

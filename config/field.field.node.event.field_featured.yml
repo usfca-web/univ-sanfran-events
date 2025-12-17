@@ -16,7 +16,7 @@ field_name: field_featured
 entity_type: node
 bundle: event
 label: 'Feature on myUSF home'
-description: "You may feature your event if it has a detailed description and a proper photo.<br>\r\nEvents marked as featured are subject to review by OMC."
+description: 'You may feature your event if it has a detailed description and a proper photo. Events marked as featured are reviewed by OMC.'
 required: false
 translatable: false
 default_value:

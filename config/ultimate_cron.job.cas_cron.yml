@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: cas_cron
 weight: 0
 module: cas
-callback: cas_cron
+callback: 'cas#cron'
 scheduler:
   id: simple
 launcher:

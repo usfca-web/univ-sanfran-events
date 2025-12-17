@@ -17,7 +17,7 @@ field_name: body
 entity_type: node
 bundle: event
 label: Body
-description: 'Use the Body field to add your event information. Do not repeat the date or time since this information will automatically populate on the event page.'
+description: 'Use the Body field to add your event information. Do not repeat the date, time or location. This information appears on the event from the EMS booking.'
 required: false
 translatable: true
 default_value: {  }
@@ -25,4 +25,5 @@ default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
+  allowed_formats: {  }
 field_type: text_with_summary

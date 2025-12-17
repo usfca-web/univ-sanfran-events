@@ -14,12 +14,12 @@ dependencies:
   module:
     - actions_permissions
     - content_moderation
+    - file
     - filter
     - media
     - node
     - rabbit_hole
     - views_bulk_edit
-    - workbench_access
 id: editor
 label: Author
 weight: 4
@@ -42,6 +42,7 @@ permissions:
   - 'delete media'
   - 'delete own audio media'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own video media'
@@ -65,10 +66,8 @@ permissions:
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
   - 'use editorial transition create_new_draft'
-  - 'use editorial transition review'
   - 'use text format full_html'
   - 'use views bulk edit'
-  - 'use workbench access'
   - 'view all media revisions'
   - 'view any unpublished content'
   - 'view event revisions'

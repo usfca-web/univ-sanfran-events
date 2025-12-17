@@ -33,6 +33,7 @@ module:
   editor: 0
   entity_clone: 0
   entity_reference_revisions: 0
+  feed_title_lock: 0
   feeds: 0
   feeds_dependency: 0
   feeds_ex: 0
@@ -62,12 +63,14 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   quickedit: 0
   rabbit_hole: 0
   rdf: 0
   rest: 0
   rh_node: 0
   scheduler: 0
+  scroll_fix: 0
   search: 0
   serialization: 0
   shortcut: 0
@@ -82,6 +85,7 @@ module:
   typed_data: 0
   ultimate_cron: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_bulk_edit: 0
   views_bulk_operations: 0

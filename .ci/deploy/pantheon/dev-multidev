@@ -23,13 +23,23 @@ else
   terminus -n build:env:push "$TERMINUS_SITE.dev" --yes
 fi
 
-# Update the Drupal database
-terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+# # Update the Drupal database
+# terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
 
-# If exported configuration is available, then import it.
+# # If exported configuration is available, then import it.
+# if [ -f "config/system.site.yml" ] ; then
+#   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
+# fi
+
+# If exported configuration is available, then import it first.
 if [ -f "config/system.site.yml" ] ; then
+  echo "Importing configuration before database updates..."
   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
 fi
+
+# Now update the Drupal database
+echo "Running database updates..."
+terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
 
 # Clear Drupal cache
 terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- cr

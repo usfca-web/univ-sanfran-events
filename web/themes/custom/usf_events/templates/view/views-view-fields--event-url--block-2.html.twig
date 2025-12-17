@@ -32,13 +32,25 @@
  */
 #}
 {% set websites = fields.field_event_website_tax.content|trim|replace({" ":""})|split(",")%}
-{% set date = fields.field_date.content|date("Y-m-d") %}
+{# {% set date = fields.field_date.content|date("Y-m-d") %} #}
+{% set date = fields.field_date.raw|date("Y-m-d") %}
 {% set bid = fields.field_ems_booking_id.content %}
 {% set title = fields.title.content|lower|replace({" ":"-"},{"\/":""}) %}
 {% set url = fields.view_node.content %}
 {% set stub = url|split("/") %}
 {% set start_date = fields.field_date_1.content %}
 {% set end_date = fields.field_date_2.content %}
+
+{# {% set day = fields.field_date_3.content|date('j') %}
+{% set month = fields.field_date_3.content|date('F') %}
+{% set start_time = fields.field_date_3.content|date('g:i A') %}
+{% set end_time = fields.field_date_4.content|date('g:i A') %} #}
+
+{% set day = fields.field_date_3.raw|date('j') %}
+{% set month = fields.field_date_3.raw|date('F') %}
+{% set start_time = fields.field_date_3.raw|date('g:i A') %}
+{% set end_time = fields.field_date_4.raw|date('g:i A') %}
+
 
 {% set start = start_date|split("|") %}
 {% set start = start[0] %}
@@ -49,6 +61,14 @@
 
 {% set location = fields.field_location.content %}
 {% set building = fields.field_building.content  %}
+
+{% set rsvp_link_title = fields.field_slate_external_url_1.content %}
+    {% if rsvp_link_title is not empty %}
+        {% set rsvp_link_title = rsvp_link_title %}
+    {% else %}
+        {% set rsvp_link_title = "rsvp"%}
+    {% endif %}
+
 
 <div class="preview_tabs">
 <div id="tabs">
@@ -67,31 +87,118 @@
 <div id="tabs-1">
     <div class="event_header_bg">
         <div class="event_display_title">
-            {{ fields.field_display_title.content }}
+            {% if fields.field_display_title.content is not empty %}
+                {{ fields.field_display_title.content }}
+            {% else %}
+                {{ fields.title.content }}
+            {% endif %}
         </div>
     </div>
-{% if fields.field_media.content %} 
-    <div class="event_media">
-            {{ fields.field_media.content }}
+<div class="preview-sidebar">
+    <div class="text-container">
+        <div class="date-wrapper">
+            <div class="f--field f--date-string">
+                <span>{{ day }}</span> {{ month }}
+            </div>
+        </div>
+        <div class="f--field f--time-string">
+        {{ start_time }} - {{ end_time }}
+        </div>
+        <div class="location-wrapper">
+            <div class="f--field f--text">
+                {% if building is not empty %}
+                    {{  building }}
+                {% endif %}
+                {% if location is not empty %}
+                    {{ location }}
+                {% endif %}
+              
+            </div>
+        </div>
+        <div class="f--field f--description"></div>
+        {% if fields.field_slate_external_url.content is not empty and rsvp_link_title is not empty %}
+            <div class="links-container">
+                <div class="f--field f--link">
+                    <a class="link" href="{{ fields.field_slate_external_url.content }}"  target="_blank" rel="noopener">{{ rsvp_link_title }}</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="social-share-container">
+            <span class="a2a_kit a2a_kit_size_32 addtoany_list" style="line-height: 32px;" data-a2a-url="">
+                <span class="title">
+                Share
+                </span>
+                
+
+
+                <span class="a2a_button_copy_link">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                <circle class="st0" cx="15" cy="3.2" r="2.8" fill="#00543c"/>
+                <circle class="st0" cx="3.5" cy="9.5" r="2.8" fill="#00543c"/>
+                <circle class="st0" cx="15" cy="15.6" r="2.8" fill="#00543c"/>
+                <line class="st1" x1="3.1" y1="9.7" x2="13.8" y2="15.2" fill="none" stroke="#00543c" stroke-miterlimit="10" stroke-width= "1.2632px"/>
+                <line class="st1" x1="14.5" y1="3.3" x2="3.9" y2="8.8" fill="none" stroke="#00543c" stroke-miterlimit="10" stroke-width= "1.2632px"/>
+                <rect x="0.2" y="0.1" class="st2" width="18.7" height="18.7" fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width= "0.2497px"/>
+              </svg>
+                </span>
+                <span class="a2a_label visually-hidden">Copy</span>
+
+                <span class="a2a_button_facebook">
+                <svg enable-background="new 0 0 19 19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="m18 0h-17c-.5 0-1 .5-1 1v17c0 .6.5 1 1 1h9.1v-7.3h-2.4v-2.9h2.5v-2.1c0-2.5 1.5-3.8 3.7-3.8.7 0 1.5 0 2.2.1v2.6h-1.5c-1.2 0-1.4.6-1.4 1.4v1.8h2.8l-.4 2.9h-2.5v7.3h4.9c.6 0 1-.5 1-1v-17c0-.5-.5-1-1-1z" fill="#00543C"></path></svg>
+                </span>
+                <span class="a2a_label visually-hidden">Facebook</span>
+
+                <span class="a2a_button_twitter">
+                <svg enable-background="new 0 0 19 15.5" viewBox="0 0 19 15.5" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m19 1.8c-.7.2-1.4.5-2.2.7.7-.5 1.4-1.3 1.7-2.2-.7.4-1.6.7-2.5.9-.7-.7-1.7-1.2-2.9-1.2-2.2 0-3.9 1.7-3.9 3.9 0 .2 0 .7.2.9-3.3-.2-6.2-1.7-8.2-4.1-.1.6-.5 1.3-.5 2 0 1.3.7 2.6 1.7 3.2-.7 0-1.3-.2-1.8-.5 0 2 1.3 3.6 3.1 3.8-.2.2-.5.3-.9.3-.2 0-.5 0-.7 0 .5 1.6 2 2.6 3.6 2.7-1.3 1.1-3 1.7-4.8 1.7-.4 0-.7 0-.9 0 1.7 1.2 3.8 1.7 5.9 1.7 7.2-.1 11.1-6 11.1-11.1 0-.2 0-.5 0-.5.8-.8 1.5-1.4 2-2.2" fill="#00543C" fill-rule="evenodd"></path></svg>
+                </span>
+                <span class="a2a_label visually-hidden">Twitter</span>
+
+                <span class="a2a_button_linkedin">
+                <svg enable-background="new 0 0 19 19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="m15.4 0h-11.8c-2 0-3.6 1.6-3.6 3.6v11.8c0 2 1.6 3.6 3.6 3.6h11.8c2 0 3.6-1.6 3.6-3.6v-11.8c0-2-1.6-3.6-3.6-3.6zm-9.6 15.9h-2.8v-8.6h2.8zm-1.5-9.7c-1 0-1.6-.6-1.5-1.5 0-.9.6-1.5 1.6-1.5.9 0 1.5.6 1.5 1.5s-.6 1.5-1.6 1.5zm11.7 9.7h-2.7v-4.6c0-1.2-.5-2-1.5-2-.9 0-1.4.5-1.5 1-.1.2-.1.5-.1.7v5h-2.8c0-7.8 0-8.6 0-8.6h2.8v1.2c.4-.6 1-1.5 2.5-1.5 2 0 3.3 1.2 3.3 3.8z" fill="#00543C"></path></svg>
+                </span>
+                <span class="a2a_label visually-hidden">LinkedIn</span>
+
+                <span class="a2a_button_email">
+                <svg enable-background="new 0 0 20 13" viewBox="0 0 20 13" xmlns="http://www.w3.org/2000/svg"><path d="m20 1.3v.2 10c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5v-10c0-.1 0-.1 0-.2l8.5 7.4c.9.8 2.2.8 3.1 0zm-9.5 6.2 8.5-7.4c-.1-.1-.3-.1-.5-.1h-17c-.2 0-.4 0-.6.1l8.5 7.4c.4.3.8.3 1.1 0z" fill="#00543C"></path></svg>
+                </span>
+                <span class="a2a_label visually-hidden">Email</span>
+
+                <span class="a2a_button_google_cal">
+                    <svg enable-background="new 0 0 19 19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><g><path fill="#00543C" d="M17.3,1.5h-2.2V0h-1.9v1.5H5.7V0H3.8v1.5h-2c-0.5,0-1,0.5-1,1V18c0,0.5,0.5,1,1,1h15.4c0.6,0,1-0.5,1.1-1V2.5 C18.3,2,17.8,1.5,17.3,1.5z M16.6,17.5H2.5V6.8h14.1V17.5z"></path><rect x="2.5" y="6.8" fill="#FFFFFF" width="14.1" height="10.7"></rect></g><circle fill="#00543C" cx="5.4" cy="9.6" r="1"></circle><circle fill="#00543C" cx="9.7" cy="9.6" r="1"></circle><circle fill="#00543C" cx="13.9" cy="9.5" r="1"></circle></svg>
+                </span>
+                <span class="a2a_label visually-hidden">Google Calendar</span>
+
+            </span>
+        </div>
     </div>
-{% endif %}
-{% if fields.field_image_caption.content %} 
-    <div class="event_media_caption">
-            {{ fields.field_image_caption.content }}
-    </div>
-{% endif %}
-{% if fields.body.content %}
-    <div class="event_body">  
-            {{ fields.body.content }}
-    </div>
-{% endif %}
 </div>
-{% endif %}
+<div class="preview-main-body">
+    {% if fields.field_media.content %} 
+        <div class="event_media">
+                {{ fields.field_media.content }}
+        </div>
+    {% endif %}
+    {% if fields.field_image_caption.content %} 
+        <div class="event_media_caption">
+                {{ fields.field_image_caption.content }}
+        </div>
+    {% endif %}
+    {% if fields.body.content %}
+        <div class="event_body">  
+                {{ fields.body.content }}
+        </div>
+    {% endif %}
+</div>
+    {% endif %}
 
 {% if website  == "MyUSF" %}
 <div id="tabs-2">
     <div class="event_display_title">
-        {{ fields.field_display_title.content }}
+            {% if fields.field_display_title.content is not empty %}
+                {{ fields.field_display_title.content }}
+            {% else %}
+                {{ fields.title.content }}
+            {% endif %}
     </div>
     <div class="event_date">
         {{ start  ~ ' - ' }} {{ end }}
@@ -118,8 +225,8 @@
         </div>
     {% endif %}
     {% if fields.field_slate_external_url.content %}
-        <div class="event_rsvp_link">  
-            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank"> {{ fields.field_slate_external_url_1.content }}</a></p>
+        <div class="event_rsvp_link">
+            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank">{{ rsvp_link_title }}</a></p>
         </div>
     {% endif %}
     {% if fields.body.content %}

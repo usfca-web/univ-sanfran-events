@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Group Name'
 vid: group_name
-description: ''
+description: null
 weight: 0
+new_revision: false

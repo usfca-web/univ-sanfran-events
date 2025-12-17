@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Email Category'
 vid: email_category
-description: ''
+description: null
 weight: 0
+new_revision: false

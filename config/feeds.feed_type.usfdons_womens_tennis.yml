@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Women''s Tennis'
+label: "USFDons Athletics Events - Women's Tennis"
 id: usfdons_womens_tennis
-description: 'Feed for USF Dons athletics events - Women''s Tennis'
+description: "Feed for USF Dons athletics events - Women's Tennis"
 help: ''
 import_period: 3600
 fetcher: http

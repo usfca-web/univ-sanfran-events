@@ -185,9 +185,9 @@ third_party_settings:
         source: website_app_category
         weight: 0
         label: 'Set value or default value'
-label: 'USFDons Athletics Events - Men''s Baseball'
+label: "USFDons Athletics Events - Men's Baseball"
 id: usfdons_mens_baseball
-description: 'Feed for USF Dons athletics events -  Men''s Baseball'
+description: "Feed for USF Dons athletics events -  Men's Baseball"
 help: ''
 import_period: 3600
 fetcher: http
