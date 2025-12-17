@@ -16,7 +16,7 @@ field_name: field_display_title
 entity_type: node
 bundle: event
 label: 'Display Title'
-description: "<p><i>IMPORTANT:</i> For events pulled into Drupal from <a href=\"https://ems.usfca.edu/\" target=\"_blank\">EMS</a>, the <em>\"DISPLAY TITLE\"</em>, <em>\"DATE\"</em>, <em>\"LOCATION\"</em>, and <em>\"BUILDING\"</em> fields must be edited directly within <a href=\"https://ems.usfca.edu/\" target=\"_blank\">EMS</a>.\r\n\r\n<br><br>To update these fields, please contact Events Management at <b>(415) 422-6166</b> or <a href=\"mailto:eventsmanagement@usfca.edu\">eventsmanagement@usfca.edu</a>.\r\n\r\n<br><br>All other questions regarding your calendar event should be directed to <a href=\"mailto:ecommunications@usfca.edu,webservices@usfca.edu?&subject=Event Question\">Web and Digital Communications</a>.<br><br>\r\n<a href=\"https://myusf.usfca.edu/marketing-communications/resources/events/drupal\" target=\"_blank\">View the full drupal event guide »</a></p>"
+description: "The Display Title field will default to your event title in EMS, but you can override the title using this field.\r\n"
 required: false
 translatable: false
 default_value: {  }

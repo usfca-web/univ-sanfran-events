@@ -17,7 +17,7 @@ field_name: field_campus_location
 entity_type: node
 bundle: event
 label: 'Campus Location'
-description: ''
+description: 'Fill out this field if you want your event to populate in Google search.'
 required: false
 translatable: false
 default_value: {  }

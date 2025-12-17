@@ -16,7 +16,7 @@ field_name: field_feature_on_marketing_site
 entity_type: node
 bundle: event
 label: 'Feature on Marketing Site'
-description: "You may feature your event if it has a detailed description and a proper photo.<br>\r\nEvents marked as featured are reviews and approved by OMC."
+description: 'You may feature your event if it has a detailed description and a proper photo. Events marked as featured are reviewed and approved by OMC.'
 required: false
 translatable: false
 default_value:

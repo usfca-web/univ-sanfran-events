@@ -17,7 +17,7 @@ field_name: field_terms
 entity_type: node
 bundle: event
 label: Terms
-description: "Event terms determine which event feeds your event appears in on both myUSF and the marketing website.<br>\r\nDo not use another group's event term if you do not have their permission in advance. <a href=\"/admin/taxonomy-terms?vid=terms\" target=\"_blank\">View list of terms.</a><br>\r\nIf a new term is needed, please contact webservices."
+description: 'Event terms determine if your event appears in event lists on both myUSF and USFCA sites. Do not use another group''s event term if you do not have their permission in advance. <a href="/admin/taxonomy-terms?vid=terms" target="_blank">View list of terms.</a> If a new term is needed, please contact Web Services.'
 required: false
 translatable: false
 default_value: {  }

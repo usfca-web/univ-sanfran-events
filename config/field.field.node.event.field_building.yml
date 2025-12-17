@@ -20,7 +20,7 @@ field_name: field_building
 entity_type: node
 bundle: event
 label: Building
-description: ''
+description: 'This field must be edited within <a href="https://ems.usfca.edu/" target="_blank">EMS</a>. To update this, please contact Events Management at (415) 422-6166 or <a href="mailto:eventsmanagement@usfca.edu">eventsmanagement@usfca.edu</a>.'
 required: false
 translatable: false
 default_value: {  }

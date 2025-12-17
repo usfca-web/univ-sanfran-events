@@ -27,10 +27,10 @@ function feed_title_lock_form_alter(array &$form, FormStateInterface $form_state
   // Disable the Title field but keep it visible for all non-admin users.
   if (isset($form['title']['widget'][0]['value']) && is_array($form['title']['widget'][0]['value'])) {
     $form['title']['widget'][0]['value']['#disabled'] = TRUE;
-    $form['title']['widget'][0]['value']['#description'] = t('This title is managed automatically from an external feed.');
+    $form['title']['widget'][0]['value']['#description'] = t('Title comes from EMS booking.');
   }
   elseif (isset($form['title']) && is_array($form['title'])) {
     $form['title']['#disabled'] = TRUE;
-    $form['title']['#description'] = t('This title is managed automatically from an external feed.');
+    $form['title']['#description'] = t('Title comes from EMS booking.');
   }
 }
