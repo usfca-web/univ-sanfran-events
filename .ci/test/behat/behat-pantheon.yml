@@ -1,6 +1,6 @@
 default:
-  formatter:
-    name: progress
+  formatters:
+    progress: true
   suites:
     default:
       paths: [ "%paths.base%/tests/behat/features" ]
