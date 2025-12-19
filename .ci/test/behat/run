@@ -37,4 +37,5 @@ echo "::::::::::::::::::::::::::::::::::::::::::::::::"
 echo
 
 # Run the Behat tests
-./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors "$@"
+./vendor/bin/behat --config=.ci/test/behat/behat-pantheon.yml --strict --colors
+

@@ -1,25 +1,23 @@
 default:
+  formatter:
+    name: progress
   suites:
     default:
-      paths:
-        - %paths.base%/features
+      paths: [ "%paths.base%/tests/behat/features" ]
       contexts:
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
 
   extensions:
     Behat\MinkExtension:
-      base_url: http://localhost
+      base_url: "https://example.invalid/" # overridden by BEHAT_PARAMS in CI
       sessions:
         default:
           goutte: ~
 
     Drupal\DrupalExtension:
-      drupal:
-        drupal_root: web
+      api_driver: "drush"
       drush:
-        # CRITICAL FIX
-        binary: %paths.base%/vendor/bin/drush
-        # Prevent deprecated flags from breaking builds
-        options:
-          no-interaction: true
+        # Use the CI repo drush to invoke the alias (that then SSHes to Pantheon)
+        binary: "%paths.base%/vendor/bin/drush"
+        options: "--no-ansi"
