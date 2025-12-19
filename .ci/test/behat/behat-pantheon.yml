@@ -1,0 +1,25 @@
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://localhost
+      sessions:
+        default:
+          goutte: ~
+
+    Drupal\DrupalExtension:
+      drupal:
+        drupal_root: web
+      drush:
+        # CRITICAL FIX
+        binary: /code/vendor/bin/drush
+        # Prevent deprecated flags from breaking builds
+        options:
+          no-interaction: true
