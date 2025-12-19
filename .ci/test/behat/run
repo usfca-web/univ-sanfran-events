@@ -20,17 +20,12 @@ echo "\$options['strict'] = 0;" >> ~/.drush/pantheon.aliases.drushrc.php
 
 # Dynamically set Behat configuration parameters
 # IMPORTANT: Force the *remote* drush binary on Pantheon to /code/vendor/bin/drush
-export BEHAT_PARAMS=$(
-  cat <<EOF
-{"extensions":{
-  "Behat\\\\MinkExtension":{"base_url":"https://${TERMINUS_ENV}-${TERMINUS_SITE}.pantheonsite.io/"},
-  "Drupal\\\\DrupalExtension":{"drush":{
-    "alias":"@pantheon.${TERMINUS_SITE}.${TERMINUS_ENV}",
-    "binary":"/code/vendor/bin/drush"
+export BEHAT_PARAMS='{"extensions":{
+  "Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"},
+  "Drupal\\DrupalExtension":{"drush":{
+    "alias":"@pantheon.'$TERMINUS_SITE'.'$TERMINUS_ENV'"
   }}
-}}
-EOF
-)
+}}'
 
 # Start headless Chrome
 echo "\n Starting Chrome in headless mode ..."

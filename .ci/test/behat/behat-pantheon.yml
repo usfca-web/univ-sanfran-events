@@ -19,7 +19,7 @@ default:
         drupal_root: web
       drush:
         # CRITICAL FIX
-        binary: /code/vendor/bin/drush
+        binary: %paths.base%/vendor/bin/drush
         # Prevent deprecated flags from breaking builds
         options:
           no-interaction: true
