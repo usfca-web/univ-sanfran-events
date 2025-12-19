@@ -1,6 +1,7 @@
 default:
   formatters:
     progress: true
+
   suites:
     default:
       paths: [ "%paths.base%/tests/behat/features" ]
@@ -15,9 +16,9 @@ default:
         default:
           goutte: ~
 
-  Drupal\DrupalExtension:
-    api_driver: "drush"
-    drush:
-      binary: "%paths.base%/vendor/bin/drush"
-      global_options: "--no-ansi"
+    Drupal\DrupalExtension:
+      api_driver: "drush"
+      drush:
+        binary: "%paths.base%/vendor/bin/drush"
+        global_options: "--no-ansi"
 
