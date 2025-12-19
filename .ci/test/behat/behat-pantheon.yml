@@ -15,9 +15,9 @@ default:
         default:
           goutte: ~
 
-    Drupal\DrupalExtension:
-      api_driver: "drush"
-      drush:
-        # Use the CI repo drush to invoke the alias (that then SSHes to Pantheon)
-        binary: "%paths.base%/vendor/bin/drush"
-        options: "--no-ansi"
+  Drupal\DrupalExtension:
+    api_driver: "drush"
+    drush:
+      binary: "%paths.base%/vendor/bin/drush"
+      global_options: "--no-ansi"
+
