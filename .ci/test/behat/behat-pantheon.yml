@@ -10,17 +10,16 @@ testwork:
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
 
-  extensions:
-    Behat\MinkExtension:
-      base_url: "https://example.invalid/"
-      sessions:
-        default:
-          browserkit_http: ~
+  mink:
+    base_url: "https://example.invalid/" # overridden by BEHAT_PARAMS in CI
+    sessions:
+      default:
+        browserkit_http: ~
 
-    Drupal\DrupalExtension:
-      api_driver: "drush"
-      drush:
-        binary: "%paths.base%/vendor/bin/drush"
-        global_options: "--no-ansi"
+  drupal:
+    api_driver: "drush"
+    drush:
+      binary: "%paths.base%/vendor/bin/drush"
+      global_options: "--no-ansi"
 
 
