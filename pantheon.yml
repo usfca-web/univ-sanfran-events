@@ -5,7 +5,7 @@ api_version: 1
 # PHP Version:
 # https://pantheon.io/docs/pantheon-yml#php-version
 # Set site's PHP version to 8.1
-php_version: 8.1
+php_version: 8.3
 
 # Drush Version
 # https://pantheon.io/docs/pantheon-yml/#drush-version
