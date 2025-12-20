@@ -1,4 +1,4 @@
-testwork:
+default:
   formatters:
     progress: true
 
@@ -10,14 +10,16 @@ testwork:
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
 
-  mink:
-    base_url: "https://example.invalid/"
-    sessions:
-      default:
-        browserkit_http: ~
+  extensions:
+    Behat\MinkExtension:
+      base_url: "https://example.invalid/"
+      sessions:
+        default:
+          browserkit_http: ~
 
-  drupal:
-    api_driver: "drush"
-    drush:
-      binary: "%paths.base%/vendor/bin/drush"
-      global_options: "--no-ansi"
+    Drupal\DrupalExtension:
+      api_driver: "drush"
+      drush:
+        # CI overrides alias + binary; this is safe fallback
+        binary: "%paths.base%/vendor/bin/drush"
+        global_options: "--no-ansi"
