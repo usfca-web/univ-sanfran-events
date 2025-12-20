@@ -14,7 +14,7 @@ default:
       base_url: "https://example.invalid/" # overridden by BEHAT_PARAMS in CI
       sessions:
         default:
-          browserkit: ~
+          browserkit_http: ~
 
     Drupal\DrupalExtension:
       api_driver: "drush"
