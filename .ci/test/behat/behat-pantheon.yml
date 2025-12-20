@@ -1,17 +1,18 @@
-default:
+testwork:
   formatters:
     progress: true
 
   suites:
     default:
-      paths: [ "%paths.base%/tests/behat/features" ]
+      paths:
+        - tests/behat/features
       contexts:
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
 
   extensions:
     Behat\MinkExtension:
-      base_url: "https://example.invalid/" # overridden by BEHAT_PARAMS in CI
+      base_url: "https://example.invalid/"
       sessions:
         default:
           browserkit_http: ~
@@ -21,4 +22,5 @@ default:
       drush:
         binary: "%paths.base%/vendor/bin/drush"
         global_options: "--no-ansi"
+
 
