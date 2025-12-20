@@ -25,7 +25,7 @@ export BEHAT_PARAMS='{
     "Drupal\\DrupalExtension": {
       "drush": {
         "alias": "@pantheon.'"$TERMINUS_SITE"'.'"$TERMINUS_ENV"'",
-        "binary": "'"$PWD"'/vendor/bin/drush",
+        "binary": "/app/vendor/bin/drush",
         "global_options": "--no-ansi"
       }
     },
@@ -46,6 +46,11 @@ echo "::::::::::::::::::::::::::::::::::::::::::::::::"
 echo "Behat test site: $TERMINUS_SITE.$TERMINUS_ENV"
 echo "::::::::::::::::::::::::::::::::::::::::::::::::"
 echo
+
+echo "PWD=$PWD"
+ls -la vendor/bin || true
+which drush || true
+find . -maxdepth 4 -path "*/vendor/bin/drush" -print || true
 
 # Run the Behat tests
 ./vendor/bin/behat --config=.ci/test/behat/behat-pantheon.yml --strict --colors
