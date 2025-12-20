@@ -25,7 +25,7 @@ export BEHAT_PARAMS='{
     "Drupal\\DrupalExtension": {
       "drush": {
         "alias": "@pantheon.'"$TERMINUS_SITE"'.'"$TERMINUS_ENV"'",
-        "binary": "/app/vendor/bin/drush",
+        "binary": "${PWD}/vendor/bin/drush",
         "global_options": "--no-ansi"
       }
     },
@@ -52,6 +52,38 @@ ls -la vendor/bin || true
 which drush || true
 find . -maxdepth 4 -path "*/vendor/bin/drush" -print || true
 
+
+# Build a runtime behat config so we don't rely on BEHAT_PARAMS being honored.
+cat > /tmp/behat.runtime.yml <<EOF
+default:
+  formatters:
+    progress: true
+
+  suites:
+    default:
+      paths:
+        - tests/behat/features
+      contexts:
+        - Drupal\\DrupalExtension\\Context\\DrupalContext
+        - Drupal\\DrupalExtension\\Context\\MinkContext
+
+  extensions:
+    Behat\\MinkExtension:
+      base_url: "https://${TERMINUS_ENV}-${TERMINUS_SITE}.pantheonsite.io/"
+      sessions:
+        default:
+          browserkit_http: ~
+
+    Drupal\\DrupalExtension:
+      api_driver: "drush"
+      drush:
+        alias: "@pantheon.${TERMINUS_SITE}.${TERMINUS_ENV}"
+        binary: "${PWD}/vendor/bin/drush"
+        global_options: "--no-ansi"
+EOF
+
+
 # Run the Behat tests
-./vendor/bin/behat --config=.ci/test/behat/behat-pantheon.yml --strict --colors
+./vendor/bin/behat --config=/tmp/behat.runtime.yml --strict --colors
+
 
