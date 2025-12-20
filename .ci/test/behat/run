@@ -21,16 +21,19 @@ echo "\$options['strict'] = 0;" >> ~/.drush/pantheon.aliases.drushrc.php
 # Dynamically set Behat configuration parameters
 # IMPORTANT: Force the *remote* drush binary on Pantheon to /code/vendor/bin/drush
 export BEHAT_PARAMS='{
-  "extensions": {
-    "Drupal\\DrupalExtension": {
+  "testwork": {
+    "drupal": {
       "drush": {
         "alias": "@pantheon.'"$TERMINUS_SITE"'.'"$TERMINUS_ENV"'",
         "binary": "'"$PWD"'/vendor/bin/drush",
         "global_options": "--no-ansi"
       }
     },
-    "Behat\\MinkExtension": {
-      "base_url": "https://'"$TERMINUS_ENV"'-'"$TERMINUS_SITE"'.pantheonsite.io/"
+    "mink": {
+      "base_url": "https://'"$TERMINUS_ENV"'-'"$TERMINUS_SITE"'.pantheonsite.io/",
+      "sessions": {
+        "default": { "browserkit_http": null }
+      }
     }
   }
 }'
