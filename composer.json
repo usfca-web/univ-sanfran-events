@@ -20,6 +20,7 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.6",
         "drupal/bartik": "^1.0",
         "drupal/better_exposed_filters": "^7.1",
         "drupal/cas": "^3.0@beta",
