@@ -43,6 +43,7 @@ id: slate_events
 description: 'Import Events from Slate'
 help: ''
 import_period: 3600
+import_period_per_feed: false
 fetcher: http
 fetcher_configuration:
   auto_detect_feeds: false
