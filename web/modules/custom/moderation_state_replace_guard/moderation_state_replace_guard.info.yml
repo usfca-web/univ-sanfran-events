@@ -1,0 +1,6 @@
+name: 'Moderation State Replace Guard'
+type: module
+description: 'Forces Replace (disables Append) for moderation_state change method in Views Bulk Edit/VBO bulk edit forms.'
+core_version_requirement: ^10 || ^11
+package: Custom
+version: '1.0.0'
