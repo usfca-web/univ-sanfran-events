@@ -13,6 +13,7 @@ dependencies:
     - node.type.event
     - taxonomy.vocabulary.group_name
     - user.role.administrator
+    - user.role.manager
   module:
     - better_exposed_filters
     - datetime
@@ -623,6 +624,7 @@ display:
         options:
           role:
             administrator: administrator
+            manager: manager
       cache:
         type: tag
         options: {  }
