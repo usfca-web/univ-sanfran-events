@@ -90,42 +90,60 @@ final class EmsClient {
   }
 
   public function getBookingsPage(array $query): array {
-    $url = self::BASE_URL . '/api/v1/bookings';
-    $token = $this->getClientToken();
+  $url = self::BASE_URL . '/api/v1/bookings';
+  $token = $this->getClientToken();
 
-    try {
-      $res = $this->httpClient->get($url, [
-        'headers' => [
-          'Accept' => 'application/json',
-          'x-ems-api-token' => $token,
-        ],
-        'query' => $query,
-        'timeout' => 30,
-      ]);
+  $requestOptions = static function (string $token, array $query): array {
+    return [
+      'headers' => [
+        'Accept' => 'application/json',
+        'x-ems-api-token' => $token,
+      ],
+      'query' => $query,
+      // More resilient defaults than 30s total.
+      'connect_timeout' => 10,
+      'timeout' => 90,
+    ];
+  };
 
+  try {
+    $res = $this->httpClient->get($url, $requestOptions($token, $query));
+    return json_decode((string) $res->getBody(), TRUE) ?? [];
+  }
+  catch (\GuzzleHttp\Exception\ClientException $e) {
+    $status = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
+
+    // EMS uses 404 for "No results" for some queries (e.g. certain eventTypeId).
+    if ($status === 404 && $e->getResponse()) {
+      $body = (string) $e->getResponse()->getBody();
+      $json = json_decode($body, TRUE);
+
+      $msgId = is_array($json) ? (string) ($json['msgId'] ?? '') : '';
+      $message = is_array($json) ? (string) ($json['message'] ?? '') : '';
+
+      if ($msgId === 'NotFound' || stripos($message, 'no results') !== FALSE) {
+        return [
+          'page' => (int) ($query['page'] ?? 1),
+          'pageSize' => (int) ($query['pageSize'] ?? 0),
+          'pageCount' => 0,
+          'resultsCount' => 0,
+          'results' => [],
+        ];
+      }
+    }
+
+    // If token expired unexpectedly, clear and retry once.
+    if ($status === 401) {
+      $this->cache->delete('usf_ems_proxy:client_token');
+
+      $token = $this->getClientToken();
+      $res = $this->httpClient->get($url, $requestOptions($token, $query));
       return json_decode((string) $res->getBody(), TRUE) ?? [];
     }
-    catch (\GuzzleHttp\Exception\ClientException $e) {
-      // If token expired unexpectedly, clear and retry once.
-      if ($e->getResponse() && $e->getResponse()->getStatusCode() === 401) {
-        $this->cache->delete('usf_ems_proxy:client_token');
 
-        $token = $this->getClientToken();
-        $res = $this->httpClient->get($url, [
-          'headers' => [
-            'Accept' => 'application/json',
-            'x-ems-api-token' => $token,
-          ],
-          'query' => $query,
-          'timeout' => 30,
-        ]);
-
-        return json_decode((string) $res->getBody(), TRUE) ?? [];
-      }
-
-      throw $e;
-    }
+    throw $e;
   }
+}
 
   /**
    * Fetch all pages and merge results into one payload (Feeds-friendly).
