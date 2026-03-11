@@ -1,0 +1,25 @@
+default:
+  formatters:
+    progress: true
+
+  suites:
+    default:
+      paths:
+        - tests/behat/features
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+
+  extensions:
+    Behat\MinkExtension:
+      base_url: "https://example.invalid/"
+      sessions:
+        default:
+          browserkit_http: ~
+
+    Drupal\DrupalExtension:
+      api_driver: "drush"
+      drush:
+        # CI overrides alias + binary; this is safe fallback
+        binary: "%paths.base%/vendor/bin/drush"
+        global_options: "--no-ansi"
