@@ -25,11 +25,11 @@
         "drupal/better_exposed_filters": "^7.1",
         "drupal/cas": "^3.0@beta",
         "drupal/cas_attributes": "^3.0@beta",
-        "drupal/chosen": "^3.0",
+        "drupal/chosen": "^5.0",
         "drupal/config_ignore": "^3.0@beta",
-        "drupal/core-composer-scaffold": "11.3.1",
-        "drupal/core-project-message": "11.3.1",
-        "drupal/core-recommended": "11.3.1",
+        "drupal/core-composer-scaffold": "11.3.5",
+        "drupal/core-project-message": "11.3.5",
+        "drupal/core-recommended": "11.3.5",
         "drupal/csv_serialization": "^4.0.1",
         "drupal/ctools": "^4.0",
         "drupal/date_popup": "^2.0.2",
@@ -90,12 +90,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
-        "patches": {
-            "drupal/json_feed": {
-                "Drupal 11 core_version_requirement": "patches/json_feed-drupal11-core-version-requirement.patch",
-                "Allow Drupal 11 in composer requirements": "patches/json_feed-drupal11-composer-require.patch"
-                }        
-            },
+        "patches": {},
         "enable-patching": true,
         "drupal-scaffold": {
             "locations": {
