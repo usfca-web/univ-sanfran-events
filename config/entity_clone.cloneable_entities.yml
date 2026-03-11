@@ -1,3 +1,5 @@
 cloneable_entities:
   - section_association
   - access_scheme
+  - key
+  - key_config_override

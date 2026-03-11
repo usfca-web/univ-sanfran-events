@@ -52,11 +52,13 @@ module:
   jquery_ui_touch_punch: 0
   json_feed: 0
   jsonapi: 0
+  key: 0
   link: 0
   media: 0
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  moderation_state_replace_guard: 0
   mysql: 0
   node: 0
   options: 0
@@ -87,6 +89,7 @@ module:
   update: 0
   upgrade_status: 0
   user: 0
+  usf_ems_proxy: 0
   views_bulk_edit: 0
   views_bulk_operations: 0
   views_field_view: 0

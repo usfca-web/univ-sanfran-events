@@ -1,0 +1,11 @@
+uuid: c5097560-c0f1-45e8-9803-3eca49f1ec5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.bulk_edit
+label: 'Bulk Edit'
+description: ''
+targetEntityType: node
+cache: true

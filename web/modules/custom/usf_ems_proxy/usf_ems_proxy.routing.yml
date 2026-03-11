@@ -1,0 +1,6 @@
+usf_ems_proxy.bookings_all:
+  path: '/internal/ems/bookings/all'
+  defaults:
+    _controller: 'usf_ems_proxy.bookings_controller:bookingsAll'
+  requirements:
+    _access: 'TRUE'

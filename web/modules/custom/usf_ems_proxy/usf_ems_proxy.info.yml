@@ -1,0 +1,7 @@
+name: USF EMS Proxy
+type: module
+description: Internal EMS bookings proxy endpoint for Feeds (JWT client auth + pagination merge).
+core_version_requirement: ^10 || ^11
+package: USF
+dependencies:
+  - key:key

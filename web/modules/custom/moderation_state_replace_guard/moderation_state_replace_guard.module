@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * This module prevents the "Append to current value" change method from being
+ * used for moderation_state in bulk edit forms (commonly produced by Views Bulk
+ * Edit / VBO), and forces "Replace the current value" instead.
+ */
+function moderation_state_replace_guard_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // We key off the presence of the element rather than relying on a specific
+  // form ID (which can vary between module versions / action plugins).
+  if (!isset($form['node']['event']['moderation_state_change_method'])) {
+    return;
+  }
+
+  $element =& $form['node']['event']['moderation_state_change_method'];
+
+  // 1) Remove/disable the "append" option so editors can't pick it.
+  if (isset($element['#options']) && isset($element['#options']['append'])) {
+    unset($element['#options']['append']);
+  }
+  // If radios are built as children.
+  if (isset($element['append'])) {
+    $element['append']['#access'] = FALSE;
+  }
+
+  // 2) Force default to "replace" in the UI.
+  $element['#default_value'] = 'replace';
+
+  // Also set the value on the form state (useful if the form rebuilds via AJAX).
+  $form_state->setValue(['node', 'event', 'moderation_state_change_method'], 'replace');
+
+  // 3) Safety net: force submitted value to "replace" during validation.
+  $form['#validate'][] = 'moderation_state_replace_guard_force_replace_validate';
+}
+
+/**
+ * Validation handler: always force replace for moderation_state change method.
+ */
+function moderation_state_replace_guard_force_replace_validate(array &$form, FormStateInterface $form_state) {
+  if ($form_state->hasValue(['node', 'event', 'moderation_state_change_method'])) {
+    $form_state->setValue(['node', 'event', 'moderation_state_change_method'], 'replace');
+  }
+}
