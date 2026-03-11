@@ -12,8 +12,7 @@ dependencies:
     - field.storage.node.field_location
     - node.type.event
     - taxonomy.vocabulary.group_name
-    - user.role.administrator
-    - user.role.manager
+    - user.role.authenticated
   module:
     - better_exposed_filters
     - datetime
@@ -623,8 +622,7 @@ display:
         type: role
         options:
           role:
-            administrator: administrator
-            manager: manager
+            authenticated: authenticated
       cache:
         type: tag
         options: {  }
