@@ -3,5 +3,8 @@ _core:
 mode: simple
 ignored_config_entities:
   - 'block.block.*'
+  - key.key.ems_client_id
+  - key.key.ems_client_secret
+  - key.key.ems_proxy_secret
   - 'system.menu.*'
   - system.site

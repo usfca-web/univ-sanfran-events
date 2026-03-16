@@ -48,8 +48,8 @@
 
 {% set day = fields.field_date_3.raw|date('j') %}
 {% set month = fields.field_date_3.raw|date('F') %}
-{% set start_time = fields.field_date_3.raw|date('g:i A') %}
-{% set end_time = fields.field_date_4.raw|date('g:i A') %}
+{% set start_time = fields.field_date_3.content|date('g:i A') %}
+{% set end_time = fields.field_date_4.content|date('g:i A') %}
 
 
 {% set start = start_date|split("|") %}

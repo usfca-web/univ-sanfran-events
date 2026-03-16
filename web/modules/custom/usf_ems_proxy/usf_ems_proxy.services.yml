@@ -1,0 +1,13 @@
+services:
+  usf_ems_proxy.ems_client:
+    class: Drupal\usf_ems_proxy\Service\EmsClient
+    arguments: ['@http_client', '@cache.default', '@key.repository', '@logger.channel.usf_ems_proxy']
+
+  usf_ems_proxy.bookings_controller:
+    class: Drupal\usf_ems_proxy\Controller\EmsBookingsController
+    arguments: ['@usf_ems_proxy.ems_client', '@cache.default']
+    tags: ['controller.service_arguments']
+
+  logger.channel.usf_ems_proxy:
+    parent: logger.channel_base
+    arguments: ['usf_ems_proxy']
