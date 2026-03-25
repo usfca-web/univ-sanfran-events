@@ -116,6 +116,8 @@ final class EmsBookingsController extends ControllerBase {
       'minReserveStartTime' => $min,
       'maxReserveStartTime' => $max,
       'statusId' => 6,
+      'includeComponentRooms' => FALSE,
+      'reservationUDF' => 'Publish to Calendar:Yes',
     ], static fn($v) => $v !== '' && $v !== 0);
 
     // ---------------------------
