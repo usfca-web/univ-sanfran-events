@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#
-# This script runs the Behat tests.
-#
-
 # Authenticate with Terminus
 terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
 
@@ -13,15 +9,34 @@ source $BASH_ENV
 # Verbose mode and exit on errors
 set -ex
 
-# Create a drush alias file so that Behat tests can be executed against Pantheon.
-terminus alpha:aliases --no-db-url --only=$TERMINUS_SITE
-drush sa @pantheon.$TERMINUS_SITE.$TERMINUS_ENV
+# Create Drush aliases for Pantheon
+terminus alpha:aliases --no-db-url --only="$TERMINUS_SITE"
 
-# Drush Behat driver fails without this option.
+# Sanity check the alias (USE REAL VARS)
+./vendor/bin/drush sa "@pantheon.${TERMINUS_SITE}.${TERMINUS_ENV}"
+
+# Drush Behat driver fails without this option (keep if you know you need it)
 echo "\$options['strict'] = 0;" >> ~/.drush/pantheon.aliases.drushrc.php
 
 # Dynamically set Behat configuration parameters
-export BEHAT_PARAMS='{"extensions" : {"Behat\\MinkExtension" : {"base_url" : "https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"}, "Drupal\\DrupalExtension" : {"drush" :   {  "alias":  "@pantheon.'$TERMINUS_SITE'.'$TERMINUS_ENV'" }}}}'
+# IMPORTANT: Force the *remote* drush binary on Pantheon to /code/vendor/bin/drush
+export BEHAT_PARAMS='{
+  "extensions": {
+    "Drupal\\DrupalExtension": {
+      "drush": {
+        "alias": "@pantheon.'"$TERMINUS_SITE"'.'"$TERMINUS_ENV"'",
+        "binary": "${PWD}/vendor/bin/drush",
+        "global_options": "--no-ansi"
+      }
+    },
+    "Behat\\MinkExtension": {
+      "base_url": "https://'"$TERMINUS_ENV"'-'"$TERMINUS_SITE"'.pantheonsite.io/",
+      "sessions": {
+        "default": { "browserkit_http": null }
+      }
+    }
+  }
+}'
 
 # Start headless Chrome
 echo "\n Starting Chrome in headless mode ..."
@@ -32,5 +47,43 @@ echo "Behat test site: $TERMINUS_SITE.$TERMINUS_ENV"
 echo "::::::::::::::::::::::::::::::::::::::::::::::::"
 echo
 
+echo "PWD=$PWD"
+ls -la vendor/bin || true
+which drush || true
+find . -maxdepth 4 -path "*/vendor/bin/drush" -print || true
+
+
+# Build a runtime behat config so we don't rely on BEHAT_PARAMS being honored.
+cat > /tmp/behat.runtime.yml <<EOF
+default:
+  formatters:
+    progress: true
+
+  suites:
+    default:
+      paths:
+        - tests/behat/features
+      contexts:
+        - Drupal\\DrupalExtension\\Context\\DrupalContext
+        - Drupal\\DrupalExtension\\Context\\MinkContext
+
+  extensions:
+    Behat\\MinkExtension:
+      base_url: "https://${TERMINUS_ENV}-${TERMINUS_SITE}.pantheonsite.io/"
+      sessions:
+        default:
+          browserkit_http: ~
+
+    Drupal\\DrupalExtension:
+      api_driver: "drush"
+      drush:
+        alias: "@pantheon.${TERMINUS_SITE}.${TERMINUS_ENV}"
+        binary: "${PWD}/vendor/bin/drush"
+        global_options: "--no-ansi"
+EOF
+
+
 # Run the Behat tests
-./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors  "$@"
+./vendor/bin/behat --config=/tmp/behat.runtime.yml --strict --colors
+
+
