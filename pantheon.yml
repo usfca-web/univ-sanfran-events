@@ -9,7 +9,7 @@ php_version: 8.1
 
 # Drush Version
 # https://pantheon.io/docs/pantheon-yml/#drush-version
-drush_version: 9
+drush_version: 12
 
 # Protected Web Paths
 # https://pantheon.io/docs/pantheon-yml#protected-web-paths
