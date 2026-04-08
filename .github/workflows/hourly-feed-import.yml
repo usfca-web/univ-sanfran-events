@@ -8,6 +8,7 @@ on:
 jobs:
   import-feed:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       PANTHEON_SITE_ENV: univ-sanfran-events.pr-669
       FEED_ID: '6'
@@ -49,7 +50,7 @@ jobs:
           EOF
 
       - name: Run feed importer
-        run: terminus drush "$PANTHEON_SITE_ENV" -- feeds:import "$FEED_ID" -y
+        run: terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes
 
       - name: Send Slack notification
         if: always()
