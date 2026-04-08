@@ -28,8 +28,27 @@ jobs:
       - name: Authenticate with Terminus
         run: terminus auth:login --machine-token="${{ secrets.TERMINUS_MACHINE_TOKEN }}"
 
+      - name: Configure Pantheon SSH key
+        env:
+          PANTHEON_SSH_KEY: ${{ secrets.PANTHEON_SSH_PRIVATE_KEY }}
+        run: |
+          if [ -z "$PANTHEON_SSH_KEY" ]; then
+            echo "PANTHEON_SSH_PRIVATE_KEY is required for remote drush access."
+            exit 1
+          fi
+
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+          printf '%s\n' "$PANTHEON_SSH_KEY" > "$HOME/.ssh/id_rsa"
+          chmod 600 "$HOME/.ssh/id_rsa"
+
+          cat <<'EOF' >> "$HOME/.ssh/config"
+          Host *.drush.in
+            StrictHostKeyChecking accept-new
+            IdentityFile ~/.ssh/id_rsa
+          EOF
+
       - name: Run feed importer
-        id: feed_import
         run: terminus drush "$PANTHEON_SITE_ENV" -- feeds:import "$FEED_ID" -y
 
       - name: Send Slack notification
