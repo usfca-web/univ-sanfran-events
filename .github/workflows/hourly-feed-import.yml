@@ -71,5 +71,5 @@ jobs:
 
           curl -X POST \
             -H "Content-Type: application/json" \
-            --data "{\"text\":\"Hourly Feed Import ${STATUS_TEXT}\"}" \
+            --data "{\"text\":\"Hourly Events Feed Import ${STATUS_TEXT}\"}" \
             "$SLACK_WEBHOOK_URL"
