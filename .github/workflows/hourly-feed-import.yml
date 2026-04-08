@@ -57,11 +57,6 @@ jobs:
         env:
           JOB_STATUS: ${{ job.status }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-          RUN_NUMBER: ${{ github.run_number }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          REPOSITORY: ${{ github.repository }}
-          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           if [ -z "$SLACK_WEBHOOK_URL" ]; then
             echo "SLACK_WEBHOOK_URL is not set; skipping Slack notification."
@@ -69,58 +64,12 @@ jobs:
           fi
 
           if [ "$JOB_STATUS" = "success" ]; then
-            STATUS_TEXT="completed successfully"
-            STATUS_EMOJI=":white_check_mark:"
+            STATUS_TEXT="Succeeded"
           else
-            STATUS_TEXT="failed"
-            STATUS_EMOJI=":x:"
+            STATUS_TEXT="Failed"
           fi
-
-          payload=$(cat <<EOF
-          {
-            "text": "${STATUS_EMOJI} ${WORKFLOW_NAME} ${STATUS_TEXT}",
-            "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${STATUS_EMOJI} *${WORKFLOW_NAME}* ${STATUS_TEXT}"
-                }
-              },
-              {
-                "type": "section",
-                "fields": [
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Repository:*\n${REPOSITORY}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Branch:*\n${BRANCH_NAME}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Pantheon Env:*\n${PANTHEON_SITE_ENV}"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Feed ID:*\n${FEED_ID}"
-                  }
-                ]
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*Run:* <${RUN_URL}|GitHub Actions run #${RUN_NUMBER}>"
-                }
-              }
-            ]
-          }
-          EOF
-          )
 
           curl -X POST \
             -H "Content-Type: application/json" \
-            --data "$payload" \
+            --data "{\"text\":\"Hourly Feed Import ${STATUS_TEXT}\"}" \
             "$SLACK_WEBHOOK_URL"
