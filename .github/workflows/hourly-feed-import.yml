@@ -50,13 +50,34 @@ jobs:
           EOF
 
       - name: Run feed importer
-        run: terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes
+        env:
+          FEED_IMPORT_LOG: /tmp/hourly-feed-import.log
+        run: |
+          set +e
+          terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes 2>&1 | tee "$FEED_IMPORT_LOG"
+          IMPORT_EXIT_CODE=${PIPESTATUS[0]}
+
+          SUMMARY=$(grep -E 'Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items' "$FEED_IMPORT_LOG" | tail -n 8 || true)
+
+          if [ -z "$SUMMARY" ]; then
+            SUMMARY=$(tail -n 8 "$FEED_IMPORT_LOG" || true)
+          fi
+
+          {
+            echo "FEED_IMPORT_EXIT_CODE=$IMPORT_EXIT_CODE"
+            echo "FEED_IMPORT_SUMMARY<<EOF"
+            echo "$SUMMARY"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+          exit "$IMPORT_EXIT_CODE"
 
       - name: Send Slack notification
         if: always()
         env:
           JOB_STATUS: ${{ job.status }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          FEED_IMPORT_SUMMARY: ${{ env.FEED_IMPORT_SUMMARY }}
         run: |
           if [ -z "$SLACK_WEBHOOK_URL" ]; then
             echo "SLACK_WEBHOOK_URL is not set; skipping Slack notification."
@@ -65,11 +86,22 @@ jobs:
 
           if [ "$JOB_STATUS" = "success" ]; then
             STATUS_TEXT="Succeeded"
+            PREFIX=""
           else
             STATUS_TEXT="Failed"
+            PREFIX="@here "
           fi
+
+          SUMMARY_TEXT=$(printf '%s' "$FEED_IMPORT_SUMMARY" | tail -n 8)
+          if [ -n "$SUMMARY_TEXT" ]; then
+            MESSAGE="${PREFIX}Hourly Events Feed Import ${STATUS_TEXT}\n${SUMMARY_TEXT}"
+          else
+            MESSAGE="${PREFIX}Hourly Events Feed Import ${STATUS_TEXT}"
+          fi
+
+          JSON_MESSAGE=$(printf '%s' "$MESSAGE" | python3 -c 'import json,sys; print(json.dumps({"text": sys.stdin.read()}))')
 
           curl -X POST \
             -H "Content-Type: application/json" \
-            --data "{\"text\":\"Hourly Events Feed Import ${STATUS_TEXT}\"}" \
+            --data "$JSON_MESSAGE" \
             "$SLACK_WEBHOOK_URL"
