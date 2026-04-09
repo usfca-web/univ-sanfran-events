@@ -58,7 +58,7 @@ processor_configuration:
   insert_new: 1
   update_existing: 2
   update_non_existent: _keep
-  skip_hash_check: false
+  skip_hash_check: true
   authorize: true
   revision: false
   expire: -1
