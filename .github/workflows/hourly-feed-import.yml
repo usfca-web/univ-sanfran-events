@@ -5,6 +5,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+concurrency:
+  group: hourly-events-feed-import
+  cancel-in-progress: false
+
 jobs:
   import-feed:
     runs-on: ubuntu-latest
@@ -56,6 +60,10 @@ jobs:
           set +e
           terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes 2>&1 | tee "$FEED_IMPORT_LOG"
           IMPORT_EXIT_CODE=${PIPESTATUS[0]}
+
+          if grep -q 'The feed became locked before the import could begin' "$FEED_IMPORT_LOG"; then
+            IMPORT_EXIT_CODE=1
+          fi
 
           SUMMARY=$(grep -E 'Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items' "$FEED_IMPORT_LOG" | tail -n 8 || true)
 
