@@ -46,10 +46,14 @@
 {% set start_time = fields.field_date_3.content|date('g:i A') %}
 {% set end_time = fields.field_date_4.content|date('g:i A') %} #}
 
-{% set day = fields.field_date_3.raw|date('j') %}
-{% set month = fields.field_date_3.raw|date('F') %}
-{% set start_time = fields.field_date_3.content|date('g:i A') %}
-{% set end_time = fields.field_date_4.content|date('g:i A') %}
+{% set start_date_value = row._entity.field_date.value ?? null %}
+{% set end_date_value = row._entity.field_date.end_value ?? null %}
+{% set start_date_object = start_date_value ? date(start_date_value ~ 'Z') : null %}
+{% set end_date_object = end_date_value ? date(end_date_value ~ 'Z') : null %}
+{% set day = start_date_object ? start_date_object|date('j') : '' %}
+{% set month = start_date_object ? start_date_object|date('F') : '' %}
+{% set start_time = start_date_object ? start_date_object|date('g:i A') : '' %}
+{% set end_time = end_date_object ? end_date_object|date('g:i A') : '' %}
 
 
 {% set start = start_date|split("|") %}
