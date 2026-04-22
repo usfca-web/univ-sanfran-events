@@ -12,10 +12,10 @@ concurrency:
 jobs:
   import-feed:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 55
     env:
       PANTHEON_SITE_ENV: univ-sanfran-events.pr-669
-      FEED_ID: '6'
+      FEED_IMPORT_SUMMARY_FILE: /tmp/hourly-feed-import-summary.txt
 
     steps:
       - name: Set up PHP
@@ -54,31 +54,63 @@ jobs:
           EOF
 
       - name: Run feed importer
-        env:
-          FEED_IMPORT_LOG: /tmp/hourly-feed-import.log
         run: |
           set +e
-          terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes 2>&1 | tee "$FEED_IMPORT_LOG"
-          IMPORT_EXIT_CODE=${PIPESTATUS[0]}
+          FEED_IDS=(33 32 31 30 29 28 6)
+          declare -A TYPE_IDS=(
+            [33]=31
+            [32]=29
+            [31]=23
+            [30]=13
+            [29]=8
+            [28]=5
+            [6]=14
+          )
 
-          if grep -q 'The feed became locked before the import could begin' "$FEED_IMPORT_LOG"; then
-            IMPORT_EXIT_CODE=1
-          fi
+          : > "$FEED_IMPORT_SUMMARY_FILE"
+          OVERALL_EXIT_CODE=0
 
-          SUMMARY=$(grep -E 'Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items' "$FEED_IMPORT_LOG" | tail -n 8 || true)
+          for FEED_ID in "${FEED_IDS[@]}"; do
+            TYPE_ID="${TYPE_IDS[$FEED_ID]}"
+            FEED_IMPORT_LOG="/tmp/hourly-feed-import-${FEED_ID}.log"
 
-          if [ -z "$SUMMARY" ]; then
-            SUMMARY=$(tail -n 8 "$FEED_IMPORT_LOG" || true)
-          fi
+            echo "Importing feed ID ${FEED_ID} for Type ID ${TYPE_ID}..."
+            terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes 2>&1 | tee "$FEED_IMPORT_LOG"
+            IMPORT_EXIT_CODE=${PIPESTATUS[0]}
+
+            if grep -q 'The feed became locked before the import could begin' "$FEED_IMPORT_LOG"; then
+              IMPORT_EXIT_CODE=1
+            fi
+
+            if [ "$IMPORT_EXIT_CODE" -eq 0 ]; then
+              STATUS_TEXT="Succeeded"
+            else
+              STATUS_TEXT="Failed"
+              OVERALL_EXIT_CODE=1
+            fi
+
+            SUMMARY=$(grep -E 'Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items' "$FEED_IMPORT_LOG" | tail -n 5 || true)
+
+            if [ -z "$SUMMARY" ]; then
+              SUMMARY=$(tail -n 5 "$FEED_IMPORT_LOG" || true)
+            fi
+
+            {
+              echo "Feed ID ${FEED_ID} (Type ID ${TYPE_ID}): ${STATUS_TEXT}"
+              if [ -n "$SUMMARY" ]; then
+                printf '%s\n' "$SUMMARY" | sed 's/^/  /'
+              fi
+              echo
+            } >> "$FEED_IMPORT_SUMMARY_FILE"
+          done
 
           {
-            echo "FEED_IMPORT_EXIT_CODE=$IMPORT_EXIT_CODE"
             echo "FEED_IMPORT_SUMMARY<<EOF"
-            echo "$SUMMARY"
+            cat "$FEED_IMPORT_SUMMARY_FILE"
             echo "EOF"
           } >> "$GITHUB_ENV"
 
-          exit "$IMPORT_EXIT_CODE"
+          exit "$OVERALL_EXIT_CODE"
 
       - name: Send Slack notification
         if: always()
@@ -100,7 +132,7 @@ jobs:
             PREFIX="@here "
           fi
 
-          SUMMARY_TEXT=$(printf '%s' "$FEED_IMPORT_SUMMARY" | tail -n 8)
+          SUMMARY_TEXT=$(printf '%s' "$FEED_IMPORT_SUMMARY")
           if [ -n "$SUMMARY_TEXT" ]; then
             MESSAGE="${PREFIX}Hourly Events Feed Import ${STATUS_TEXT}\n${SUMMARY_TEXT}"
           else
