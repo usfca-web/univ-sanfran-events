@@ -89,10 +89,10 @@ jobs:
               OVERALL_EXIT_CODE=1
             fi
 
-            SUMMARY=$(grep -E 'Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items' "$FEED_IMPORT_LOG" | tail -n 5 || true)
+            SUMMARY=$(grep -E '\[info\].*(Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items|There are no new)' "$FEED_IMPORT_LOG" | tail -n 5 || true)
 
             if [ -z "$SUMMARY" ]; then
-              SUMMARY=$(tail -n 5 "$FEED_IMPORT_LOG" || true)
+              SUMMARY=$(grep -v '\[notice\] Message:' "$FEED_IMPORT_LOG" | tail -n 5 || true)
             fi
 
             {
