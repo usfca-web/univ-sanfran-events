@@ -53,6 +53,9 @@ jobs:
             IdentityFile ~/.ssh/id_rsa
           EOF
 
+      - name: Clear Drupal caches
+        run: terminus drush "$PANTHEON_SITE_ENV" -- cr
+
       - name: Run feed importer
         run: |
           set +e
