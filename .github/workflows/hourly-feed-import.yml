@@ -72,6 +72,7 @@ jobs:
 
           : > "$FEED_IMPORT_SUMMARY_FILE"
           OVERALL_EXIT_CODE=0
+          FAILED_FEEDS=()
 
           for FEED_ID in "${FEED_IDS[@]}"; do
             TYPE_ID="${TYPE_IDS[$FEED_ID]}"
@@ -90,6 +91,7 @@ jobs:
             else
               STATUS_TEXT="Failed"
               OVERALL_EXIT_CODE=1
+              FAILED_FEEDS+=("${FEED_ID} (Type ID ${TYPE_ID})")
             fi
 
             SUMMARY=$(grep -E '\[info\].*(Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items|There are no new)' "$FEED_IMPORT_LOG" | tail -n 5 || true)
@@ -112,6 +114,10 @@ jobs:
             cat "$FEED_IMPORT_SUMMARY_FILE"
             echo "EOF"
           } >> "$GITHUB_ENV"
+
+          if [ "${#FAILED_FEEDS[@]}" -gt 0 ]; then
+            echo "Hourly feed import failed for: ${FAILED_FEEDS[*]}"
+          fi
 
           exit "$OVERALL_EXIT_CODE"
 
