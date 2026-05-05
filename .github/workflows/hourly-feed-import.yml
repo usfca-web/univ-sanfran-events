@@ -81,17 +81,25 @@ jobs:
             echo "Importing feed ID ${FEED_ID} for Type ID ${TYPE_ID}..."
             terminus drush "$PANTHEON_SITE_ENV" -- -vvv feeds:import "$FEED_ID" --yes 2>&1 | tee "$FEED_IMPORT_LOG"
             IMPORT_EXIT_CODE=${PIPESTATUS[0]}
+            LOCKED_FEED=0
 
             if grep -q 'The feed became locked before the import could begin' "$FEED_IMPORT_LOG"; then
+              LOCKED_FEED=1
               IMPORT_EXIT_CODE=1
             fi
 
             if [ "$IMPORT_EXIT_CODE" -eq 0 ]; then
               STATUS_TEXT="Succeeded"
+            elif [ "$LOCKED_FEED" -eq 1 ]; then
+              STATUS_TEXT="Failed (Locked)"
             else
               STATUS_TEXT="Failed"
               OVERALL_EXIT_CODE=1
-              FAILED_FEEDS+=("${FEED_ID} (Type ID ${TYPE_ID})")
+            fi
+
+            if [ "$IMPORT_EXIT_CODE" -ne 0 ]; then
+              OVERALL_EXIT_CODE=1
+              FAILED_FEEDS+=("${FEED_ID} (Type ID ${TYPE_ID}): ${STATUS_TEXT}")
             fi
 
             SUMMARY=$(grep -E '\[info\].*(Failed importing|Imported|created|updated|deleted|processed|resultsCount|Event items|There are no new)' "$FEED_IMPORT_LOG" | tail -n 5 || true)
