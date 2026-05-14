@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 55
     env:
-      PANTHEON_SITE_ENV: univ-sanfran-events.pr-669
+      PANTHEON_SITE_ENV: univ-sanfran-events.live
       FEED_IMPORT_SUMMARY_FILE: /tmp/hourly-feed-import-summary.txt
 
     steps:
