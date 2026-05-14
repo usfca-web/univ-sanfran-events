@@ -30,11 +30,13 @@ final class EmsBookingsController extends ControllerBase {
     $min = (string) $request->query->get('minReserveStartTime', '');
     $max = (string) $request->query->get('maxReserveStartTime', '');
 
-    // Dynamic date range if not explicitly provided
+    // Default to a forward-looking window that begins "now" so the proxy
+    // excludes events that already ended earlier today.
     if ($min === '' || $max === '') {
-
-      $dmin = new \DateTime('today', $tz);
-      $dmax = new \DateTime('today', $tz);
+      $dmin = $min !== ''
+        ? new \DateTime($min, $tz)
+        : new \DateTime('now', $tz);
+      $dmax = clone $dmin;
 
       switch ($range) {
         case '30days':

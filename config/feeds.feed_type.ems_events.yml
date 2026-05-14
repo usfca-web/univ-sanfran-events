@@ -34,7 +34,8 @@ label: 'EMS Events'
 id: ems_events
 description: 'Import events from EMS'
 help: ''
-import_period: 3600
+import_period: -1
+import_period_per_feed: false
 fetcher: http
 fetcher_configuration:
   auto_detect_feeds: false
@@ -59,6 +60,8 @@ processor_configuration:
   update_existing: 2
   update_non_existent: _keep
   skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
   authorize: true
   revision: false
   expire: -1

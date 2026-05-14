@@ -46,10 +46,14 @@
 {% set start_time = fields.field_date_3.content|date('g:i A') %}
 {% set end_time = fields.field_date_4.content|date('g:i A') %} #}
 
-{% set day = fields.field_date_3.raw|date('j') %}
-{% set month = fields.field_date_3.raw|date('F') %}
-{% set start_time = fields.field_date_3.content|date('g:i A') %}
-{% set end_time = fields.field_date_4.content|date('g:i A') %}
+{% set start_date_value = row._entity.field_date.value ?? null %}
+{% set end_date_value = row._entity.field_date.end_value ?? null %}
+{% set start_date_object = start_date_value ? date(start_date_value ~ 'Z') : null %}
+{% set end_date_object = end_date_value ? date(end_date_value ~ 'Z') : null %}
+{% set day = start_date_object ? start_date_object|date('j') : '' %}
+{% set month = start_date_object ? start_date_object|date('F') : '' %}
+{% set start_time = start_date_object ? start_date_object|date('g:i A') : '' %}
+{% set end_time = end_date_object ? end_date_object|date('g:i A') : '' %}
 
 
 {% set start = start_date|split("|") %}
@@ -214,6 +218,11 @@
         {{  building }}
     {% endif %}
     </div>
+    {% if fields.field_slate_external_url.content %}
+        <div class="event_rsvp_link">
+            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank">{{ rsvp_link_title }}</a></p>
+        </div>
+    {% endif %}
     {% if fields.field_media.content %}
         <div class="event_media">
             {{ fields.field_media.content }}
@@ -222,11 +231,6 @@
     {% if fields.field_image_caption.content %}
         <div class="event_media_caption">  
             {{ fields.field_image_caption.content }}
-        </div>
-    {% endif %}
-    {% if fields.field_slate_external_url.content %}
-        <div class="event_rsvp_link">
-            <p><a class="diamond_link" href="{{ fields.field_slate_external_url.content }}" rel="noopener noreferrer" target="_blank">{{ rsvp_link_title }}</a></p>
         </div>
     {% endif %}
     {% if fields.body.content %}
