@@ -87,7 +87,6 @@ module:
   typed_data: 0
   ultimate_cron: 0
   update: 0
-  upgrade_status: 0
   user: 0
   usf_ems_proxy: 0
   views_bulk_edit: 0
