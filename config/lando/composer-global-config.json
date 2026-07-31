@@ -1,0 +1,9 @@
+{
+  "config": {
+    "policy": {
+      "advisories": {
+        "block": false
+      }
+    }
+  }
+}
