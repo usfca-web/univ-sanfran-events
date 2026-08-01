@@ -7,16 +7,16 @@ dependencies:
 id: event_path
 label: 'Event Path'
 type: 'canonical_entities:node'
-pattern: 'event/[node:title]/[node:field_guid]'
+pattern: '/event/[node:title]/[node:field_guid]'
 selection_criteria:
   6729a230-3ce7-4d2c-8921-efc533cee172:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 6729a230-3ce7-4d2c-8921-efc533cee172
     context_mapping:
       node: node
     bundles:
       event: event
+    uuid: 6729a230-3ce7-4d2c-8921-efc533cee172
 selection_logic: and
 weight: -5
 relationships: {  }
