@@ -15,7 +15,7 @@ set -ex
 
 # Dynamically set Behat configuration parameters
 chmod +x ./.ci/test/behat/drush-wrapper
-export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"},"Drupal\\DrupalExtension":{"drush":{"root":"/code/web","binary":"./.ci/test/behat/drush-wrapper"}}}}'
+export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"},"Drupal\\DrupalExtension":{"drush":{"alias":"remote","binary":"./.ci/test/behat/drush-wrapper"}}}}'
 
 # Start headless Chrome
 echo "\n Starting Chrome in headless mode ..."
