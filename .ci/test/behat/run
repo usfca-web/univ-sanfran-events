@@ -14,7 +14,8 @@ source $BASH_ENV
 set -ex
 
 # Dynamically set Behat configuration parameters
-export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"},"Drupal\\DrupalExtension":{"drush":{"root":"/code/web","binary":"terminus remote:drush '$TERMINUS_SITE'.'$TERMINUS_ENV' --"}}}}'
+chmod +x ./.ci/test/behat/drush-wrapper
+export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"},"Drupal\\DrupalExtension":{"drush":{"root":"/code/web","binary":"./.ci/test/behat/drush-wrapper"}}}}'
 
 # Start headless Chrome
 echo "\n Starting Chrome in headless mode ..."
