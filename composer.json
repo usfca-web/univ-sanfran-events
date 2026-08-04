@@ -142,6 +142,11 @@
         "patchLevel": {
             "drupal\/core": "-p2"
         },
+        "patches": {
+            "drupal/chosen": {
+                "Detect local Chosen library in Drupal 11 web-root installs": "patches/chosen-lib-detect-local-library.patch"
+            }
+        },
         "build-env": {
             "export-configuration": "drush config-export --yes"
         }
