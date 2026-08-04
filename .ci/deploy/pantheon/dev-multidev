@@ -24,23 +24,11 @@ else
   terminus -n build:env:push "$TERMINUS_SITE.dev" --yes
 fi
 
-# # Update the Drupal database
-# terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
-
-# # If exported configuration is available, then import it.
-# if [ -f "config/system.site.yml" ] ; then
-#   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
-# fi
-
-# If exported configuration is available, then import it first.
-if [ -f "config/system.site.yml" ] ; then
-  echo "Importing configuration before database updates..."
-  terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
-fi
-
-# Now update the Drupal database
-echo "Running database updates..."
-terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+# Config import and database updates are handled by Pantheon workflow hooks
+# declared in pantheon.yml. Avoid direct remote drush calls here because
+# multidev artifacts can lack a working /code/vendor/bin/drush wrapper.
+echo "Waiting for Pantheon workflow hooks to complete config import and database updates..."
+terminus -n workflow:wait "$TERMINUS_SITE.$TERMINUS_ENV" --max=600
 
 # Clear Drupal cache
 terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- cr

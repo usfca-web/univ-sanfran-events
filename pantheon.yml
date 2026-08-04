@@ -4,8 +4,8 @@ api_version: 1
 
 # PHP Version:
 # https://pantheon.io/docs/pantheon-yml#php-version
-# Set site's PHP version to 8.1
-php_version: 8.1
+# Set site's PHP version to 8.3 for Drupal 11 compatibility.
+php_version: 8.3
 
 # Drush Version
 # https://pantheon.io/docs/pantheon-yml/#drush-version
@@ -24,7 +24,7 @@ web_docroot: true
 # Database version
 # https://pantheon.io/docs/pantheon-yml#specify-a-version-of-mariadb
 database:
-  version: 10.3
+  version: 10.6
 
 # Quicksilver Platform Integration Hooks
 # https://pantheon.io/docs/pantheon-yml#quicksilver

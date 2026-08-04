@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eo pipefail
+
+if [ -z "$TERMINUS_SITE" ] || [ -z "$TERMINUS_ENV" ]; then
+  echo "TERMINUS_SITE and TERMINUS_ENV must be set." >&2
+  exit 1
+fi
+
+# DrupalExtension prepends either a drush alias like "@foo" or a
+# "--root=/path" argument before the real command. Terminus does not want
+# either of those, so drop that leading context argument if present.
+if [ "${1#@}" != "$1" ] || [ "${1#--root=}" != "$1" ]; then
+  shift
+fi
+
+exec terminus -n drush "${TERMINUS_SITE}.${TERMINUS_ENV}" -- "$@"

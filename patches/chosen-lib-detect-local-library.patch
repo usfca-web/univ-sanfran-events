@@ -1,0 +1,98 @@
+--- modules/chosen_lib/chosen_lib.module
++++ modules/chosen_lib/chosen_lib.module
+@@ -22,19 +22,30 @@
+   $chosen_path = _chosen_lib_get_chosen_path();
+ 
+   if ($chosen_path) {
+-    $minified_js = file_exists($chosen_path . '/chosen.min.js');
+-    $chosen_js = $minified_js ? '/chosen.min.js' : '/chosen.js';
++    $absolute_chosen_path = \Drupal::root() . '/' . $chosen_path;
++    $chosen_js = _chosen_lib_get_chosen_asset($absolute_chosen_path, [
++      'chosen.min.js',
++      'chosen.jquery.min.js',
++      'chosen.js',
++      'chosen.jquery.js',
++    ]);
+ 
+-    $libraries['chosen']['js']['/' . $chosen_path . $chosen_js] = [
+-      'minified' => $minified_js,
+-    ];
++    if ($chosen_js) {
++      $libraries['chosen']['js']['/' . $chosen_path . '/' . $chosen_js] = [
++        'minified' => str_contains($chosen_js, '.min.'),
++      ];
++    }
+ 
+-    $minified_css = file_exists($chosen_path . '/chosen.min.css');
+-    $chosen_css = $minified_css ? '/chosen.min.css' : '/chosen.css';
++    $chosen_css = _chosen_lib_get_chosen_asset($absolute_chosen_path, [
++      'chosen.min.css',
++      'chosen.css',
++    ]);
+ 
+-    $libraries['chosen.css']['css']['component']['/' . $chosen_path . $chosen_css] = [
+-      'minified' => $minified_css,
+-    ];
++    if ($chosen_css) {
++      $libraries['chosen.css']['css']['component']['/' . $chosen_path . '/' . $chosen_css] = [
++        'minified' => str_contains($chosen_css, '.min.'),
++      ];
++    }
+ 
+     return;
+   }
+@@ -57,20 +68,43 @@
+  *   The location of the library, or FALSE if the library isn't installed.
+  */
+ function _chosen_lib_get_chosen_path() {
+-  $searchdir = [];
++  $root = \Drupal::root();
++  $site_path = DrupalKernel::findSitePath(\Drupal::request());
++  $search_paths = [
++    'profiles/' . \Drupal::installProfile() . '/libraries/chosen' => $root . '/profiles/' . \Drupal::installProfile() . '/libraries/chosen',
++    'libraries/chosen' => $root . '/libraries/chosen',
++    $site_path . '/libraries/chosen' => $root . '/' . $site_path . '/libraries/chosen',
++  ];
+ 
+-  $searchdir[] = 'profiles/' . \Drupal::installProfile() . '/libraries/';
+-  $searchdir[] = 'libraries/';
+-  $searchdir[] = DrupalKernel::findSitePath(\Drupal::request()) . '/libraries/';
++  foreach ($search_paths as $relative_path => $absolute_path) {
++    if (_chosen_lib_get_chosen_asset($absolute_path, [
++      'chosen.min.js',
++      'chosen.jquery.min.js',
++      'chosen.js',
++      'chosen.jquery.js',
++    ])) {
++      return $relative_path;
++    }
++  }
+ 
+-  foreach ($searchdir as $dir) {
+-    $path = $dir . 'chosen';
++  return FALSE;
++}
+ 
+-    if (
+-      file_exists($path . '/chosen.min.js') ||
+-      file_exists($path . '/chosen.js')
+-    ) {
+-      return $path;
++/**
++ * Gets the first matching Chosen asset filename from a directory.
++ *
++ * @param string $directory
++ *   The absolute directory path.
++ * @param array $candidates
++ *   Candidate filenames in priority order.
++ *
++ * @return string|false
++ *   The matching filename, or FALSE if none were found.
++ */
++function _chosen_lib_get_chosen_asset($directory, array $candidates) {
++  foreach ($candidates as $candidate) {
++    if (file_exists($directory . '/' . $candidate)) {
++      return $candidate;
+     }
+   }
+ 
