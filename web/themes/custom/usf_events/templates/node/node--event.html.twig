@@ -135,7 +135,7 @@
       {% endif %}
     </div>
 {% if node.field_event_website_tax.value is empty %}
-  <p><a href="/node/{{ node.id }}/edit">Edit event and set which website(s) you want it to display on in order to preview.</a></p>
+  <p><a href="/node/{{ node.id }}/edit">Edit the event and set which website(s) you want it to display on in order to preview.</a></p>
 {% endif %}
 {% if bid is not empty %}
     {{ drupal_view('event_url', 'block_1', bid) }}
