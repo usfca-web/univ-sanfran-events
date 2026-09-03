@@ -30,7 +30,7 @@
         "drupal/csv_serialization": "4.0.1",
         "drupal/ctools": "^4.1.1",
         "drupal/date_popup": "^1.1",
-        "drupal/diff": "^1.9",
+        "drupal/diff": "^2.1.1",
         "drupal/disable_field": "^3.0",
         "drupal/entity_clone": "2.2.0-beta1",
         "drupal/entity_reference_revisions": "^1.9",
