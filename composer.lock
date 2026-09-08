@@ -6647,7 +6647,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-codex/drupal-upgrades-2026-09-03-univ-sanfran-events",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
