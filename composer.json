@@ -60,7 +60,7 @@
         "drupal/typed_data": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_bulk_edit": "^3.0",
-        "drupal/views_bulk_operations": "4.4.7",
+        "drupal/views_bulk_operations": "^4.4.7",
         "drupal/views_field_view": "1.0.0",
         "drupal/views_ical": "^1.0@alpha",
         "drupal/workbench_access": "^2.0",
