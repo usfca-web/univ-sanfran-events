@@ -1,9 +1,13 @@
 diff --git a/behat.inc b/behat.inc
-index efcc509..d129773 100644
+index efcc509..685ff58 100644
 --- a/behat.inc
 +++ b/behat.inc
-@@ -88,6 +88,14 @@ function drush_behat_op_is_field($is_field_info) {
-   return _drush_behat_is_field($entity_type, $field_name);
+@@ -85,9 +85,17 @@ function drush_behat_op_delete_term(\stdClass $term) {
+  */
+ function drush_behat_op_is_field($is_field_info) {
+   list($entity_type, $field_name) = $is_field_info;
+-  return _drush_behat_is_field($entity_type, $field_name);
++  return _drush_behat_is_field($entity_type, $field_name) ? 'true' : 'false';
  }
  
 +/**
@@ -11,7 +15,7 @@ index efcc509..d129773 100644
 + */
 +function drush_behat_op_is_base_field($is_field_info) {
 +  list($entity_type, $field_name) = $is_field_info;
-+  return _drush_behat_is_base_field($entity_type, $field_name);
++  return _drush_behat_is_base_field($entity_type, $field_name) ? 'true' : 'false';
 +}
 +
  /**
