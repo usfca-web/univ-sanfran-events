@@ -1,0 +1,31 @@
+diff --git a/behat.inc b/behat.inc
+index efcc509..d129773 100644
+--- a/behat.inc
++++ b/behat.inc
+@@ -88,6 +88,14 @@ function drush_behat_op_is_field($is_field_info) {
+   return _drush_behat_is_field($entity_type, $field_name);
+ }
+ 
++/**
++ * Check if this is a base field.
++ */
++function drush_behat_op_is_base_field($is_field_info) {
++  list($entity_type, $field_name) = $is_field_info;
++  return _drush_behat_is_base_field($entity_type, $field_name);
++}
++
+ /**
+  * Get all of the field attached to the specified entity type.
+  *
+@@ -111,6 +119,11 @@ function _drush_behat_is_field($entity_type, $field_name) {
+   return (isset($fields[$field_name]) && $fields[$field_name] instanceof FieldStorageConfig);
+ }
+ 
++function _drush_behat_is_base_field($entity_type, $field_name) {
++  $base_fields = \Drupal::service('entity_field.manager')->getBaseFieldDefinitions($entity_type);
++  return isset($base_fields[$field_name]);
++}
++
+ function _drush_behat_get_field_handler($entity, $entity_type, $field_name) {
+   $core_namespace = "Drupal8";
+   return _drush_behat_get_field_handler_common($entity, $entity_type, $field_name, $core_namespace);

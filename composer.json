@@ -91,6 +91,14 @@
   "prefer-stable": true,
   "extra": {
     "enable-patching": true,
+    "patches": {
+      "drupal/drupal-driver": {
+        "Support base-field validation through the Drush driver": "patches/drupal-driver-drush-base-fields.patch"
+      },
+      "drush-ops/behat-drush-endpoint": {
+        "Expose base-field validation for the Behat Drush driver": "patches/behat-drush-endpoint-base-fields.patch"
+      }
+    },
     "drupal-scaffold": {
       "locations": {
         "web-root": "./web"

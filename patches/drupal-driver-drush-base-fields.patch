@@ -1,0 +1,26 @@
+diff --git a/src/Drupal/Driver/DrushDriver.php b/src/Drupal/Driver/DrushDriver.php
+index 384d995..ae5d99d 100644
+--- a/src/Drupal/Driver/DrushDriver.php
++++ b/src/Drupal/Driver/DrushDriver.php
+@@ -426,6 +426,21 @@ class DrushDriver extends BaseDriver {
+     }
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function isBaseField($entity_type, $field_name) {
++    try {
++      $value = [$entity_type, $field_name];
++      $arguments = ['is-base-field', escapeshellarg(json_encode($value))];
++      $result = $this->drush('behat', $arguments, []);
++      return strpos($result, "true\n") !== FALSE;
++    }
++    catch (\Exception $exception) {
++      return FALSE;
++    }
++  }
++
+   /**
+    * Sets common drush arguments or options.
+    *
