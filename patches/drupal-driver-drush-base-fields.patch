@@ -1,8 +1,8 @@
 diff --git a/src/Drupal/Driver/DrushDriver.php b/src/Drupal/Driver/DrushDriver.php
-index 384d995..ae5d99d 100644
+index 384d995..f6b8e7d 100644
 --- a/src/Drupal/Driver/DrushDriver.php
 +++ b/src/Drupal/Driver/DrushDriver.php
-@@ -426,6 +426,21 @@ class DrushDriver extends BaseDriver {
+@@ -426,6 +426,56 @@ class DrushDriver extends BaseDriver {
      }
    }
  
@@ -10,6 +10,41 @@ index 384d995..ae5d99d 100644
 +   * {@inheritdoc}
 +   */
 +  public function isBaseField($entity_type, $field_name) {
++    $base_fields = [
++      'node' => [
++        'title',
++        'status',
++        'uid',
++        'created',
++        'changed',
++        'promote',
++        'sticky',
++        'langcode',
++      ],
++      'taxonomy_term' => [
++        'name',
++        'description',
++        'parent',
++        'status',
++        'langcode',
++      ],
++      'user' => [
++        'name',
++        'mail',
++        'status',
++        'roles',
++        'created',
++        'changed',
++        'access',
++        'login',
++        'langcode',
++      ],
++    ];
++
++    if (isset($base_fields[$entity_type]) && in_array($field_name, $base_fields[$entity_type], TRUE)) {
++      return TRUE;
++    }
++
 +    try {
 +      $value = [$entity_type, $field_name];
 +      $arguments = ['is-base-field', escapeshellarg(json_encode($value))];
