@@ -2,7 +2,7 @@ diff --git a/src/Drupal/Driver/DrushDriver.php b/src/Drupal/Driver/DrushDriver.p
 index 384d995..f6b8e7d 100644
 --- a/src/Drupal/Driver/DrushDriver.php
 +++ b/src/Drupal/Driver/DrushDriver.php
-@@ -426,6 +426,56 @@ class DrushDriver extends BaseDriver {
+@@ -426,6 +426,58 @@ class DrushDriver extends BaseDriver {
      }
    }
  
@@ -12,6 +12,7 @@ index 384d995..f6b8e7d 100644
 +  public function isBaseField($entity_type, $field_name) {
 +    $base_fields = [
 +      'node' => [
++        'type',
 +        'title',
 +        'status',
 +        'uid',
@@ -29,6 +30,7 @@ index 384d995..f6b8e7d 100644
 +        'langcode',
 +      ],
 +      'user' => [
++        'pass',
 +        'name',
 +        'mail',
 +        'status',
