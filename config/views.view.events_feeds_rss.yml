@@ -1086,7 +1086,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -1110,7 +1110,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -1895,6 +1895,9 @@ display:
               raw_output: false
             view_node:
               alias: link
+              raw_output: false
+            body:
+              alias: details
               raw_output: false
             field_date_1:
               alias: description
