@@ -17,20 +17,28 @@ terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
 if [[ $CI_BRANCH != $DEFAULT_BRANCH ]]
 then
   # Create a new multidev environment (or push to an existing one)
-  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes || true
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes
   terminus -n workflow:wait "$TERMINUS_SITE.$TERMINUS_ENV" --max=600
 else
   # Push to the dev environment
   terminus -n build:env:push "$TERMINUS_SITE.dev" --yes
 fi
 
-# # Update the Drupal database
-# terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+# Code sync can finish before a new multidev database is ready.
+# Drush status may exit successfully without bootstrapping Drupal, so check its value.
+for attempt in {1..20}; do
+  echo "Checking Drupal readiness for $TERMINUS_SITE.$TERMINUS_ENV (attempt $attempt/20)..."
+  if bootstrap=$(terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- status --field=bootstrap) &&
+     [[ "$bootstrap" == "Successful" ]]; then
+    break
+  fi
 
-# # If exported configuration is available, then import it.
-# if [ -f "config/system.site.yml" ] ; then
-#   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
-# fi
+  if [[ "$attempt" -eq 20 ]]; then
+    echo "Drupal could not bootstrap. Check Pantheon provisioning and the target database before retrying." >&2
+    exit 1
+  fi
+  sleep 30
+done
 
 # If exported configuration is available, then import it first.
 if [ -f "config/system.site.yml" ] ; then
