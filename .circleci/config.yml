@@ -124,6 +124,8 @@ jobs:
       # Deploy to Pantheon
       - run:
           name: deploy to Pantheon
+          # Pantheon multidev provisioning can exceed CircleCI’s 10-minute quiet limit.
+          no_output_timeout: 30m
           command: ./.ci/deploy/pantheon/dev-multidev
 
   behat_test:
