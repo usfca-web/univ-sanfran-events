@@ -48,7 +48,7 @@
     "drupal/json_feed": "^2.0",
     "drupal/key": "^1.22",
     "drupal/paragraphs": "^1.21",
-    "drupal/pathauto": "1.15.0",
+    "drupal/pathauto": "1.16.0",
     "drupal/quickedit": "^1.0",
     "drupal/rabbit_hole": "1.3.0",
     "drupal/rdf": "^2.1",
