@@ -95,7 +95,6 @@
 {% set gid = node.field_usfdons_game_id.value %}
 {% set location = node.field_location.value %}
 {% set building = node.field_building.value %}
-
 <article{{ attributes.addClass(classes) }}>
   <header>
     {{ title_prefix }}
@@ -118,7 +117,7 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {#{ content }#}
   <div class="event_display_title">
-     {{ node.field_display_title.value }}
+     Heloooo {{ node.field_display_title.value }}
   </div>
     <div class="event_date">
      {{ start_date|date("l, F j, g:i A ") ~ ' - '}}{{ end_date|date("g:i A ") }}
